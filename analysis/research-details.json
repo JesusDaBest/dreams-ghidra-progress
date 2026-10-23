@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 963,
+    "checked_and_applied_names": 964,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 963,
+    "verified_names": 964,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "819 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "820 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30087,6 +30087,34 @@
       "Context structures, mode meaning, four-slot meanings and numeric type IDs remain unresolved. Working inputs are opaque pointers plus32-bit mode; only its lowbyte consumed.",
       "Exact original instruction boundary repaired at1409ae878..881; bytes unchanged. Some invalid/type-mismatch paths can dereference null; no broad input-safety guarantee.",
       "No MM source/livestream match or implicit child-callee completion claimed."
+    ]
+  },
+  "ancestor_context_mapping_checkpoint": {
+    "functions": {
+      "14094a0b0": {
+        "name": "FindEligibleAncestorIndexInContext",
+        "signature": "int PS4_SYSV FindEligibleAncestorIndexInContext(void * source_context, void * destination_context, int source_index)",
+        "return_storage": "EAX:4",
+        "original_sha256": "af0f722e7fb9a4e062a08be7e519cdd29b4fc6c4ddf47e2542c8952cad66876f",
+        "size": 428,
+        "instructions": 110,
+        "created": false,
+        "c_sha256": "1d9616ad4c3b96fb6153cfb92051d8608df77de53582a3157145f21b8dabf7a4",
+        "nonempty_c_lines": 95
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 428,
+    "original_instructions": 110,
+    "typed_c_nonempty_lines": 80,
+    "new_native_cases": 4097,
+    "scope_limits": [
+      "Whole428-byte original function tested in4097 new isolated synthetic cases; no live contexts/platform/game execution.",
+      "Valid acyclic source-parent chain only; invalid/null source and cycles excluded. Original arithmetic uses32-bit wrapping and signed22-bit reference extraction.",
+      "Returns0 when sourceparent sentinel ends traversal; starts at parent, not inputobject. Exact semantic type names remain unresolved.",
+      "No MM livestream/source-build match or implicit whole-caller completion."
     ]
   }
 }

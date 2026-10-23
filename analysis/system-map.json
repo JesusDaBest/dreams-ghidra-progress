@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2356,
-  "unmapped_total": 7338,
+  "mapped_total": 2357,
+  "unmapped_total": 7337,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60434,6 +60434,30 @@
           "support": [
             "Entire original 20739-byte body (4211 instructions) and all 3555 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from complete20739-byte/4211-instruction original body, all3555 nonempty diagnostic C lines and directcaller1409bb007. Acquires/initializes pooled context via outputRDX; caller reads pointer slot aftercall. RDI base snapshot, RSI runtime-state context, lowbyteECXmode (observed0/1), R8 opaque parameter block read+0x596. Opaque pointer working inputs and void return; epilogue RAX stackcookie not semantic result. Mode0 update-pass path or nonzero bulkcopy0x1c8d680/relocation; reconciles0x43e0/0x19c50/0x270/0xce0/0x40-stride records, references by objectIDs, selected type-specific state, parent flags and four pointer+ID slots, then prepares simulation. Exact structures/mode meaning/typeIDs/slot semantics unresolved. Original signed22-bit packing and32-bit wrapping govern, some invalid/type-mismatch paths can null-dereference; no broad safety guarantee. Corrected saved instruction overlap at1409ae87c to original MOV878/CMP87d in full EH body. No native/platform/context execution, child-callee completeness or MM source match claimed."
+          ]
+        }
+      ]
+    },
+    "14094a0b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Ancestor fallback used when direct cross-context object lookup fails during game-context reconciliation; source/destination object tables and original caller return use verified.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "af0f722e7fb9a4e062a08be7e519cdd29b4fc6c4ddf47e2542c8952cad66876f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindEligibleAncestorIndexInContext",
+          "support": [
+            "Entire original 428-byte body (110 instructions) and all 80 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from full428-byte original body,80 nonempty C lines,two direct callers and4097 isolated whole-original cases. RDI source context,RSI destination context,EDX packed source index,EAX signed32 result. Starts at sourceobject parent+4; traverses signed22-bit parent references and resolves ancestor firstDWORD IDs through destination hash chains. Candidate flags0x100800 must clear, source+0x27b0c0 must zero, low7 type must be0/1/11/17/19/95/96. Returns first eligible destination ancestor index; source parent sentinel-1 ends with0. No explicit cycle guard. Invalid/null source can dereference null despite later null-source expression. Native tests synthetic valid acyclic chains only, all128 types,4flag combinations,source gate,missing immediate candidate,hash collision,zero-parent case; read-only checked ranges/original bytes preserved. No runtime game/platform/source equivalence or semantic type-name claim."
           ]
         }
       ]

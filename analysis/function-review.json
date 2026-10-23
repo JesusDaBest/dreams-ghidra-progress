@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "819 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "820 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8576,
-    "other_names": 1118,
-    "verification": "complete_inventory_matches_baseline_plus_819_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8575,
+    "other_names": 1119,
+    "verification": "complete_inventory_matches_baseline_plus_820_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22933,6 +22933,27 @@
         "Context structures, mode meaning, four-slot meanings and numeric type IDs remain unresolved. Working inputs are opaque pointers plus32-bit mode; only its lowbyte consumed.",
         "Exact original instruction boundary repaired at1409ae878..881; bytes unchanged. Some invalid/type-mismatch paths can dereference null; no broad input-safety guarantee.",
         "No MM source/livestream match or implicit child-callee completion claimed."
+      ]
+    },
+    {
+      "address": "14094a0b0",
+      "original_name": "FUN_14094a0b0",
+      "applied_name": "FindEligibleAncestorIndexInContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV FindEligibleAncestorIndexInContext(void * source_context, void * destination_context, int source_index)",
+      "evidence": [
+        "Entire original 428-byte body (110 instructions) and all 80 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from full428-byte original body,80 nonempty C lines,two direct callers and4097 isolated whole-original cases. RDI source context,RSI destination context,EDX packed source index,EAX signed32 result. Starts at sourceobject parent+4; traverses signed22-bit parent references and resolves ancestor firstDWORD IDs through destination hash chains. Candidate flags0x100800 must clear, source+0x27b0c0 must zero, low7 type must be0/1/11/17/19/95/96. Returns first eligible destination ancestor index; source parent sentinel-1 ends with0. No explicit cycle guard. Invalid/null source can dereference null despite later null-source expression. Native tests synthetic valid acyclic chains only, all128 types,4flag combinations,source gate,missing immediate candidate,hash collision,zero-parent case; read-only checked ranges/original bytes preserved. No runtime game/platform/source equivalence or semantic type-name claim."
+      ],
+      "caveats": [
+        "Whole428-byte original function tested in4097 new isolated synthetic cases; no live contexts/platform/game execution.",
+        "Valid acyclic source-parent chain only; invalid/null source and cycles excluded. Original arithmetic uses32-bit wrapping and signed22-bit reference extraction.",
+        "Returns0 when sourceparent sentinel ends traversal; starts at parent, not inputobject. Exact semantic type names remain unresolved.",
+        "No MM livestream/source-build match or implicit whole-caller completion."
       ]
     }
   ],

@@ -8525,3 +8525,14 @@ The original instruction stream establishes two instructions where the saved lis
 This is static semantic review with a checked direct-caller window, not a whole-context execution test. Child callees are not implicitly complete, input safety is not established, and no original Media Molecule source match is claimed.
 
 Totals: **963 reviewed names / 9,694 defined functions**, **2,356 mapped / 7,338 unmapped**. Whole-game completion remains unknown.
+
+
+### Cross-context ancestor fallback
+
+**FindEligibleAncestorIndexInContext** identifies a complete **428-byte / 110-instruction** helper. All **80 nonempty diagnostic C lines** and two direct-caller windows were read. The saved three-input interface and 32-bit return passed rollback preview, save and independent reopen with original bytes unchanged.
+
+Starting at the input object's parent, the helper walks signed 22-bit source references and looks up each ancestor ID in the destination context. It accepts candidates only when their flags, numeric type and source-context gate allow it. It returns the first eligible destination index. If the parent chain ends, it returns **zero**, rather than the all-ones lookup sentinel. Exact user-facing type names remain unresolved.
+
+**4,097 new isolated whole-original cases** cover all 128 type values, four candidate-flag combinations, the source gate, a missing immediate match, a colliding hash entry and a parent-sentinel case. Tested memory and original code remained unchanged. The initial test setup failed before invoking the original function because the synthetic allocation was too small; it was corrected and the failure retained locally. Valid acyclic chains were tested; invalid/null references, cycles and live game behavior were excluded. Completed suites were not rerun.
+
+Totals: **964 reviewed names / 9,694 defined functions**, **2,357 mapped / 7,337 unmapped**. Whole-game completion remains unknown.
