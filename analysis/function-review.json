@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 122 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 123 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9673,
+    "total": 9674,
     "default_fun_names": 8603,
-    "other_names": 1070,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_122_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1071,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_123_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21724,6 +21724,29 @@
       "caveats": [
         "Finite six distinct valid indices only; aliasing,malformed indices,nonfinite inputs,threshold-edge rounding,arbitrary geometry and live-game behavior unverified.",
         "Refined RSQRT compared numerically,not bitwise. Full enclosing updater and exact original developer source/class not recovered."
+      ]
+    },
+    {
+      "address": "141438710",
+      "original_name": null,
+      "applied_name": "ApplyBatchedRecipientSpringConstraints",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyBatchedRecipientSpringConstraints(void * shape_state, int selection_index)",
+      "evidence": [
+        "Complete861-byte original body(154instructions),288-line typed pseudocode and named-preview differences read.",
+        "72 whole original leaf finite cases matched weighted distance constraints across zero/one/two four-record batches,signed strengths,rest-length factors and inverse weights.",
+        "Corrected exact initializer stores link BODY_SPRINGS to embedded callback slot2 and ESI2 dispatch.",
+        "Independent saved-project reopening verified bounded definition,working interface and unchanged original bytes/other function inventory."
+      ],
+      "caveats": [
+        "Within each batch,pairs have distinct indices; aliasing write order and degenerate lengths unverified.",
+        "Observed loop subtracts4 untilzero; malformed counts,invalid indices,nonfinite values,rounding edges and live-game behavior unverified.",
+        "RSQRT/reciprocal refinements compared numerically,not bitwise; original source class not recovered."
       ]
     }
   ],

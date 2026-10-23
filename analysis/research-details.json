@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 915,
+    "checked_and_applied_names": 916,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 915,
-    "function_count": 9673,
+    "verified_names": 916,
+    "function_count": 9674,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2032,6 +2032,7 @@
       "141433a70",
       "141437c80",
       "1414386b0",
+      "141438710",
       "141438a70",
       "141438c70",
       "141438dc0",
@@ -2048,7 +2049,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 122 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 123 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28793,6 +28794,29 @@
     "limits": [
       "Finite six distinct valid indices only; aliasing,malformed indices,nonfinite inputs,threshold-edge rounding,arbitrary geometry and live-game behavior unverified.",
       "Refined RSQRT compared numerically,not bitwise. Full enclosing updater and exact original developer source/class not recovered."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_body_springs_checkpoint": {
+    "address": "141438710",
+    "name": "ApplyBatchedRecipientSpringConstraints",
+    "signature": "void PS4_SYSV ApplyBatchedRecipientSpringConstraints(void * shape_state, int selection_index)",
+    "original_sha256": "2745d9b08847eca07fa634feabad72f364095b67d9a72e892170d4596f1647a7",
+    "native_cases": 72,
+    "size": 861,
+    "created": true,
+    "c_sha256": "176b3761968001231196f0bb3ce07b2b92ed3fe5a4ccc41db0f878bd7f2be1f0",
+    "nonempty_c_lines": 297,
+    "evidence": [
+      "Complete861-byte original body(154instructions),288-line typed pseudocode and named-preview differences read.",
+      "72 whole original leaf finite cases matched weighted distance constraints across zero/one/two four-record batches,signed strengths,rest-length factors and inverse weights.",
+      "Corrected exact initializer stores link BODY_SPRINGS to embedded callback slot2 and ESI2 dispatch.",
+      "Independent saved-project reopening verified bounded definition,working interface and unchanged original bytes/other function inventory."
+    ],
+    "limits": [
+      "Within each batch,pairs have distinct indices; aliasing write order and degenerate lengths unverified.",
+      "Observed loop subtracts4 untilzero; malformed counts,invalid indices,nonfinite values,rounding edges and live-game behavior unverified.",
+      "RSQRT/reciprocal refinements compared numerically,not bitwise; original source class not recovered."
     ],
     "project_saved_and_independently_reopened": true
   }

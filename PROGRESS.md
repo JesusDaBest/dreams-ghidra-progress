@@ -8120,3 +8120,14 @@ The solver places selected points toward mode-dependent targets,then performs fo
 Checks use six distinct valid indices. Aliased or malformed indices,nonfinite values,threshold-edge rounding,arbitrary geometry and live-game behavior remain unverified. This does not establish the complete updater or original developer class/source.
 
 Totals: **915 checked names across 9,673 defined functions**, **2,316 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
+
+
+### Batched recipient spring constraints
+
+`ApplyBatchedRecipientSpringConstraints` now has a verified bounded definition. Its entire861-byte body(154instructions),288-line typed pseudocode and named-preview differences were read. Exact initializer stores associate it with `BODY_SPRINGS`,embedded callback slot2 and dispatcher index2.
+
+The callback processes four pair records at a time. Each record has two signed16-bit point indices,a reference length and a correction coefficient. A slot strength and per-point inverse weights scale the distance correction. Four displacement snapshots are taken before the batch point writes; later batches see prior updates. All72 whole original-code finite cases matched an independent weighted constraint model,covering zero/one/two batches,signed strengths,three reference-length factors and two inverse-weight scales. All four point lanes,other state,records and original code were checked. An independent project reopen confirmed the saved definition.
+
+Within-batch pairs were distinct in these checks. Aliasing write order,zero-length springs,malformed counts,invalid indices,nonfinite values,rounding boundaries and live-game behavior remain unverified. The observed loop subtracts4 untilzero;the producer contract still needs tracing.
+
+Totals: **916 checked names across 9,674 defined functions**, **2,317 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
