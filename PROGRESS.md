@@ -8427,3 +8427,16 @@ The teardown received **576 new isolated whole-original cases**. The first polli
 The observed status offsets `0x34` and `0x38` agree with `flip_pending_num` and `current_buffer` in [shadPS4's FlipStatus definition](https://github.com/shadps4-emu/shadPS4/blob/main/src/core/libraries/videoout/video_out.h). This is a field-layout cross-check against the original reads, not an exact original SDK/source-version claim.
 
 These two functions are mapped under **Rendering → GPU resources & dispatch → Video output**. Totals: **950 reviewed names / 9,692 defined functions**, **2,343 mapped / 7,349 unmapped**. These are scoped code reviews, not verified whole-game rendering or original source recovery.
+
+
+### HMD callbacks and color-target storage
+
+Three more complete original functions are reviewed and independently verified after saving: **EnterHmdReprojectionAndLimitGpuWaves**, **LeaveHmdReprojectionAndRestoreGpuWaves**, and **InitializeColorTargetAndAllocateTrackedStorage**. The two callback definitions were missing; the color-target factory already existed. This covers **1,777 original bytes / 388 instructions** and **285 nonempty lines of typed C**.
+
+The callback pair is registered by the reviewed HMD initialization path. Entry records vblank information, updates a counter keyed by the first value in the callback payload, sets an activity bit, and applies GPU wave-limit multipliers under a mutex. Exit selects restored multipliers from two flags and clears the activity bit. The platform call resolves to **sceGnmSetWaveLimitMultipliers**; this is GPU wave policy, not CPU thread scheduling. The payload's external field name and the flags' broader meanings remain unresolved. These are not established writers of the deferred-release completion slots.
+
+The color-target factory builds its descriptor, allocates main and optional auxiliary storage, encodes addresses into descriptor/view state and registers resources. Failure at a later allocation exits without locally unwinding earlier allocations. Format indices have no local bounds guard. Exact format/sample enumeration meanings and GPU effects remain unverified.
+
+**This batch is static review only.** No new native fixture or live hardware/platform test was run, and completed suites were not rerun. Descriptive names are evidence-supported working labels, not recovered original source names. No MM livestream source match is claimed.
+
+Totals: **953 reviewed names / 9,694 defined functions**, **2,346 mapped / 7,348 unmapped**. Two added definitions and one existing rename are mapped into the existing Rendering sections. These counts measure reviewed discovered code, not whole-game completion.

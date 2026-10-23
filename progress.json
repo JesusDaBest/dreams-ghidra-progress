@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 904,
+    "done": 907,
     "todo": 1439,
-    "total": 2343,
-    "behavior_or_helpers_reviewed": 830,
+    "total": 2346,
+    "behavior_or_helpers_reviewed": 833,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -29985,12 +29985,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 132,
+        "done": 135,
         "todo": 268,
-        "total": 400,
-        "behavior_or_helpers_reviewed": 132,
+        "total": 403,
+        "behavior_or_helpers_reviewed": 135,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 374,
+        "runtime_functions_identified": 377,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -30107,6 +30107,8 @@
           "LookupOrRequestImageCacheSlice",
           "TryGetCachedImageColorSample",
           "TestSpriteBoundsAgainstViewPlanes",
+          "EnterHmdReprojectionAndLimitGpuWaves",
+          "LeaveHmdReprojectionAndRestoreGpuWaves",
           "ConfigureVideoOutputBuffersAndCursor",
           "TearDownVideoOutputResources",
           "InitializeDoubleBufferedGpuRecordStorage",
@@ -30125,6 +30127,7 @@
           "ResetGraphicsBindingState",
           "BindGraphicsShaderPairIfChanged",
           "ApplyGraphicsDrawStateIfChanged",
+          "InitializeColorTargetAndAllocateTrackedStorage",
           "ScheduleRequiredQueueSequenceWaits",
           "DownsampleImageBytes4x4"
         ],
@@ -30511,6 +30514,8 @@
           "141331520",
           "1413317f0",
           "141361110",
+          "14139dd40",
+          "14139de40",
           "14139df10",
           "14139e6c0",
           "14139f160",
@@ -30529,6 +30534,7 @@
           "1413c49f0",
           "1413c4ed0",
           "1413c5010",
+          "1413c82d0",
           "1413c90c0",
           "1414c8200"
         ],
@@ -34256,12 +34262,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU resources & dispatch",
-            "done": 57,
+            "done": 60,
             "todo": 0,
-            "total": 57,
-            "behavior_or_helpers_reviewed": 57,
+            "total": 60,
+            "behavior_or_helpers_reviewed": 60,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 57,
+            "runtime_functions_identified": 60,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -34307,6 +34313,8 @@
               "LoadPhotoCacheImagePixels",
               "LookupOrRequestImageCacheSlice",
               "TryGetCachedImageColorSample",
+              "EnterHmdReprojectionAndLimitGpuWaves",
+              "LeaveHmdReprojectionAndRestoreGpuWaves",
               "ConfigureVideoOutputBuffersAndCursor",
               "TearDownVideoOutputResources",
               "InitializeDoubleBufferedGpuRecordStorage",
@@ -34321,6 +34329,7 @@
               "InitializeGpuImageResource",
               "WaitForCompletionAndDrainDeferredReleases",
               "ReadImageRgbSample",
+              "InitializeColorTargetAndAllocateTrackedStorage",
               "ScheduleRequiredQueueSequenceWaits",
               "DownsampleImageBytes4x4"
             ],
@@ -34367,6 +34376,8 @@
               "141331220",
               "141331520",
               "1413317f0",
+              "14139dd40",
+              "14139de40",
               "14139df10",
               "14139e6c0",
               "14139f160",
@@ -34381,6 +34392,7 @@
               "1413c3620",
               "1413c3ef0",
               "1413c4060",
+              "1413c82d0",
               "1413c90c0",
               "1414c8200"
             ],
@@ -34787,27 +34799,88 @@
                 ]
               },
               {
+                "name": "rendering/compute/display-output",
+                "label": "Video output",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "EnterHmdReprojectionAndLimitGpuWaves",
+                  "LeaveHmdReprojectionAndRestoreGpuWaves",
+                  "ConfigureVideoOutputBuffersAndCursor",
+                  "TearDownVideoOutputResources"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14139dd40",
+                  "14139de40",
+                  "14139df10",
+                  "14139e6c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/display-output/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "EnterHmdReprojectionAndLimitGpuWaves",
+                      "LeaveHmdReprojectionAndRestoreGpuWaves",
+                      "ConfigureVideoOutputBuffersAndCursor",
+                      "TearDownVideoOutputResources"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14139dd40",
+                      "14139de40",
+                      "14139df10",
+                      "14139e6c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/resource-storage",
                 "label": "Resource storage",
-                "done": 3,
+                "done": 4,
                 "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
+                "runtime_functions_identified": 4,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "InitializeDoubleBufferedGpuRecordStorage",
                   "ReleaseTrackedAllocationOrDefer",
-                  "TryAllocateGraphicsResourceStorage"
+                  "TryAllocateGraphicsResourceStorage",
+                  "InitializeColorTargetAndAllocateTrackedStorage"
                 ],
                 "todo_names": [],
                 "done_addresses": [
                   "14139f160",
                   "1413a9680",
-                  "1413c2ee0"
+                  "1413c2ee0",
+                  "1413c82d0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -34815,25 +34888,27 @@
                   {
                     "name": "rendering/compute/resource-storage/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 3,
+                    "done": 4,
                     "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
+                    "runtime_functions_identified": 4,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "InitializeDoubleBufferedGpuRecordStorage",
                       "ReleaseTrackedAllocationOrDefer",
-                      "TryAllocateGraphicsResourceStorage"
+                      "TryAllocateGraphicsResourceStorage",
+                      "InitializeColorTargetAndAllocateTrackedStorage"
                     ],
                     "todo_names": [],
                     "done_addresses": [
                       "14139f160",
                       "1413a9680",
-                      "1413c2ee0"
+                      "1413c2ee0",
+                      "1413c82d0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -34936,57 +35011,6 @@
                     "done_addresses": [
                       "14003b5e0",
                       "14139fbf0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/display-output",
-                "label": "Video output",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ConfigureVideoOutputBuffersAndCursor",
-                  "TearDownVideoOutputResources"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14139df10",
-                  "14139e6c0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/display-output/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ConfigureVideoOutputBuffersAndCursor",
-                      "TearDownVideoOutputResources"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14139df10",
-                      "14139e6c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -48084,5 +48108,5 @@
       }
     ]
   },
-  "unmapped": 7349
+  "unmapped": 7348
 }

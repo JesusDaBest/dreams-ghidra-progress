@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "808 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "809 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9692,
-    "default_fun_names": 8587,
-    "other_names": 1105,
-    "verification": "complete_inventory_matches_baseline_plus_808_renames_and_141_created_functions_and_1_reviewed_existing_name"
+    "total": 9694,
+    "default_fun_names": 8586,
+    "other_names": 1108,
+    "verification": "complete_inventory_matches_baseline_plus_809_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22658,6 +22658,71 @@
         "Video/HMD, sleep/status, virtual methods and allocation cleanup are models, not real dependency execution.",
         "Models populate full status even when returning an error; this does not prove real failed-call output behavior or guaranteed progress.",
         "Valid non-null virtual-method state is assumed."
+      ]
+    },
+    {
+      "address": "14139dd40",
+      "original_name": null,
+      "applied_name": "EnterHmdReprojectionAndLimitGpuWaves",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EnterHmdReprojectionAndLimitGpuWaves(void * callback_data)",
+      "evidence": [
+        "Entire original 241-byte body (55 instructions) and all 46 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from the entire original EH-bounded body and complete typed C. Static review only; no live HMD/GPU, concurrency, allocator or platform execution. No original-source symbol or exact MM source-build match claimed. Consumes RDI pointer, reads its first64-bit value. Gets vblank status into zeroed40-byte local and atomically stores offset8; changed callback value resets per-value counter, then increments counter. Sets indexed global activity bit (index masked31), locks shared mutex, stores thread ID and active byte1, forwards wave-mask0x17f, eighth multiplier0 and seven bytes [0,0,0,0,31,0,0] to original wave-limit wrapper, then unlocks. API results ignored. Callback structure meaning beyond first value remains unknown; no completion-slot writer claim."
+      ],
+      "caveats": [
+        "Static review only; no new native fixtures, GPU/HMD/platform execution or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14139de40",
+      "original_name": null,
+      "applied_name": "LeaveHmdReprojectionAndRestoreGpuWaves",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV LeaveHmdReprojectionAndRestoreGpuWaves(void)",
+      "evidence": [
+        "Entire original 201-byte body (48 instructions) and all 47 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from the entire original EH-bounded body and complete typed C. Static review only; no live HMD/GPU, concurrency, allocator or platform execution. No original-source symbol or exact MM source-build match claimed. No consumed incoming arguments. Locks shared mutex, stores thread ID, clears active byte, selects seven multipliers and eighth byte: first flag nonzero [5,5,5,5,5,5,31]/5; else second flag nonzero [5,5,5,31,5,5,5]/5; else all31. Forwards mask0x17f to wave-limit wrapper, unlocks, atomically clears indexed activity bit via rotate(-2,index). Flag semantics beyond observed branch selection remain unknown."
+      ],
+      "caveats": [
+        "Static review only; no new native fixtures, GPU/HMD/platform execution or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1413c82d0",
+      "original_name": "FUN_1413c82d0",
+      "applied_name": "InitializeColorTargetAndAllocateTrackedStorage",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeColorTargetAndAllocateTrackedStorage(void * target, int width, int height, int format_index, int sample_mode, int tile_flags)",
+      "evidence": [
+        "Entire original 1335-byte body (285 instructions) and all 192 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from the entire original EH-bounded body and complete typed C. Static review only; no live HMD/GPU, concurrency, allocator or platform execution. No original-source symbol or exact MM source-build match claimed. Consumes target RDI, width ESI, height EDX, unsigned format-table index ECX, descriptor sample-mode value R8D and tile flag bits R9D. Format table stride24 with no local bounds guard. Initializes descriptor at target+0x70; nonzero descriptor result exits. Caches dimensions, main/auxiliary size-alignment words, adjusts packed descriptor fields on first-aux-only path and enforces minimum alignment65536 when target+0xe8 nonzero. Allocates main record+8, optional auxiliary+0x30/+0x50 using reviewed allocation helper; each failed allocation exits without local unwind. Encodes allocation addresses shifted8 into descriptor, builds texture-view state+0xb8 and registers resources with kinds6/7 then5/3 using resolved sceGnmRegisterResource wrapper. Pool-owner lookup follows mode2 kind mapping, signed handle and bounded registration-slot lookup. Input format/sample enumeration meanings and actual GPU descriptor effects remain unproved; existing reviewed color-auxiliary size helper and original caller establish descriptive color-target role. Void working return; no reliable success result."
+      ],
+      "caveats": [
+        "Static review only; no new native fixtures, GPU/HMD/platform execution or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
       ]
     }
   ],

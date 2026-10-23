@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 950,
+    "checked_and_applied_names": 953,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 950,
-    "function_count": 9692,
+    "verified_names": 953,
+    "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1985,6 +1985,8 @@
       "1410a6860",
       "1411a32b0",
       "141330c40",
+      "14139dd40",
+      "14139de40",
       "1413db1d0",
       "1413dc430",
       "1413dc530",
@@ -2067,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "808 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "809 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29740,5 +29742,57 @@
       "Generated C still omits some imported/virtual call arguments and retains intrinsic/overlapping-global artifacts; original register instructions are authoritative.",
       "No actual output device, HMD, cursor, allocator reclamation, virtual-method implementation or asynchronous GPU completion was executed in this checkpoint."
     ]
+  },
+  "hmd_render_target_checkpoint": {
+    "functions": {
+      "14139dd40": {
+        "name": "EnterHmdReprojectionAndLimitGpuWaves",
+        "signature": "void PS4_SYSV EnterHmdReprojectionAndLimitGpuWaves(void * callback_data)",
+        "return_storage": "<VOID>",
+        "original_sha256": "e0689ce75c7dbb18962bd8008ffd55f45d2ea125dc6cbdfa74d6c966530a3a09",
+        "size": 241,
+        "instructions": 55,
+        "created": true,
+        "c_sha256": "8fbd44f76cec9545502afeb1a49e9e008953d367c1e2a4d64d21aaa183e8c4ec",
+        "nonempty_c_lines": 57
+      },
+      "14139de40": {
+        "name": "LeaveHmdReprojectionAndRestoreGpuWaves",
+        "signature": "void PS4_SYSV LeaveHmdReprojectionAndRestoreGpuWaves(void)",
+        "return_storage": "<VOID>",
+        "original_sha256": "37a670f0fafa9e36b64983c8f256655dcb849c37dc2a46d490b5a3cbb5bc8540",
+        "size": 201,
+        "instructions": 48,
+        "created": true,
+        "c_sha256": "970c2d32f4c3fbda2fbab51c457d41c88f8721dd3247551738bf1f8ed9381c53",
+        "nonempty_c_lines": 56
+      },
+      "1413c82d0": {
+        "name": "InitializeColorTargetAndAllocateTrackedStorage",
+        "signature": "void PS4_SYSV InitializeColorTargetAndAllocateTrackedStorage(void * target, int width, int height, int format_index, int sample_mode, int tile_flags)",
+        "return_storage": "<VOID>",
+        "original_sha256": "e8f9504794a9b912ef97a16e3fef59e11e0e57b88b9bd35fd010b6099d4e8226",
+        "size": 1335,
+        "instructions": 285,
+        "created": false,
+        "c_sha256": "35aa561201ac49a3f2083359c2c6e244eb914ac0e644f888918894c7186eea19",
+        "nonempty_c_lines": 212
+      }
+    },
+    "new_checked_names": 3,
+    "new_definitions": 2,
+    "existing_renames": 1,
+    "original_bytes": 1777,
+    "original_instructions": 388,
+    "typed_c_nonempty_lines": 285,
+    "static_only": true,
+    "new_native_cases": 0,
+    "limits": [
+      "Static review only; no new native fixtures, GPU/HMD/platform execution or concurrency verification.",
+      "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+      "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+      "No source-build match to MM livestream material established in this batch."
+    ],
+    "completion_slot_writers_resolved": false
   }
 }
