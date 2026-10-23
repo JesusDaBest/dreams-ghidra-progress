@@ -8746,3 +8746,16 @@ For each active point, the callback transforms its current position into an 8x8x
 These are isolated callback tests with explicit local fixtures. Arbitrary nonunit quaternions, zero/negative scale, invalid indices, exact boundary behavior, nonfinite inputs, complete grid production, the full updater and live-game behavior remain unresolved. No complete collision-system or whole-game completion is claimed.
 
 Totals: **918 checked names across 9,676 defined functions**, **2,319 mapped and 7,357 unmapped**. These count reviewed functions, not completed game features.
+
+
+### Directional recipient sphere constraints
+
+`ApplyDirectionalRecipientSphereConstraints` now has a saved, independently reopened definition with an opaque shape-state pointer and callback-slot index. Its full 967-byte body (202 instructions), 333-line typed pseudocode and all named-preview differences were read. Original registration labels it IMP_2_SPHERES_COLLISION, slot 8.
+
+Each queued sphere supplies a center, radius and gain. The callback derives a direction from that center toward the origin, skips near-origin centers, and tests parallel directional intersections for each body point. A positive far intersection drives a point correction, including radial-plane terms and a related position-history adjustment. A separate second pass uses the point normal and sphere direction to shift current and previous positions equally. Later sphere records see earlier point updates. This is more specific than a generic nearest-point sphere pushout.
+
+672 whole original-code cases passed: 432 cases isolate directional intersections with zero point normals, and 240 further cases exercise nonzero normals and both passes. They cover zero/one/two spheres, empty and populated point ranges, near-origin skips, multiple radii and gains, signed strengths, radial-plane corrections, additional projections and sequential sphere effects. All four current/history lanes, untouched state, sphere records, input packets and original bytes were checked. Maximum absolute model difference was below 0.00000030.
+
+Bounded producer windows append radius-0.8 records with a bounded gain. The updater transforms queued centers in place without changing radius or gain in that loop, then clears the count after processing. These are partial producer/updater traces; their full input provenance remains unresolved. Nonfinite values, invalid counts, exact tangent/rounding cases, arbitrary nonunit normals and live-game behavior are unverified.
+
+Totals: **919 checked names across 9,677 defined functions**, **2,320 mapped and 7,357 unmapped**. These count reviewed functions, not completed game features.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 125 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 126 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9676,
+    "total": 9677,
     "default_fun_names": 8603,
-    "other_names": 1073,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_125_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1074,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_126_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21793,6 +21793,29 @@
         "Finite fixtures only:unit quaternion rotations,positive uniform scales,axis-unit/zero radial planes and valid point indices.",
         "Nonpositive counts,skipped contacts,zero gradients,signed strengths and history behavior tested;arbitrary nonunit transforms,zero/negative scale,invalid indices,exact boundaries and nonfinite behavior remain unresolved.",
         "Grid producer,complete updater,original source class and live-game behavior not fully verified."
+      ]
+    },
+    {
+      "address": "141439000",
+      "original_name": null,
+      "applied_name": "ApplyDirectionalRecipientSphereConstraints",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyDirectionalRecipientSphereConstraints(void * shape_state, int selection_index)",
+      "evidence": [
+        "Complete967-byte original body(202instructions),333-line typed pseudocode and all named-preview differences read.",
+        "672 whole original callback cases matched independent parallel-ray/sphere intersection,radial-plane,history-projection and normal-dependent second-pass models.",
+        "Exact initializer registration links IMP_2_SPHERES_COLLISION to callback slot8 and ESI8 dispatch;record producer,center-transform loop and count resets traced in bounded original windows.",
+        "Independent project reopening verified saved name,opaque shape-state pointer,callback index,bounded function definition and unchanged original bytes/other function inventory."
+      ],
+      "caveats": [
+        "Finite fixtures with positive radii and valid point indices;nonfinite inputs,invalid counts,exact tangent/rounding cases and arbitrary nonunit point normals unresolved.",
+        "Producer and transform windows are partial traces,not complete producer/updater reviews or full original game execution.",
+        "Original source class and live-game behavior remain unverified."
       ]
     }
   ],
