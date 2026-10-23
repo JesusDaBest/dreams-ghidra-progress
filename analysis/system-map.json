@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9697,
-  "mapped_total": 2364,
+  "inventory_total": 9698,
+  "mapped_total": 2365,
   "unmapped_total": 7333,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -60626,6 +60626,30 @@
           "support": [
             "Entire original 978-byte body (221 instructions) and all 338 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire978-byte/221-instruction original and338 nonempty typedC lines,four directcaller windows read. ContextRDI,indexESI,selectorlow16EDX,component scale float4XMM0,two workingfloat4 stackinputs atentry+8/+24 (position/scale andorientation);void. Tag0x10/index/selector andfirstactive recipient identity matching, idle190zero. Inputtransform finiteguard all4lanes; sourcevectorXYZonly. FLT_MAX sentinel selectsstoredlocalvector or derivedinverse-transform path. Component reciprocals fall backtozero ifanyXYZnonfinite. Storeslocalvector1c0,transformedvector1a0,counter194zero,flag198one,state190two. 384 isolated originalcases coveridentity/simpleexact transforms,sentinel/NaNbranches,inputfiniteguards andzerocomponent fallback. Initialoracle wronglyexpectedNaNW; correctedfromoriginal output andfailure retained. Originaltypes,arbitrary rotations/numericbehavior,sourceWnonfinite,aliases/concurrency/invalidpointers unvalidated. Cintegercasts areartifacts ofSIMDbitstores. No livegame/platform/MMsource match."
+          ]
+        }
+      ]
+    },
+    "14147b7f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "Transforms and stages local/world working vectors selected by object/property and active recipient identity. Counted once as shared property support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, isolated original execution and corrected caller interface.",
+      "code_sha256": "bf59bd2cd4baa6bdf02154b0e41f37e2243b992086c486c50f95e1f60d37688d",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "StageUniformlyTransformedVectorForPropertyRecipients",
+          "support": [
+            "Entire original 936-byte body (212 instructions) and all 293 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Entire936-byte/212-instruction original and293 nonempty typed C lines read, plus all 16 direct caller windows. Selects tag0x10 property records by object index and low16 selector; maps owner/key/mode to the first matching active recipient and requires idle state190 zero. No subselector or component-scale argument. The two stack float4 working inputs represent position/uniform scale and orientation; exact original aggregate types remain unresolved. Both inputs require all four lanes finite; source vector at object+1b0 checks XYZ only. Ordered FLT_MAX selects recipient block1e0 instead of230; selected block+30 either supplies a stored local float4 or requests inverse uniform-transform derivation. Writes local1c0, transformed1a0, counter194 zero, flag198 one, state190 two. Apparent C integer casts on stores are raw SIMD bit stores in the original. No original calls. Identity quaternion and exact simple transforms checked in192 isolated original-byte cases; arbitrary rotations, general floating point, sourceW nonfinite, invalid pointers, aliases, concurrency and live game behavior remain unvalidated. No MM source equivalence."
           ]
         }
       ]

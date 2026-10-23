@@ -9186,3 +9186,16 @@ These checks allow signed-zero equivalence and do not assert NaN payload bits. A
 The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. Exact original class, selector and state names remain unresolved. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **971 reviewed names / 9,697 defined functions**, **2,364 mapped / 7,333 unmapped**. Whole-game completion remains unknown.
+
+
+### Uniformly transformed property vectors
+
+**StageUniformlyTransformedVectorForPropertyRecipients** identifies a complete **936-byte / 212-instruction** helper. All **293 nonempty diagnostic C lines** and **16 direct-caller windows** were read. It selects matching property recipients and uses a **FLT_MAX** sentinel to choose stored local data or derive a local vector through an inverse uniform transform. It stages local and transformed vectors. Unlike the previously reviewed sibling, it has no separate component-scale input.
+
+**192 isolated cases of the unchanged original helper passed.** These cover simple exact transforms with an identity quaternion, stored/derived/NaN sentinel paths, idle/blocked states, matching/mismatching indices, nonfinite values in every incoming transform lane and nonfinite source X/Y/Z. Numerical outputs and full guarded memory were checked.
+
+Signed-zero equivalence is allowed; NaN payload bits are not asserted. Arbitrary rotations, general floating-point behavior, nonfinite source W, exhaustive list paths, aliases, concurrency and invalid pointers remain untested. Original aggregate, class, selector and state names remain unresolved. The C display's integer casts correspond to raw SIMD stores.
+
+The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **972 reviewed names / 9,698 defined functions**, **2,365 mapped / 7,333 unmapped**. Whole-game completion remains unknown.

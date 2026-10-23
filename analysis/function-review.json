@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "824 existing-function renames, 146 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "824 existing-function renames, 147 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9697,
+    "total": 9698,
     "default_fun_names": 8571,
-    "other_names": 1126,
-    "verification": "complete_inventory_matches_baseline_plus_824_renames_and_146_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1127,
+    "verification": "complete_inventory_matches_baseline_plus_824_renames_and_147_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23103,6 +23103,28 @@
         "384 isolated original-byte cases cover simple identity-quaternion transforms, FLT_MAX/NaN sentinel paths, zero-component reciprocal fallback and finite-input guards. An initial NaN-W oracle error was corrected; failure retained.",
         "Signed-zero equivalence allowed; NaN payload bits not checked. Arbitrary rotations/general floating point, nonfinite source W, aliases, concurrency, invalid pointers and exhaustive list paths untested.",
         "Working transform storage is not a recovered original C++ aggregate. Exact record/state/selector names unresolved. No live game/platform or MM source equivalence claimed."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14147b7f0",
+      "original_name": null,
+      "applied_name": "StageUniformlyTransformedVectorForPropertyRecipients",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV StageUniformlyTransformedVectorForPropertyRecipients(void * operation_context, int object_index, uint property_selector, SpatialQueryFloat4Working16 position_scale_working, SpatialQueryFloat4Working16 orientation_working)",
+      "evidence": [
+        "Entire original 936-byte body (212 instructions) and all 293 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire936-byte/212-instruction original and293 nonempty typed C lines read, plus all 16 direct caller windows. Selects tag0x10 property records by object index and low16 selector; maps owner/key/mode to the first matching active recipient and requires idle state190 zero. No subselector or component-scale argument. The two stack float4 working inputs represent position/uniform scale and orientation; exact original aggregate types remain unresolved. Both inputs require all four lanes finite; source vector at object+1b0 checks XYZ only. Ordered FLT_MAX selects recipient block1e0 instead of230; selected block+30 either supplies a stored local float4 or requests inverse uniform-transform derivation. Writes local1c0, transformed1a0, counter194 zero, flag198 one, state190 two. Apparent C integer casts on stores are raw SIMD bit stores in the original. No original calls. Identity quaternion and exact simple transforms checked in192 isolated original-byte cases; arbitrary rotations, general floating point, sourceW nonfinite, invalid pointers, aliases, concurrency and live game behavior remain unvalidated. No MM source equivalence."
+      ],
+      "caveats": [
+        "Entire936-byte/212-instruction original,293 nonempty typed C lines and16 direct caller windows read.",
+        "192 isolated original-byte cases cover identity-quaternion/simple exact uniform transforms, stored/derived/NaN sentinel paths, all incoming transform lane finite guards, sourceXYZ guards, idle/blocked state and index match/mismatch.",
+        "Signed-zero equivalence allowed; NaN payload bits unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive lists, aliases, concurrency, invalid pointers and live game behavior untested.",
+        "Original aggregate/class/selector/state names unresolved. No component-scale argument and no MM source equivalence claimed."
       ],
       "created_function": true
     }
