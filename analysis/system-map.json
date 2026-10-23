@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9692,
-  "mapped_total": 2339,
-  "unmapped_total": 7353,
+  "mapped_total": 2341,
+  "unmapped_total": 7351,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60010,6 +60010,64 @@
             "Immediate handle selection uses the kind table: mode2 reads its pool handle; otherwise -1 is forwarded. Unrecognized kinds skip pool release.",
             "All branches call sceGnmUnregisterOwnerAndResources and reset pointer,+8,+0x10,+0x18; the kind and remaining fields are preserved. Pool-release return is ignored, so cleared state does not prove successful reclamation.",
             "Platform import independently resolved using original SELF relocation/NID and the local symbol database. Native cases check unsigned wrap, type boundaries, low-byte flag semantics, null payloads and guarded queue writes."
+          ]
+        }
+      ]
+    },
+    "1413c3ef0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete original dataflow and scoped native cases; pool-table identity or deferred completion/queue-consumption behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original and typed C review with whole-original fixture evidence.",
+      "code_sha256": "99df89389eaf65a1759754f3394b25bab5dd624bf92d289c362fda1cffb0968b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WaitForCompletionAndDrainDeferredReleases",
+          "support": [
+            "Complete original function and all typed C reviewed. Saved descriptive name and consumed-register interface independently checked after reopening; original instruction bytes unchanged.",
+            "264 new isolated cases:168 standalone pool-release cases and96 composed queue-drain cases executing both original functions. Mutex/thread/event/time primitives are explicit models.",
+            "No consumed incoming arguments. Selects (~current_bank)&1 and compares two64-bit completion slots with zero-extended low32(current_stamp-1).",
+            "Waits using sceKernelWaitEqueue with capacity1 and timeout50000 until the first slot matches, then busy-polls the second slot. Wait return codes and event-count output are ignored.",
+            "Accumulates process-counter delta around the wait, then walks pointer/kind entries, resolves a kind-specific pool index or -1, calls the actual pool-release algorithm and zeros only the selected count.",
+            "96 composed fixtures cover both banks, stamp wrap, queue counts0/1/4, controlled event-wait repetitions and modeled wait errors. The other bank, queue bytes and guards remain unchanged.",
+            "Three direct caller windows are recorded; their full enclosing functions are not claimed reviewed. Completion-slot producers and the exact frame-stamp interpretation remain open."
+          ]
+        }
+      ]
+    },
+    "140165a70": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "memory-pools",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete original dataflow and scoped native cases; pool-table identity or deferred completion/queue-consumption behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original and typed C review with whole-original fixture evidence.",
+      "code_sha256": "86e95cdfaa87a2870582fa7cc2e8804f07aed36d009f7a39fa161e25c13cf05b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseBlockToCoalescingPool",
+          "support": [
+            "Complete original function and all typed C reviewed. Saved descriptive name and consumed-register interface independently checked after reopening; original instruction bytes unchanged.",
+            "264 new isolated cases:168 standalone pool-release cases and96 composed queue-drain cases executing both original functions. Mutex/thread/event/time primitives are explicit models.",
+            "Consumes signed pool index in EDI and block pointer in RSI; only low8 AL is the success indicator. Upper return bits preserve caller state on successful paths.",
+            "Null input returns0 without pool access. Other calls lock the selected0xF0-byte pool record, record thread ID, locate an exact used-list block and subtract its size.",
+            "Moves the metadata node into an address-sorted free list, merges adjacent successor and predecessor ranges, and recycles removed interval nodes through the spare list. Unlocks on found/missing paths.",
+            "168 pool fixtures cover used-list head/middle/tail, empty/free-gap lists, one/two-neighbor coalescing, null/missing blocks, valid synthetic indices -1/0/2, counters and surrounding guards.",
+            "Classification follows the same pool table and allocator used by the already-reviewed AllocateAlignedBlockFromPool. This pool helper is shared engine support."
           ]
         }
       ]

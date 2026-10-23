@@ -8970,3 +8970,16 @@ The complete **487 original bytes / 127 instructions** and all **72 nonempty lin
 The graph uses **GPU resources & dispatch** for the shared shader, allocation, descriptor and compute code in this group.
 
 Totals: **946 reviewed names / 9,692 defined functions**, **2,339 mapped / 7,353 unmapped**. This batch adds three definitions and reviews one existing function. These are scoped code-review counts, not whole-game completion.
+
+
+### Deferred queue consumption and coalescing pool release
+
+**WaitForCompletionAndDrainDeferredReleases** now names the queue consumer. It selects the opposite low-bit bank and waits for two completion slots to equal the zero-extended low32 value `current_stamp - 1`. The first wait uses the event queue; the second polls memory. It then processes the selected pointer/kind entries through the common pool-release routine and zeros that bank's count. Entry bytes and the other bank's count are preserved. Event return codes and output event counts are ignored. The exact producer/timing interpretation of these completion slots remains to be traced.
+
+**ReleaseBlockToCoalescingPool** now identifies the actual shared-pool operation. It removes an exact block-address match from the used list, subtracts its size, inserts the metadata node into the address-sorted free list, merges adjacent ranges and recycles redundant interval nodes. It locks/unlocks the pool and records a thread ID. Null or missing blocks return zero; found blocks return one in **AL only**. Upper return bits retain caller state on successful paths, so a 32-bit success result would be an incorrect interface. This function belongs beside the previously reviewed aligned pool allocator in shared engine support.
+
+The complete **758 original bytes / 204 instructions** and **145 nonempty lines of typed C** were reviewed, saved and independently checked after reopening. **264 new native cases** comprise 168 standalone pool cases and 96 composed queue-consumer cases executing both original functions. They verify list positions, gaps and one/two-neighbor merges, signed synthetic pool indices, counters/guards, both banks, stamp wrap, controlled wait repetitions and queue counts 0/1/4.
+
+Mutex, thread-ID, event and timing primitives are explicit models. The second completion slot starts complete; delayed spinning there, live OS/GPU completion, concurrency, invalid/cyclic/overlapping metadata, queue capacity and guaranteed progress remain unverified. No completed fixture suite was rerun. The code does not become a verified live renderer because these metadata paths pass.
+
+Totals: **948 reviewed names / 9,692 defined functions**, **2,341 mapped / 7,351 unmapped**. This batch reviews two existing functions and creates no definitions. These are code-review counts, not a whole-game completion percentage.

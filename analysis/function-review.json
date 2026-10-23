@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "804 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "806 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9692,
-    "default_fun_names": 8591,
-    "other_names": 1101,
-    "verification": "complete_inventory_matches_baseline_plus_804_renames_and_141_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8589,
+    "other_names": 1103,
+    "verification": "complete_inventory_matches_baseline_plus_806_renames_and_141_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22552,6 +22552,60 @@
         "Only valid non-null wrapper/record pointers tested; deferred queue pre-counts0..7. No capacity, concurrency or invalid-input guarantee.",
         "Names and pointer types are descriptive working interfaces; original symbols/classes and exact types remain unrecovered.",
         "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
+      ]
+    },
+    {
+      "address": "1413c3ef0",
+      "original_name": "FUN_1413c3ef0",
+      "applied_name": "WaitForCompletionAndDrainDeferredReleases",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV WaitForCompletionAndDrainDeferredReleases(void)",
+      "evidence": [
+        "Complete original function and all typed C reviewed. Saved descriptive name and consumed-register interface independently checked after reopening; original instruction bytes unchanged.",
+        "264 new isolated cases:168 standalone pool-release cases and96 composed queue-drain cases executing both original functions. Mutex/thread/event/time primitives are explicit models.",
+        "No consumed incoming arguments. Selects (~current_bank)&1 and compares two64-bit completion slots with zero-extended low32(current_stamp-1).",
+        "Waits using sceKernelWaitEqueue with capacity1 and timeout50000 until the first slot matches, then busy-polls the second slot. Wait return codes and event-count output are ignored.",
+        "Accumulates process-counter delta around the wait, then walks pointer/kind entries, resolves a kind-specific pool index or -1, calls the actual pool-release algorithm and zeros only the selected count.",
+        "96 composed fixtures cover both banks, stamp wrap, queue counts0/1/4, controlled event-wait repetitions and modeled wait errors. The other bank, queue bytes and guards remain unchanged.",
+        "Three direct caller windows are recorded; their full enclosing functions are not claimed reviewed. Completion-slot producers and the exact frame-stamp interpretation remain open."
+      ],
+      "caveats": [
+        "Live OS mutex/event behavior, asynchronous completion and GPU behavior were not tested.",
+        "The second completion slot starts complete in the fixture; delayed/repeated spinning at that slot remains untested.",
+        "Pool metadata is valid, sorted and non-overlapping. Invalid pointers, cycles, overlap, pool-index validity, capacity and integer-overflow behavior are not established.",
+        "Queue counts tested are0,1,4. No proof of error recovery or forward progress if completion slots never match.",
+        "Names and types are descriptive working interfaces, not recovered source symbols/classes."
+      ]
+    },
+    {
+      "address": "140165a70",
+      "original_name": "FUN_140165a70",
+      "applied_name": "ReleaseBlockToCoalescingPool",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV ReleaseBlockToCoalescingPool(int pool_index, void * block_pointer)",
+      "evidence": [
+        "Complete original function and all typed C reviewed. Saved descriptive name and consumed-register interface independently checked after reopening; original instruction bytes unchanged.",
+        "264 new isolated cases:168 standalone pool-release cases and96 composed queue-drain cases executing both original functions. Mutex/thread/event/time primitives are explicit models.",
+        "Consumes signed pool index in EDI and block pointer in RSI; only low8 AL is the success indicator. Upper return bits preserve caller state on successful paths.",
+        "Null input returns0 without pool access. Other calls lock the selected0xF0-byte pool record, record thread ID, locate an exact used-list block and subtract its size.",
+        "Moves the metadata node into an address-sorted free list, merges adjacent successor and predecessor ranges, and recycles removed interval nodes through the spare list. Unlocks on found/missing paths.",
+        "168 pool fixtures cover used-list head/middle/tail, empty/free-gap lists, one/two-neighbor coalescing, null/missing blocks, valid synthetic indices -1/0/2, counters and surrounding guards.",
+        "Classification follows the same pool table and allocator used by the already-reviewed AllocateAlignedBlockFromPool. This pool helper is shared engine support."
+      ],
+      "caveats": [
+        "Live OS mutex/event behavior, asynchronous completion and GPU behavior were not tested.",
+        "The second completion slot starts complete in the fixture; delayed/repeated spinning at that slot remains untested.",
+        "Pool metadata is valid, sorted and non-overlapping. Invalid pointers, cycles, overlap, pool-index validity, capacity and integer-overflow behavior are not established.",
+        "Queue counts tested are0,1,4. No proof of error recovery or forward progress if completion slots never match.",
+        "Names and types are descriptive working interfaces, not recovered source symbols/classes."
       ]
     }
   ],

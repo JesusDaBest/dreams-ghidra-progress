@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 946,
+    "checked_and_applied_names": 948,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 946,
+    "verified_names": 948,
     "function_count": 9692,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2067,7 +2067,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "804 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "806 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29610,5 +29610,55 @@
       "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
     ],
     "classification": "Generic GPU resource lifetime and shader cleanup; not exclusive to Imp."
+  },
+  "deferred_pool_release_checkpoint": {
+    "functions": {
+      "1413c3ef0": {
+        "name": "WaitForCompletionAndDrainDeferredReleases",
+        "signature": "void PS4_SYSV WaitForCompletionAndDrainDeferredReleases(void)",
+        "return_storage": "<VOID>",
+        "original_sha256": "99df89389eaf65a1759754f3394b25bab5dd624bf92d289c362fda1cffb0968b",
+        "size": 356,
+        "instructions": 89,
+        "created": false,
+        "c_sha256": "e115a690a3da5587f2afc8c380e71b23b6c3aaa1179e8473dc70dde0c0b54275",
+        "nonempty_c_lines": 68
+      },
+      "140165a70": {
+        "name": "ReleaseBlockToCoalescingPool",
+        "signature": "uchar PS4_SYSV ReleaseBlockToCoalescingPool(int pool_index, void * block_pointer)",
+        "return_storage": "AL:1",
+        "original_sha256": "86e95cdfaa87a2870582fa7cc2e8804f07aed36d009f7a39fa161e25c13cf05b",
+        "size": 402,
+        "instructions": 115,
+        "created": false,
+        "c_sha256": "098208da329209e5ca50f8a6b35902ea448f77bf877e08e111328bf1130d7e7d",
+        "nonempty_c_lines": 109
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 758,
+    "original_instructions": 204,
+    "typed_c_nonempty_lines": 145,
+    "native_cases": 264,
+    "pool_cases": 168,
+    "composed_drain_cases": 96,
+    "modeled_imports": [
+      "scePthreadMutexLock/Unlock record calls and return0",
+      "scePthreadGetthreadid returns synthetic32-bit thread ID",
+      "sceKernelGetProcessTimeCounter returns1000 then1300",
+      "sceKernelWaitEqueue records arguments and advances the first completion slot deterministically"
+    ],
+    "limits": [
+      "Live OS mutex/event behavior, asynchronous completion and GPU behavior were not tested.",
+      "The second completion slot starts complete in the fixture; delayed/repeated spinning at that slot remains untested.",
+      "Pool metadata is valid, sorted and non-overlapping. Invalid pointers, cycles, overlap, pool-index validity, capacity and integer-overflow behavior are not established.",
+      "Queue counts tested are0,1,4. No proof of error recovery or forward progress if completion slots never match.",
+      "Names and types are descriptive working interfaces, not recovered source symbols/classes."
+    ],
+    "pool_success_storage": "AL:1; upper return bits are not a32-bit success contract",
+    "completion_producers_verified": false
   }
 }
