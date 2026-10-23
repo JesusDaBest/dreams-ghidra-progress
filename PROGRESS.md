@@ -8669,3 +8669,16 @@ The earlier **12 isolated pool cases** executed this unchanged original initiali
 The saved descriptive name and one-pointer working interface passed rollback preview, save and independent reopening with original code bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **975 reviewed names / 9,699 defined functions**, **2,368 mapped / 7,331 unmapped**. Whole-game completion remains unknown.
+
+
+### Finding and claiming Imp state records
+
+**FindOrClaimImpStateRecordIndex** describes a complete **397-byte / 109-instruction** routine. All **89 nonempty diagnostic C lines** and **five selected caller windows** were read, out of44 direct call/jump sites. It takes a working128-bit key and32-bit record kind, returning a signed record index or **-1**.
+
+It searches all existing records for the first exact key/kind match, refreshes its usage stamp and returns it. Otherwise it claims the first free slot. If all slots are occupied, it recycles the first record with the smallest eligible unsigned stamp: the stamp must be below all-ones and its32-bit increment must be strictly below the current stamp. Recycling clears selected header fields and the first payload word, rather than resetting the full payload. A follow-up original-code scan located829 instruction-relative references and two direct writers: initialization to1 and an increment inside the previously reviewed **BuildAndSubmitRenderFrame**. This supports frame-related usage, but does not prove the complete lifecycle, exclude indirect writes or establish one increment per displayed frame.
+
+**540 isolated cases of the unchanged original passed:**162 matching-record results,108 free-slot claims,138 recycled records and132 unavailable results. Ten layouts, nine unsigned stamp values including high-bit/wrap boundaries, three nonzero record kinds and two fill patterns were checked. The independent oracle compared exact return values, full pool bytes and guards, globals and arguments.
+
+An empty pool delegates to the already reviewed pool normalizer; this integrated route was **not executed** in these cases. Exhaustive pool sizes, kind-zero queries, invalid pointers, aliases, concurrency and live game behavior remain untested. The saved descriptive name and working interface survived independent reopening with original bytes unchanged. No Media Molecule source match is claimed.
+
+Totals: **976 reviewed names / 9,699 defined functions**, **2,369 mapped / 7,330 unmapped**. Whole-game completion remains unknown.

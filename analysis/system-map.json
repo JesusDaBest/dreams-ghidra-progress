@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9699,
-  "mapped_total": 2368,
-  "unmapped_total": 7331,
+  "mapped_total": 2369,
+  "unmapped_total": 7330,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60722,6 +60722,30 @@
           "support": [
             "Entire original 536-byte body (86 instructions) and all 83 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. One working pointer inRDI;void. Full536-byte original and typedC read. Initializes selected fields through offset421f within4220-byte payload; preserves padding and large array contents while resetting count fields21c0/41d0. Not a blanket memset. Writes scalar/vector defaults and resets fields, then constructs four16-byte keys at41e0/41f0/4200/4210 using original recursive140114920 and literal emote happy/sad/angry/confused. Key results useRAX/RDX. Actual original field/class names unresolved. All9 direct caller windows read: two embedded initializations, history entries atstride4230, temporary payloads, global state, normalized4270-byte pool record+50 and fresh default copy. Full caller bodies other than previously reviewed995-byte pool normalizer not reviewed. Original initializer and packer previously executed by12 pool normalization cases, with complete independent payload-store oracle and untouched-gap/guard checks. Evidence reused, suite not rerun and zero new native cases credited. Initial omittedconstant fixture failure retained in prior evidence. No live game/platform or MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "14147c3d0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct397-byte lookup/claim/recycle dataflow accesses the verified Imp state pool. Counted once under Imp visuals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, five selected caller windows and540 isolated original acquisition cases.",
+      "code_sha256": "b25cf4fc8ebc4b8d99e267575fec84c2ad057af4d477043444a7c1b38143b6f6",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindOrClaimImpStateRecordIndex",
+          "support": [
+            "Entire original 397-byte body (109 instructions) and all 89 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Consumes128-bit working key inRDI/RSI and32-bit record kind inEDX, returns signed index inEAX or-1. Entire397-byte original andcomplete typedC read, five selected caller windows among44 direct call/jump sites; complete caller bodies not read. First scans all existing records for exact key-low/key-high andkind match; refreshes usage stamp+40 andreturns first matching index. Only if absent, claims first kind0 free slot. Otherwise selects first smallest unsigned stamp with stamp<ffffffff and wrap32(stamp+1)<current stamp. No eligible record returns-1. Global1478a687c producer not traced, so not asserted tobe frame/time. Recycling clears key/header ranges10..43, byte45 and first payloadqword50; doesnot reset entirepayload. Then writes suppliedkind/key/currentstamp. Claimingfree slot onlywrites suppliedkind/key/stamp. Emptycount delegates NormalizeImpStatePoolTo64Records then retriesclaim; integrateddelegate not executed innew suite. 540 isolated unchanged-original cases passed: ten layouts,nine unsigned stamps including highbit/wrap boundaries,three nonzero kinds,two fillpatterns. Exact returns, fullpool/guards,globals,args andoriginalbytes checked. Routes162hit/108free/138recycle/132unavailable. Emptydelegate/exhaustivepool sizes/kind0query/invalidpointers/aliases/concurrency/livegame untested. NoMMsourceequivalence."
           ]
         }
       ]

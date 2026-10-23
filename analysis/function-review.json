@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "826 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "827 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9699,
-    "default_fun_names": 8569,
-    "other_names": 1130,
-    "verification": "complete_inventory_matches_baseline_plus_826_renames_and_148_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8568,
+    "other_names": 1131,
+    "verification": "complete_inventory_matches_baseline_plus_827_renames_and_148_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23190,6 +23190,27 @@
         "Reuses12 prior isolated pool normalization cases in which the actual original initializer and recursive emote packer executed against a full default-store/gap/guard oracle. Zero new cases and no rerun.",
         "Only selected fields and counts reset; this is not a blanket4220-byte clear. Exact original field/class names remain unresolved.",
         "No live game/platform or Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "14147c3d0",
+      "original_name": "FUN_14147c3d0",
+      "applied_name": "FindOrClaimImpStateRecordIndex",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV FindOrClaimImpStateRecordIndex(ulonglong key_low_working, ulonglong key_high_working, int record_kind_working)",
+      "evidence": [
+        "Entire original 397-byte body (109 instructions) and all 89 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Consumes128-bit working key inRDI/RSI and32-bit record kind inEDX, returns signed index inEAX or-1. Entire397-byte original andcomplete typedC read, five selected caller windows among44 direct call/jump sites; complete caller bodies not read. First scans all existing records for exact key-low/key-high andkind match; refreshes usage stamp+40 andreturns first matching index. Only if absent, claims first kind0 free slot. Otherwise selects first smallest unsigned stamp with stamp<ffffffff and wrap32(stamp+1)<current stamp. No eligible record returns-1. Global1478a687c producer not traced, so not asserted tobe frame/time. Recycling clears key/header ranges10..43, byte45 and first payloadqword50; doesnot reset entirepayload. Then writes suppliedkind/key/currentstamp. Claimingfree slot onlywrites suppliedkind/key/stamp. Emptycount delegates NormalizeImpStatePoolTo64Records then retriesclaim; integrateddelegate not executed innew suite. 540 isolated unchanged-original cases passed: ten layouts,nine unsigned stamps including highbit/wrap boundaries,three nonzero kinds,two fillpatterns. Exact returns, fullpool/guards,globals,args andoriginalbytes checked. Routes162hit/108free/138recycle/132unavailable. Emptydelegate/exhaustivepool sizes/kind0query/invalidpointers/aliases/concurrency/livegame untested. NoMMsourceequivalence."
+      ],
+      "caveats": [
+        "Entire397-byte/109-instruction original and89 nonempty typed C lines read. Five selected caller windows among44 direct call/jump sites; complete caller bodies not read.",
+        "540 isolated original cases cover exact key/kind lookup, first free slot, smallest eligible unsigned stamp with first-tie selection, unavailable results and usage-stamp boundaries. Complete pool/guards/globals/args checked.",
+        "Empty-pool normalization delegate, exhaustive sizes, kind0 queries, invalid pointers, aliases, concurrency and live game behavior untested.",
+        "Direct stamp writers located: initialization to1 and increment in the previously reviewed BuildAndSubmitRenderFrame. Complete lifecycle, indirect writers and original class/field names unresolved. No MM source equivalence claimed."
       ]
     }
   ],
