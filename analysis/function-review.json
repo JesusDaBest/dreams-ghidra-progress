@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 127 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 128 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9678,
+    "total": 9679,
     "default_fun_names": 8603,
-    "other_names": 1075,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_127_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1076,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_128_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21838,6 +21838,30 @@
       "caveats": [
         "No new native cases credited;callee432priororiginal-code cases include override0,but this wrapper is not another full solver review.",
         "Original source class,full updater and live-game behavior unresolved."
+      ]
+    },
+    {
+      "address": "14143d190",
+      "original_name": null,
+      "applied_name": "UpdateRecipientDeformableShapeAndSurfaceSamples",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateRecipientDeformableShapeAndSurfaceSamples(void * shape_state, void * input_transform, int mode, void * transform_a, void * transform_b, float scalar0, AnimationFloat4Register base_position, float position_multiplier, AnimationFloat4Register transform_position_scale, AnimationFloat4Register transform_rotation)",
+      "evidence": [
+        "Full 16069-byte original updater body (3005 instructions), executable typed C and two direct caller register interfaces reviewed.",
+        "Traces resets, frame composition, damped point extrapolation, grid movement sweep, three orientation interpolation stages, four-pass nine-layer constraint scheduling, surface reconstruction and transient cleanup.",
+        "480 new original-code cases cover final origin-grid query and surface samples/cleanup; prior separate bounded scheduler, sweep, fallback and pair-coefficient checks retained.",
+        "Four shared classification/math import register interfaces corrected from loader bindings and original local module bodies; descriptive updater name and ten-argument working interface independently reopened."
+      ],
+      "caveats": [
+        "Native checks execute selected blocks, not the entire updater with all real callbacks or live gameplay.",
+        "Original class/source identity, scalar0 and multiplier property meanings, runtime global provenance and indirect callers remain unresolved.",
+        "NaN behavior varies across normalization sites; the quaternion interpolation-angle parameter is not a proven ten-degree full rotation limit.",
+        "No exact Media Molecule livestream/source match or whole-game completion claim."
       ]
     }
   ],

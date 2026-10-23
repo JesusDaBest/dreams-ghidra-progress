@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9678,
-  "mapped_total": 2321,
+  "inventory_total": 9679,
+  "mapped_total": 2322,
   "unmapped_total": 7357,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -59350,6 +59350,32 @@
             "Five-line pseudocode reviewed with justified CALL_RETURN metadata;all named-preview differences read. Without annotation Ghidra incorrectly expands the callee into681lines here.",
             "Corrected exact registration links ELASTIC_LAYER to callback slot1;incoming callback index discarded and solver response_override forced0.",
             "Independent project reopening verified descriptive name,working callback interface,tailcall annotation,unchanged original bytes and other function inventory."
+          ]
+        }
+      ]
+    },
+    "14143d190": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both caller state pointers, all nine registered constraint callbacks and surface-output helpers use this recipient runtime state.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original updater assembly and executable C plus two direct caller interfaces reviewed; 480 new bounded original-code cases; independent saved-project reopen.",
+      "code_sha256": "6e5dff53a2af76a3779cc9e16ea911c9ec4a30493e06c371398a4fc4344e853f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateRecipientDeformableShapeAndSurfaceSamples",
+          "support": [
+            "Full 16069-byte original updater body (3005 instructions), executable typed C and two direct caller register interfaces reviewed.",
+            "Traces resets, frame composition, damped point extrapolation, grid movement sweep, three orientation interpolation stages, four-pass nine-layer constraint scheduling, surface reconstruction and transient cleanup.",
+            "480 new original-code cases cover final origin-grid query and surface samples/cleanup; prior separate bounded scheduler, sweep, fallback and pair-coefficient checks retained.",
+            "Four shared classification/math import register interfaces corrected from loader bindings and original local module bodies; descriptive updater name and ten-argument working interface independently reopened."
           ]
         }
       ]
