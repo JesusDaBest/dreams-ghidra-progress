@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2353,
-  "unmapped_total": 7341,
+  "mapped_total": 2354,
+  "unmapped_total": 7340,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60362,6 +60362,30 @@
           "support": [
             "Entire original 227-byte body (70 instructions) and all 33 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from complete227-byte original body, all typed C and1224 new isolated whole-original cases. Eight consumed inputs: commandRDI,eventESI,flagsEDX,destinationRCX,selectorR8D,dataR9 and low32 stack entry+8/cache and+16/interrupt fields. Void working return. If low32((end-cursor)>>2)<6, calls growth(context,6,user); lowAL0 exits untouched, success reloads cursor and preserved dataR9. Writes sixDWORDs header0xc0044700 plus masked event/cache/interrupt/flag fields,address and64-bit data; advances cursor24bytes. Address retains low40bits, selector1 aligns4 else8. Selector shifted29 without explicit range guard. Two stack fields are masked6bits/2bits. Growth/native cases validate all consumed ABI locations, exact original caller inputs, field boundaries and deterministic vectors, exact packets/cursor/guards and unchanged code; actual GPU/platform/interrupt/ordering not executed. Original frame caller passes event20,flags0,currentbank first-marker address,selector2,current frame zeroextended32,stack0x38/0. Header/opcode0x47 matches inspected emulator EventWriteEop layout; exact original SDK and hardware effects unproved. Generated indirect growth call omits args; original registers/native observations govern."
+          ]
+        }
+      ]
+    },
+    "140c5e6c0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Whole original function builds frame work and performs normal/HMD submission, banked completion waits and deferred release; assigned once to frame orchestration within rendering queue runtime.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "a9ecfaff2ba979f61c5b08b39e45ffe2038b43d02a52e8d9711e3f3363dfc016",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildAndSubmitRenderFrame",
+          "support": [
+            "Entire original 28461-byte body (5325 instructions) and all 4801 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from all5325 original instructions/28461bytes, full4801 nonempty diagnostic C lines and3 direct caller windows. RDI opaque frame context; RSI receives0x214-byte result; EDX forwarded to140e900e0, observed0/1 but exact option meaning unresolved. No meaningful return consumed by observed callers; void working interface. Orchestrates timing histories/resource metadata/caches, rectangle placement, frame build/render callees, GPU packets, normal or HMD submission, completion waits, deferred pool releases and bank rotation. Imported/virtual C prototypes incomplete: original register setup governs. Original bounded kinds0..3 cleanup table has4 identical targets140c5ef12; full original EH body restores omitted11-byte virtual cleanup block. Frame result/context fields remain opaque. VR CPU marker store does not establish GPU completion. Static review only; no whole-frame/platform execution, no synchronization guarantee, no MM source match; child callees not implicitly reviewed."
           ]
         }
       ]

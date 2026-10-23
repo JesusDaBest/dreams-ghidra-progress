@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "816 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "817 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8579,
-    "other_names": 1115,
-    "verification": "complete_inventory_matches_baseline_plus_816_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8578,
+    "other_names": 1116,
+    "verification": "complete_inventory_matches_baseline_plus_817_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22870,6 +22870,27 @@
         "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
         "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
         "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "140c5e6c0",
+      "original_name": "FUN_140c5e6c0",
+      "applied_name": "BuildAndSubmitRenderFrame",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildAndSubmitRenderFrame(void * frame_context, void * frame_result, int build_option)",
+      "evidence": [
+        "Entire original 28461-byte body (5325 instructions) and all 4801 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from all5325 original instructions/28461bytes, full4801 nonempty diagnostic C lines and3 direct caller windows. RDI opaque frame context; RSI receives0x214-byte result; EDX forwarded to140e900e0, observed0/1 but exact option meaning unresolved. No meaningful return consumed by observed callers; void working interface. Orchestrates timing histories/resource metadata/caches, rectangle placement, frame build/render callees, GPU packets, normal or HMD submission, completion waits, deferred pool releases and bank rotation. Imported/virtual C prototypes incomplete: original register setup governs. Original bounded kinds0..3 cleanup table has4 identical targets140c5ef12; full original EH body restores omitted11-byte virtual cleanup block. Frame result/context fields remain opaque. VR CPU marker store does not establish GPU completion. Static review only; no whole-frame/platform execution, no synchronization guarantee, no MM source match; child callees not implicitly reviewed."
+      ],
+      "caveats": [
+        "Complete original body and diagnostic C static review plus three direct caller windows; no whole-frame runtime or GPU/platform validation.",
+        "Frame context and result structures remain opaque; build option meaning unresolved beyond observed0/1 and forwarding.",
+        "Generated import/virtual-call prototypes remain incomplete; original register evidence governs. Child callees are not implicitly reviewed.",
+        "No MM livestream/source-build match established."
       ]
     }
   ],

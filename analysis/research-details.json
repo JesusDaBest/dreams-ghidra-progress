@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 960,
+    "checked_and_applied_names": 961,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 960,
+    "verified_names": 961,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "816 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "817 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30004,5 +30004,33 @@
         "Data-selector values beyond known enum not rejected by local writer."
       ]
     }
+  },
+  "render_frame_checkpoint": {
+    "functions": {
+      "140c5e6c0": {
+        "name": "BuildAndSubmitRenderFrame",
+        "signature": "void PS4_SYSV BuildAndSubmitRenderFrame(void * frame_context, void * frame_result, int build_option)",
+        "return_storage": "<VOID>",
+        "original_sha256": "a9ecfaff2ba979f61c5b08b39e45ffe2038b43d02a52e8d9711e3f3363dfc016",
+        "size": 28461,
+        "instructions": 5325,
+        "created": false,
+        "c_sha256": "21d6fe67ca82959fdd49f2b7078b1b6ceabd2d1e88d267968a51730333e24dbe",
+        "nonempty_c_lines": 4815
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 28461,
+    "original_instructions": 5325,
+    "typed_c_nonempty_lines": 4801,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete original body and diagnostic C static review plus three direct caller windows; no whole-frame runtime or GPU/platform validation.",
+      "Frame context and result structures remain opaque; build option meaning unresolved beyond observed0/1 and forwarding.",
+      "Generated import/virtual-call prototypes remain incomplete; original register evidence governs. Child callees are not implicitly reviewed.",
+      "No MM livestream/source-build match established."
+    ]
   }
 }

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 914,
+    "done": 915,
     "todo": 1439,
-    "total": 2353,
-    "behavior_or_helpers_reviewed": 840,
+    "total": 2354,
+    "behavior_or_helpers_reviewed": 841,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -29985,12 +29985,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 142,
+        "done": 143,
         "todo": 268,
-        "total": 410,
-        "behavior_or_helpers_reviewed": 142,
+        "total": 411,
+        "behavior_or_helpers_reviewed": 143,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 384,
+        "runtime_functions_identified": 385,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -30099,6 +30099,7 @@
           "UpdateQrCodeEncodingJob",
           "UpdateQrCodeImageFromText",
           "ComputeLayeredBlendTokenWeight",
+          "BuildAndSubmitRenderFrame",
           "RegisterLabelVisibleFieldOffset",
           "InternAndBeginComputeProfilingRegion",
           "SubmitComputeQueueAndWaitForFence",
@@ -30513,6 +30514,7 @@
           "14021b090",
           "14021b300",
           "140752eb0",
+          "140c5e6c0",
           "140d67a10",
           "141297630",
           "141297bd0",
@@ -34276,12 +34278,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU resources & dispatch",
-            "done": 67,
+            "done": 68,
             "todo": 0,
-            "total": 67,
-            "behavior_or_helpers_reviewed": 67,
+            "total": 68,
+            "behavior_or_helpers_reviewed": 68,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 67,
+            "runtime_functions_identified": 68,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -34323,6 +34325,7 @@
               "DestroyComputeShaderResource",
               "UpdateQrCodeEncodingJob",
               "UpdateQrCodeImageFromText",
+              "BuildAndSubmitRenderFrame",
               "InternAndBeginComputeProfilingRegion",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
@@ -34393,6 +34396,7 @@
               "14016afc0",
               "14021b090",
               "14021b300",
+              "140c5e6c0",
               "141297630",
               "141297bd0",
               "141297cf0",
@@ -34697,6 +34701,81 @@
                 ]
               },
               {
+                "name": "rendering/compute/completion",
+                "label": "Queue completion",
+                "done": 8,
+                "todo": 0,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 8,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 8,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendEndOfPipeEventPacket",
+                  "AppendPrepareFlipLabelPacket",
+                  "AppendReleaseMemoryPacket",
+                  "BuildAndSubmitRenderFrame",
+                  "SubmitComputeQueueAndWaitForFence",
+                  "AppendComputeCompletionFence",
+                  "WaitForCompletionAndDrainDeferredReleases",
+                  "ScheduleRequiredQueueSequenceWaits"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140026e30",
+                  "140027950",
+                  "14003ba80",
+                  "140c5e6c0",
+                  "141297bd0",
+                  "141297cf0",
+                  "1413c3ef0",
+                  "1413c90c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/completion/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 8,
+                    "todo": 0,
+                    "total": 8,
+                    "behavior_or_helpers_reviewed": 8,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 8,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendEndOfPipeEventPacket",
+                      "AppendPrepareFlipLabelPacket",
+                      "AppendReleaseMemoryPacket",
+                      "BuildAndSubmitRenderFrame",
+                      "SubmitComputeQueueAndWaitForFence",
+                      "AppendComputeCompletionFence",
+                      "WaitForCompletionAndDrainDeferredReleases",
+                      "ScheduleRequiredQueueSequenceWaits"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140026e30",
+                      "140027950",
+                      "14003ba80",
+                      "140c5e6c0",
+                      "141297bd0",
+                      "141297cf0",
+                      "1413c3ef0",
+                      "1413c90c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/resource-storage",
                 "label": "Resource storage",
                 "done": 8,
@@ -34764,77 +34843,6 @@
                       "1413a9680",
                       "1413c2ee0",
                       "1413c82d0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/completion",
-                "label": "Queue completion",
-                "done": 7,
-                "todo": 0,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 7,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 7,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AppendEndOfPipeEventPacket",
-                  "AppendPrepareFlipLabelPacket",
-                  "AppendReleaseMemoryPacket",
-                  "SubmitComputeQueueAndWaitForFence",
-                  "AppendComputeCompletionFence",
-                  "WaitForCompletionAndDrainDeferredReleases",
-                  "ScheduleRequiredQueueSequenceWaits"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140026e30",
-                  "140027950",
-                  "14003ba80",
-                  "141297bd0",
-                  "141297cf0",
-                  "1413c3ef0",
-                  "1413c90c0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/completion/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 7,
-                    "todo": 0,
-                    "total": 7,
-                    "behavior_or_helpers_reviewed": 7,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 7,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AppendEndOfPipeEventPacket",
-                      "AppendPrepareFlipLabelPacket",
-                      "AppendReleaseMemoryPacket",
-                      "SubmitComputeQueueAndWaitForFence",
-                      "AppendComputeCompletionFence",
-                      "WaitForCompletionAndDrainDeferredReleases",
-                      "ScheduleRequiredQueueSequenceWaits"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140026e30",
-                      "140027950",
-                      "14003ba80",
-                      "141297bd0",
-                      "141297cf0",
-                      "1413c3ef0",
-                      "1413c90c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -48164,5 +48172,5 @@
       }
     ]
   },
-  "unmapped": 7341
+  "unmapped": 7340
 }

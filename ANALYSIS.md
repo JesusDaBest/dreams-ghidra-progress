@@ -9057,3 +9057,16 @@ The builder emits six DWORDs and advances the command cursor24 bytes. It keeps o
 The opcode and data fields match the inspected [shadPS4 end-of-pipe packet definition](https://github.com/shadps4-emu/shadPS4/blob/main/src/video_core/amdgpu/pm4_cmds.h). This corroborates the descriptive role; it does not establish exact original SDK/source equivalence or an MM livestream match. The large frame routine remains only partly read and receives no naming/review credit.
 
 Totals: **960 reviewed names /9,694 defined functions**, **2,353 mapped /7,341 unmapped**. One existing builder is named under Rendering queue completion. Whole-game completion remains unknown.
+
+
+### Render frame orchestration
+
+**BuildAndSubmitRenderFrame** identifies a complete **28,461-byte / 5,325-instruction** routine. All **4,801 nonempty diagnostic C lines** were read and compared with the original instructions. Its saved name, three consumed inputs and restored cleanup block passed rollback preview, save and an independent project reopen with original bytes unchanged.
+
+The routine coordinates frame timing histories, resource metadata and caches, rectangle allocation, frame-building callees, GPU command packets, normal or VR output submission, completion waits, deferred memory releases and buffer rotation. It copies a **0x214-byte result** to its second argument. The context/result structures remain opaque; the third argument is a 32-bit option observed as zero or one and forwarded to a callee, with its exact meaning unresolved.
+
+The original four-entry cleanup jump table sends every bounded case to the same virtual cleanup block. Ghidra had omitted its eleven bytes from the function body; the saved body and table override now include it. No game bytes were patched. Normal and VR submission differ: a CPU-side marker write in the VR path does not prove GPU completion.
+
+This is **static semantic review**, not a whole-frame execution test. Imported and virtual-call prototypes remain incomplete, child callees are not implicitly reviewed, and no original Media Molecule source match is established.
+
+Totals: **961 reviewed names / 9,694 defined functions**, **2,354 mapped / 7,340 unmapped**. This function is counted once under Rendering queue runtime. Whole-game completion remains unknown.
