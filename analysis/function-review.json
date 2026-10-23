@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 123 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 124 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9674,
+    "total": 9675,
     "default_fun_names": 8603,
-    "other_names": 1071,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_123_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1072,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_124_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21747,6 +21747,29 @@
         "Within each batch,pairs have distinct indices; aliasing write order and degenerate lengths unverified.",
         "Observed loop subtracts4 untilzero; malformed counts,invalid indices,nonfinite values,rounding edges and live-game behavior unverified.",
         "RSQRT/reciprocal refinements compared numerically,not bitwise; original source class not recovered."
+      ]
+    },
+    {
+      "address": "141438590",
+      "original_name": null,
+      "applied_name": "ConstrainRecipientAuxiliaryPointTowardScaledCenter",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConstrainRecipientAuxiliaryPointTowardScaledCenter(void * shape_state, int selection_index)",
+      "evidence": [
+        "Complete277-byte original body(60instructions),68-line typed C,71-line temporary finite-argument-corrected C and named-preview differences read.",
+        "150 whole original callback cases using original local libc finite-check leaf matched an independent scaled-center constraint model.",
+        "Corrected exact initializer registration links BODY_LIGHT_LAYER to callback slot6 and ESI6 dispatch;initializer appends the selected auxiliary point.",
+        "Independent project reopening verified saved name,opaque state pointer,slot index,unchanged original bytes and other function inventory."
+      ],
+      "caveats": [
+        "Finite inputs and valid selected indices only;nonfinite runtimecases,invalid indices,full updater and livegame behavior unresolved.",
+        "Saved shared finite-import prototype omits its XMM0float argument;temporary corrected prototype was reviewed then rolled back. Assembly and original-code execution establish the actual interface.",
+        "Original source class and rendering-light semantics not established."
       ]
     }
   ],

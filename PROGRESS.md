@@ -8151,3 +8151,16 @@ The preparation loop handles individual records, whereas the reviewed solver con
 A separate twelve-case fixture executed the original edge-building region, original coefficient-preparation region and whole spring callback sequentially on the same local recipient state. The reconstructed default topology supplied 162 points, 320 triangles and 480 filtered spring records. Forward and reversed triangle orders, three strengths and two synthetic deformations matched independent edge-filter, reciprocal-sum and batch-update models across every spring and point. Maximum position difference was below 0.00000021. Coefficient and solver writes were checked against their permitted fields.
 
 The fixture explicitly supplies current positions, inverse weights, callback selection and strength between stages. It does not execute the intervening full update or the original topology loader; midpoint normalization remains a double-precision reconstruction converted to float inputs. The builder's memory-clear import uses a local substitute, and bounded regions have explicit return sinks outside their original spans. Degenerate lengths, invalid indices, nonfinite inputs and live-game behavior remain unresolved. No additional function completion credit is claimed.
+
+
+### Recipient auxiliary-point constraint
+
+`ConstrainRecipientAuxiliaryPointTowardScaledCenter` now has a saved, independently reopened definition with an opaque state pointer and callback-slot index. Its complete 277-byte body (60 instructions), 68-line typed pseudocode, 71-line temporarily corrected finite-import pseudocode and named-preview differences were read. Original registration labels this callback BODY_LIGHT_LAYER, slot 6. The initializer appends its selected auxiliary point; this does not establish a scene-light rendering role.
+
+The callback moves that point toward a target whose XYZ coordinates are 20% of the stored shape center and whose fourth lane is zero. It first corrects any distance beyond approximately 0.48, then uses the unclamped callback strength for the remaining distance. Strength zero therefore retains the distance boundary, while strength one reaches the target for ordinary finite inputs. XYZ determines distance, but all four point lanes move; position history stays unchanged.
+
+150 whole original-code cases with the original local library finite-check routine matched an independent model across three centers, five point offsets, five signed strengths and two selected indices. Unselected points, history, other state, packet and both original code bodies were unchanged. The first fixture attempt omitted the import-thunk memory page and exited without a receipt; correcting that fixture mapping produced the passing result.
+
+Ghidra's existing shared finite-import prototype omits its float argument. A temporary correction exposed the length argument in pseudocode and was rolled back; assembly and original-library execution support the interface. Nonfinite runtime cases, invalid indices, full updater execution, original source class and live-game behavior remain unresolved.
+
+Totals: **917 checked names across 9,675 defined functions**, **2,318 mapped and 7,357 unmapped**. These are reviewed-code counts, not whole-game completion.
