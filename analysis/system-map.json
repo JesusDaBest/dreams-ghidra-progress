@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2354,
-  "unmapped_total": 7340,
+  "mapped_total": 2355,
+  "unmapped_total": 7339,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60386,6 +60386,30 @@
           "support": [
             "Entire original 28461-byte body (5325 instructions) and all 4801 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from all5325 original instructions/28461bytes, full4801 nonempty diagnostic C lines and3 direct caller windows. RDI opaque frame context; RSI receives0x214-byte result; EDX forwarded to140e900e0, observed0/1 but exact option meaning unresolved. No meaningful return consumed by observed callers; void working interface. Orchestrates timing histories/resource metadata/caches, rectangle placement, frame build/render callees, GPU packets, normal or HMD submission, completion waits, deferred pool releases and bank rotation. Imported/virtual C prototypes incomplete: original register setup governs. Original bounded kinds0..3 cleanup table has4 identical targets140c5ef12; full original EH body restores omitted11-byte virtual cleanup block. Frame result/context fields remain opaque. VR CPU marker store does not establish GPU completion. Static review only; no whole-frame/platform execution, no synchronization guarantee, no MM source match; child callees not implicitly reviewed."
+          ]
+        }
+      ]
+    },
+    "1409aeb70": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared tagged payload conversion through object-context pointer table; used by frame output and another caller. Exact tagged-value source domain remains unresolved, so no renderer-only attribution.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "dd77ae04880e9e2eb23c6ed6e8ac3881ab22fd9ddaba315050c89e386dba6c01",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertTaggedPayloadObjectIndicesToIds",
+          "support": [
+            "Entire original 1265-byte body (333 instructions) and all 310 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from complete1265-byte/333-instruction original body, all310 nonempty typed C lines, original49-entry tag table and two direct caller windows. RDI destination, RSI source, RDX opaque object context; void working return. Clears destination0..0x2d; copies source+0x50 DWORD to+0x28 and source+0x54/+0x55 tag/byte to+0x2c/+0x2d. Switch tags1..49 translates selected packed object references to firstDWORD IDs through context pointer table+0x10958c0/count+0x10b58c0; null/out-of-range references become0xffffffff. Other variants copy payload fields. Packed references use signed22-bit indices here, unlike nearby26-bit remapping helper; do not conflate layouts. Tag44 duplicates source+4 to destination+4/+8 exactly as original. Exact semantic tags/types unresolved; no renderer-only attribution, alias safety, source equivalence or runtime/native test claimed. Second caller context compares object firstDWORD during lookup; caller itself not fully reviewed."
           ]
         }
       ]

@@ -8501,3 +8501,14 @@ The original four-entry cleanup jump table sends every bounded case to the same 
 This is **static semantic review**, not a whole-frame execution test. Imported and virtual-call prototypes remain incomplete, child callees are not implicitly reviewed, and no original Media Molecule source match is established.
 
 Totals: **961 reviewed names / 9,694 defined functions**, **2,354 mapped / 7,340 unmapped**. This function is counted once under Rendering queue runtime. Whole-game completion remains unknown.
+
+
+### Tagged payload object references
+
+**ConvertTaggedPayloadObjectIndicesToIds** identifies a complete **1,265-byte / 333-instruction** converter. All **310 nonempty diagnostic C lines** and the original **49-entry tag table** were read. The saved name and three-pointer working interface passed rollback preview, save and independent reopen with original bytes unchanged.
+
+The converter clears a compact destination payload, retains tag/metadata fields and either copies variant fields or translates packed object indices through a context pointer table to object IDs. Missing or out-of-range references produce the all-ones sentinel. This routine uses **signed 22-bit indices**, distinct from the nearby 26-bit remapping helpers. One variant duplicates a source field into two output fields; the review preserves that observed behavior.
+
+Two direct callers were found, including frame output. Exact semantic tag names and full source/context types remain unresolved, so this helper is counted once under shared game-context support. Static review does not establish alias safety, whole-caller correctness, platform behavior or original source equivalence. No new native tests were run.
+
+Totals: **962 reviewed names / 9,694 defined functions**, **2,355 mapped / 7,339 unmapped**. Whole-game completion remains unknown.

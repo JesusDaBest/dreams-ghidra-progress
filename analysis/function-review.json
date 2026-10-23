@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "817 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "818 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8578,
-    "other_names": 1116,
-    "verification": "complete_inventory_matches_baseline_plus_817_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8577,
+    "other_names": 1117,
+    "verification": "complete_inventory_matches_baseline_plus_818_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22891,6 +22891,27 @@
         "Frame context and result structures remain opaque; build option meaning unresolved beyond observed0/1 and forwarding.",
         "Generated import/virtual-call prototypes remain incomplete; original register evidence governs. Child callees are not implicitly reviewed.",
         "No MM livestream/source-build match established."
+      ]
+    },
+    {
+      "address": "1409aeb70",
+      "original_name": "FUN_1409aeb70",
+      "applied_name": "ConvertTaggedPayloadObjectIndicesToIds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertTaggedPayloadObjectIndicesToIds(void * destination, void * source, void * object_context)",
+      "evidence": [
+        "Entire original 1265-byte body (333 instructions) and all 310 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from complete1265-byte/333-instruction original body, all310 nonempty typed C lines, original49-entry tag table and two direct caller windows. RDI destination, RSI source, RDX opaque object context; void working return. Clears destination0..0x2d; copies source+0x50 DWORD to+0x28 and source+0x54/+0x55 tag/byte to+0x2c/+0x2d. Switch tags1..49 translates selected packed object references to firstDWORD IDs through context pointer table+0x10958c0/count+0x10b58c0; null/out-of-range references become0xffffffff. Other variants copy payload fields. Packed references use signed22-bit indices here, unlike nearby26-bit remapping helper; do not conflate layouts. Tag44 duplicates source+4 to destination+4/+8 exactly as original. Exact semantic tags/types unresolved; no renderer-only attribution, alias safety, source equivalence or runtime/native test claimed. Second caller context compares object firstDWORD during lookup; caller itself not fully reviewed."
+      ],
+      "caveats": [
+        "Complete original body and310 nonempty diagnostic C lines read; two direct caller windows. Static review only, no new native/platform tests.",
+        "Semantic payload tag names and full source/context types unresolved; three opaque pointer inputs and void working return.",
+        "This function uses signed22-bit references, distinct from nearby26-bit remapping helpers. Original32-bit wrapping arithmetic governs.",
+        "No MM livestream/source-build match or whole-caller review established."
       ]
     }
   ],

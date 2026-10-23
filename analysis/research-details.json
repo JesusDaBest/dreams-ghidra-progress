@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 961,
+    "checked_and_applied_names": 962,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 961,
+    "verified_names": 962,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "817 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "818 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30031,6 +30031,34 @@
       "Frame context and result structures remain opaque; build option meaning unresolved beyond observed0/1 and forwarding.",
       "Generated import/virtual-call prototypes remain incomplete; original register evidence governs. Child callees are not implicitly reviewed.",
       "No MM livestream/source-build match established."
+    ]
+  },
+  "tagged_payload_converter_checkpoint": {
+    "functions": {
+      "1409aeb70": {
+        "name": "ConvertTaggedPayloadObjectIndicesToIds",
+        "signature": "void PS4_SYSV ConvertTaggedPayloadObjectIndicesToIds(void * destination, void * source, void * object_context)",
+        "return_storage": "<VOID>",
+        "original_sha256": "dd77ae04880e9e2eb23c6ed6e8ac3881ab22fd9ddaba315050c89e386dba6c01",
+        "size": 1265,
+        "instructions": 333,
+        "created": false,
+        "c_sha256": "6d026924cbc5f32508fd405f91cef2aeb09504da00fad1609f77570d866001f6",
+        "nonempty_c_lines": 325
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 1265,
+    "original_instructions": 333,
+    "typed_c_nonempty_lines": 310,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete original body and310 nonempty diagnostic C lines read; two direct caller windows. Static review only, no new native/platform tests.",
+      "Semantic payload tag names and full source/context types unresolved; three opaque pointer inputs and void working return.",
+      "This function uses signed22-bit references, distinct from nearby26-bit remapping helpers. Original32-bit wrapping arithmetic governs.",
+      "No MM livestream/source-build match or whole-caller review established."
     ]
   }
 }
