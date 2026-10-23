@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 912,
+    "checked_and_applied_names": 913,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 912,
-    "function_count": 9670,
+    "verified_names": 913,
+    "function_count": 9671,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2030,6 +2030,7 @@
       "1414339f0",
       "141433a60",
       "141433a70",
+      "141438a70",
       "141438c70",
       "141438dc0",
       "14143c980",
@@ -2045,7 +2046,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 119 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 120 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28714,5 +28715,28 @@
       "Invalid counts, nonfinite data, threshold-edge rounding and live-game behavior unverified."
     ],
     "credentials_or_raw_code_published": false
+  },
+  "recipient_forces_layer_checkpoint": {
+    "address": "141438a70",
+    "name": "ApplyDirectionalRecipientBodyForcesWithPlaneCorrection",
+    "signature": "void PS4_SYSV ApplyDirectionalRecipientBodyForcesWithPlaneCorrection(void * shape_state, int selection_index)",
+    "original_sha256": "82c7b5b9a1121626f2e091e097cbbc1205c11df1f0fb36664acde9f7a2bd13bc",
+    "native_cases": 162,
+    "size": 507,
+    "created": true,
+    "c_sha256": "4245d96717d772a494d442239722b7e972146a9144b2a1717aa93d8d683faeb3",
+    "nonempty_c_lines": 200,
+    "evidence": [
+      "Complete507-byte original body,190-line typed C and named-preview differences read.",
+      "162 whole original leaf finite synthetic cases passed independent direction-weighted force and plane correction model,including enable/count gates,signed strengths,three plane vectors and full point/stored-vector effects.",
+      "BODY_FORCES_LAYER registration maps embedded callback slot3 to ESI3 dispatch.",
+      "Independent project reopening verified exact bounded function,working RDI/ESI interface and unchanged original bytes/other function inventory."
+    ],
+    "limits": [
+      "Finite bounded fixtures only; angular threshold-edge rounding,nonfinite inputs,invalid counts,arbitrary nonunit planes and live-game behavior unverified.",
+      "Plane vector and companion stored-vector source property meanings not fully traced; mathematical descriptive name only.",
+      "Full enclosing registration/dispatcher functions and exact original developer source/class not recovered by this review."
+    ],
+    "project_saved_and_independently_reopened": true
   }
 }

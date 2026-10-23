@@ -8082,3 +8082,14 @@ The producer input is now linked to the original `squashiness` channel through b
 Two scoped original-code checks passed:40 finite positive-branch cases and144 finite negative-branch cases. Positive input writes opposingY vectors scaled by0.1 times the input clamped to1. The negative branch uses rotated/mirrored position geometry, normalizes a cross product and writes an opposing pair scaled by0.05 times the negated input clamped to1. The final shuffle duplicatesZ intoW; an initial model that assumedWzero failed and was corrected against the original assembly before the completed checks passed.
 
 This is bounded branch validation, not a review or execution of the entire producer. Upstream quaternion contracts and gates remain partially traced; no capacity guard for appending beyond the32-vector storage has been established. Nonfinite or malformed inputs, threshold-edge rounding and live-game behavior remain unverified. No new function-name credit is added.
+
+
+### Directional recipient body forces and plane correction
+
+`ApplyDirectionalRecipientBodyForcesWithPlaneCorrection` now has a verified bounded definition. The complete507-byte body,190-line typed pseudocode and named-preview changes were read. `BODY_FORCES_LAYER` registration links embedded slot3 to dispatcher index3.
+
+The routine scales the opposite force direction by a capped force magnitude and callback strength,then weights displacement by point direction. It removes negative distance along a stored plane vector and applies the same initial correction to a companion stored vector. A second correction constrains the proposed displacement against that plane. All162 whole original-code finite synthetic cases passed an independent model,checking enable/count gates,zero/small/saturated forces,signed strengths,three plane vectors,full point/companion-vector writes and preservation of other state. Independent reopening confirmed the definition and unchanged original bytes.
+
+Original plane/companion-vector property meanings,angular threshold-edge rounding,nonfinite or malformed inputs,general nonunit planes and live-game behavior remain unverified. The descriptive name records established mathematics without claiming original source recovery.
+
+Totals: **913 checked names across 9,671 defined functions**, **2,314 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
