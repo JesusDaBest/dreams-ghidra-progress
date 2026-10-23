@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1000,
+    "checked_and_applied_names": 1002,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1000,
+    "verified_names": 1002,
     "function_count": 9701,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2076,7 +2076,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "849 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "851 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30973,6 +30973,45 @@
       "752 isolated original direct-path cases passed:16 raw-byte,16 raw-word32,720 scope-end. Both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wrap and depth underflow checked with full synthetic buffers/context/guards.",
       "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfers do not establish original scalar field types.",
       "No Media Molecule source equivalence claimed."
+    ]
+  },
+  "serializer_count_error_checkpoint": {
+    "functions": {
+      "14039b600": {
+        "name": "TransferSerializerCount32",
+        "signature": "void PS4_SYSV TransferSerializerCount32(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "641c3d52eaddc48ecb437d9f5bbc4a534e49cf14d2e53db4c880e038bb1fe670",
+        "size": 75,
+        "instructions": 18,
+        "created": false,
+        "c_sha256": "ac946ecfa4543ee06bcb3028533d58a2d260de9b5bb1e57f26f2d61dca11eb71",
+        "nonempty_c_lines": 29
+      },
+      "140d91850": {
+        "name": "SetSerializerErrorAndReleaseResources",
+        "signature": "void PS4_SYSV SetSerializerErrorAndReleaseResources(void * serializer_working, uint error_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "4248f466c839d351a7d57da2f0b07979a4b24eaae0545b4dda7cdfbb45a3c150",
+        "size": 165,
+        "instructions": 41,
+        "created": false,
+        "c_sha256": "7277d973d20269292ce86549fd0e59e08e103cae16dfb8beae97b559144eb9f3",
+        "nonempty_c_lines": 45
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 240,
+    "original_instructions": 59,
+    "typed_c_nonempty_lines": 48,
+    "new_native_cases": 54,
+    "scope_limits": [
+      "Both complete original bodies (240 bytes /59 instructions) and48 nonempty typed C lines read. Selected parent count/error/closure routes traced, not all incoming callers.",
+      "54 whole-original error-helper cases with controlled memset boundary passed:prior errors0/5/10000, incoming codes0/1260009/10000, buffer lengths0/1/32,two patterns andfullcontext/buffer guards. Callback andthreecleanup pointers null.",
+      "Non-null callbacks/deletion routes and raw count helper are static-only. Linked memset/delete implementations, malformed lengths, fallback/exhaustion, aliases, invalid pointers, concurrency and live game untested.",
+      "Opaque C indirect callback display remains inaccurate; assembly arguments RDI context,RSI stored argument,EDX1 recorded. No original source/class identity or MM equivalence claimed."
     ]
   }
 }

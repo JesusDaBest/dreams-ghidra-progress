@@ -9418,3 +9418,19 @@ The reviewed Imp parent closes its maximum-two-element scope on both normal and 
 Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Selected parent calls were traced; all incoming callers were not audited. No Media Molecule source match is claimed. The three generic helpers each appear once under shared saving/loading.
 
 Totals: **1,000 reviewed names /9,701 defined functions**, **2,393 mapped /7,308 unmapped**. Whole-game completion remains unknown.
+
+
+### Serializer count and error cleanup
+
+Two routines were read in full: **240 original bytes /59 instructions** and **48 nonempty diagnostic C lines**. Their names and working interfaces survived independent reopening with original code unchanged.
+
+- **TransferSerializerCount32** moves a raw 32-bit value used as a count by the Imp parent. It does no range validation or numeric conversion.
+- **SetSerializerErrorAndReleaseResources** records the incoming 32-bit code and clears a buffer only when the current error's low 16 bits are zero. It then performs callback/resource cleanup regardless of whether an error was already present. A value with only upper error bits set does not suppress the first-error path.
+
+Assembly establishes the optional callback arguments: serializer context, stored argument and 1. Two pointers are released with array delete and another with scalar delete, then cleared; callback and argument fields are also cleared. The memset and delete imports were independently resolved. The opaque callback type still makes the diagnostic C display inaccurate at that indirect call; the assembly is the evidence for its arguments.
+
+**54 isolated whole-original error-helper cases passed with a controlled memset substitute**, covering prior errors 0/5/0x10000, incoming codes 0/0x1260009/0x10000, lengths 0/1/32 and two patterns, with full context/buffer guards. Callback and allocation pointers were null; non-null callbacks/deletion routes and the count-transfer helper remain static-only in this batch. No linked platform implementation was executed.
+
+The reviewed Imp parent compares the count as signed: values above two set 0x1260009 and close the scope; negative values skip the element loop. This is no malformed-input safety guarantee. Fallback/exhaustion, malformed lengths, aliases, invalid pointers, concurrency and live-game behavior remain untested. All incoming callers were not audited; no Media Molecule source match is claimed.
+
+Both helpers are counted once under shared saving/loading. Totals: **1,002 reviewed names /9,701 defined functions**, **2,395 mapped /7,306 unmapped**. Whole-game completion remains unknown.

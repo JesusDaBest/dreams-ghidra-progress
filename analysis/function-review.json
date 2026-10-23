@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "849 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "851 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9701,
-    "default_fun_names": 8546,
-    "other_names": 1155,
-    "verification": "complete_inventory_matches_baseline_plus_849_renames_and_150_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8544,
+    "other_names": 1157,
+    "verification": "complete_inventory_matches_baseline_plus_851_renames_and_150_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23717,6 +23717,48 @@
         "752 isolated original direct-path cases passed:16 raw-byte,16 raw-word32,720 scope-end. Both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wrap and depth underflow checked with full synthetic buffers/context/guards.",
         "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfers do not establish original scalar field types.",
         "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "14039b600",
+      "original_name": "FUN_14039b600",
+      "applied_name": "TransferSerializerCount32",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TransferSerializerCount32(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 75-byte body (18 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Raw32-bit transfer used by Imp parent count field; no encoding, signed/range validation or scope updates. Direct read/write ignores existing error and advances cursor4; fallback TransferSerializerBytes length4. Parent independently uses signed count>2 forerror; negative counts skip loop. Static-only inthisbatch. Full original andtypedC read, selected fully reviewed parent count/error/closure routes traced; notallincomingcallers. Fallback/exhaustion,malformedlengths,aliases,invalidpointers,concurrency/livegame untested. NoMMsourceequivalence."
+      ],
+      "caveats": [
+        "Both complete original bodies (240 bytes /59 instructions) and48 nonempty typed C lines read. Selected parent count/error/closure routes traced, not all incoming callers.",
+        "54 whole-original error-helper cases with controlled memset boundary passed:prior errors0/5/10000, incoming codes0/1260009/10000, buffer lengths0/1/32,two patterns andfullcontext/buffer guards. Callback andthreecleanup pointers null.",
+        "Non-null callbacks/deletion routes and raw count helper are static-only. Linked memset/delete implementations, malformed lengths, fallback/exhaustion, aliases, invalid pointers, concurrency and live game untested.",
+        "Opaque C indirect callback display remains inaccurate; assembly arguments RDI context,RSI stored argument,EDX1 recorded. No original source/class identity or MM equivalence claimed."
+      ]
+    },
+    {
+      "address": "140d91850",
+      "original_name": "FUN_140d91850",
+      "applied_name": "SetSerializerErrorAndReleaseResources",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetSerializerErrorAndReleaseResources(void * serializer_working, uint error_working)",
+      "evidence": [
+        "Entire original 165-byte body (41 instructions) and all 28 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. If low16 bits atserializer+10 zero, stores full32-bit RSI code and clears buffer+a0 forunsigned32-bit difference(low32 end+a8 -low32 begin). Existing upper16-only error bits therefore do not suppress first-error path. Regardless of existing error:if callback+e0 nonnull calls it with RDI serializer,RSI value+b8,EDX1; deletes arrays at+58/+60 via_ZdaPv and scalar+68 via_ZdlPv, zeroes those pointers, then clears callback+e0 andargument+b8. Assembly confirmscallback ABI; C indirectcall display remains inaccurate due opaque callback type. 54 whole-original cases with controlled memset boundary verify first-error/buffer-clear/null-resource paths, including prior0/5/10000,codes0/1260009/10000,sizes0/1/32,two patterns andwholecontext/buffer guards. Non-null callbacks/deletes static-only. Linked memset/delete implementations not executed. Full original andtypedC read, selected fully reviewed parent count/error/closure routes traced; notallincomingcallers. Fallback/exhaustion,malformedlengths,aliases,invalidpointers,concurrency/livegame untested. NoMMsourceequivalence."
+      ],
+      "caveats": [
+        "Both complete original bodies (240 bytes /59 instructions) and48 nonempty typed C lines read. Selected parent count/error/closure routes traced, not all incoming callers.",
+        "54 whole-original error-helper cases with controlled memset boundary passed:prior errors0/5/10000, incoming codes0/1260009/10000, buffer lengths0/1/32,two patterns andfullcontext/buffer guards. Callback andthreecleanup pointers null.",
+        "Non-null callbacks/deletion routes and raw count helper are static-only. Linked memset/delete implementations, malformed lengths, fallback/exhaustion, aliases, invalid pointers, concurrency and live game untested.",
+        "Opaque C indirect callback display remains inaccurate; assembly arguments RDI context,RSI stored argument,EDX1 recorded. No original source/class identity or MM equivalence claimed."
       ]
     }
   ],

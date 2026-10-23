@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9701,
-  "mapped_total": 2393,
-  "unmapped_total": 7308,
+  "mapped_total": 2395,
+  "unmapped_total": 7306,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61322,6 +61322,54 @@
           "support": [
             "Entire original 75-byte body (18 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Transfers one raw32-bit word without numeric conversion, scope or sequence updates. Direct path ignores preset error, reads/writes by direction and advances cursor four. Fallback TransferSerializerBytes length4.16 isolated original direct cases passed, including unaligned offsets and preset error. Parent uses it for multiple scalar fields; float/int/enum meaning belongs to callers, not this helper. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "14039b600": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic serializer count transfer and error/resource cleanup used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 54 whole-original error-helper cases with a controlled memset boundary; count helper and non-null cleanup routes static-only.",
+      "code_sha256": "641c3d52eaddc48ecb437d9f5bbc4a534e49cf14d2e53db4c880e038bb1fe670",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferSerializerCount32",
+          "support": [
+            "Entire original 75-byte body (18 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Raw32-bit transfer used by Imp parent count field; no encoding, signed/range validation or scope updates. Direct read/write ignores existing error and advances cursor4; fallback TransferSerializerBytes length4. Parent independently uses signed count>2 forerror; negative counts skip loop. Static-only inthisbatch. Full original andtypedC read, selected fully reviewed parent count/error/closure routes traced; notallincomingcallers. Fallback/exhaustion,malformedlengths,aliases,invalidpointers,concurrency/livegame untested. NoMMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "140d91850": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic serializer count transfer and error/resource cleanup used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 54 whole-original error-helper cases with a controlled memset boundary; count helper and non-null cleanup routes static-only.",
+      "code_sha256": "4248f466c839d351a7d57da2f0b07979a4b24eaae0545b4dda7cdfbb45a3c150",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetSerializerErrorAndReleaseResources",
+          "support": [
+            "Entire original 165-byte body (41 instructions) and all 28 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. If low16 bits atserializer+10 zero, stores full32-bit RSI code and clears buffer+a0 forunsigned32-bit difference(low32 end+a8 -low32 begin). Existing upper16-only error bits therefore do not suppress first-error path. Regardless of existing error:if callback+e0 nonnull calls it with RDI serializer,RSI value+b8,EDX1; deletes arrays at+58/+60 via_ZdaPv and scalar+68 via_ZdlPv, zeroes those pointers, then clears callback+e0 andargument+b8. Assembly confirmscallback ABI; C indirectcall display remains inaccurate due opaque callback type. 54 whole-original cases with controlled memset boundary verify first-error/buffer-clear/null-resource paths, including prior0/5/10000,codes0/1260009/10000,sizes0/1/32,two patterns andwholecontext/buffer guards. Non-null callbacks/deletes static-only. Linked memset/delete implementations not executed. Full original andtypedC read, selected fully reviewed parent count/error/closure routes traced; notallincomingcallers. Fallback/exhaustion,malformedlengths,aliases,invalidpointers,concurrency/livegame untested. NoMMsourceequivalence."
           ]
         }
       ]
