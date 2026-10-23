@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 942,
+    "checked_and_applied_names": 946,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 942,
-    "function_count": 9689,
+    "verified_names": 946,
+    "function_count": 9692,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "140163d80",
+      "140169730",
+      "140169b20",
+      "14016afc0",
       "14021b300",
       "140774f50",
       "1407767c0",
@@ -2064,7 +2067,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "803 existing-function renames,138 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "804 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29536,5 +29539,76 @@
       "No unified meaningful return is established: the embedded path tail-calls the bool initializer and the file path tail-calls free. No bool success contract is promised.",
       "Pointer types are coarse working types; source symbols, exact stage enum and whole-game/shader correctness remain unrecovered."
     ]
+  },
+  "shader_cleanup_checkpoint": {
+    "functions": {
+      "140169730": {
+        "name": "DestroyVertexShaderResource",
+        "signature": "void PS4_SYSV DestroyVertexShaderResource(void * resource)",
+        "return_storage": "<VOID>",
+        "original_sha256": "f8ad9a9d5e7af741cb62678f31de9ed40cf9feda021632c55e871146f836a8ee",
+        "size": 78,
+        "instructions": 22,
+        "created": true,
+        "c_sha256": "323b776e03ce6e0aca20e33417c80919330e5baa5604351d39ae7776502a907f",
+        "nonempty_c_lines": 26
+      },
+      "140169b20": {
+        "name": "DestroyPixelShaderResource",
+        "signature": "void PS4_SYSV DestroyPixelShaderResource(void * resource)",
+        "return_storage": "<VOID>",
+        "original_sha256": "b227bd287c780e88bb28963f1d8876ca2a073066430da241b13dd80c9197cb7e",
+        "size": 78,
+        "instructions": 22,
+        "created": true,
+        "c_sha256": "42c007fe806690d89fccc8e8131d16db9f884a2878ce89bb68a642bbdbfcd0f7",
+        "nonempty_c_lines": 26
+      },
+      "14016afc0": {
+        "name": "DestroyComputeShaderResource",
+        "signature": "void PS4_SYSV DestroyComputeShaderResource(void * resource)",
+        "return_storage": "<VOID>",
+        "original_sha256": "7ef12cd555d9d890bb546d4794f6982e7352c399d2d34300fba9a32f13681353",
+        "size": 78,
+        "instructions": 22,
+        "created": true,
+        "c_sha256": "31c34cabed5ce1cb9852c8349e5389638d87725eab1522d293ef0e58468160ce",
+        "nonempty_c_lines": 26
+      },
+      "1413a9680": {
+        "name": "ReleaseTrackedAllocationOrDefer",
+        "signature": "void PS4_SYSV ReleaseTrackedAllocationOrDefer(void * allocation, uchar allow_defer)",
+        "return_storage": "<VOID>",
+        "original_sha256": "475073dc2aeb43217999eb169c46f194937f6495b619a5019987ecda5fe3b869",
+        "size": 253,
+        "instructions": 61,
+        "created": false,
+        "c_sha256": "0fc696aea5fda716e78e9750bc42f9cf38212ee0b86a1a449b69820e36c424f7",
+        "nonempty_c_lines": 56
+      }
+    },
+    "new_checked_names": 4,
+    "new_definitions": 3,
+    "existing_renames": 1,
+    "complete_original_bytes": 487,
+    "original_instructions": 127,
+    "typed_c_nonempty_lines": 72,
+    "native_cases": 816,
+    "helper_cases": 780,
+    "composed_callback_cases": 36,
+    "modeled_imports": [
+      "scePthreadSelf returns a synthetic thread identity",
+      "140165a70 pool-release dependency records handle and pointer, returns1",
+      "sceGnmUnregisterOwnerAndResources records owner, returns0",
+      "free records header pointer without deallocation"
+    ],
+    "platform_import": "sceGnmUnregisterOwnerAndResources",
+    "limits": [
+      "Dependencies are models: actual pool reclamation, free effects, owner unregistration, deferred-queue draining and GPU execution were not tested.",
+      "Only valid non-null wrapper/record pointers tested; deferred queue pre-counts0..7. No capacity, concurrency or invalid-input guarantee.",
+      "Names and pointer types are descriptive working interfaces; original symbols/classes and exact types remain unrecovered.",
+      "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
+    ],
+    "classification": "Generic GPU resource lifetime and shader cleanup; not exclusive to Imp."
   }
 }

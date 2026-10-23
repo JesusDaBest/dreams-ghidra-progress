@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "803 existing-function renames,138 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "804 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9689,
-    "default_fun_names": 8592,
-    "other_names": 1097,
-    "verification": "complete_inventory_matches_baseline_plus_803_renames_and_138_created_functions_and_1_reviewed_existing_name"
+    "total": 9692,
+    "default_fun_names": 8591,
+    "other_names": 1101,
+    "verification": "complete_inventory_matches_baseline_plus_804_renames_and_141_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22452,6 +22452,106 @@
         "Input filenames are assumed valid and bounded; the original sprintf targets a1024-byte stack buffer without an observed length guard.",
         "No unified meaningful return is established: the embedded path tail-calls the bool initializer and the file path tail-calls free. No bool success contract is promised.",
         "Pointer types are coarse working types; source symbols, exact stage enum and whole-game/shader correctness remain unrecovered."
+      ]
+    },
+    {
+      "address": "140169730",
+      "original_name": null,
+      "applied_name": "DestroyVertexShaderResource",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DestroyVertexShaderResource(void * resource)",
+      "evidence": [
+        "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+        "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+        "Original __cxa_atexit registration associates this callback with the VertexShader accessors.",
+        "Frees a non-null pointer at wrapper+0x68 and clears it; cleans three 32-byte allocation records at+0x40,+0x20,+0 with flag1, in that order.",
+        "The outer wrapper and other fields are preserved; 12 native cases per callback execute the actual release helper."
+      ],
+      "caveats": [
+        "Dependencies are models: actual pool reclamation, free effects, owner unregistration, deferred-queue draining and GPU execution were not tested.",
+        "Only valid non-null wrapper/record pointers tested; deferred queue pre-counts0..7. No capacity, concurrency or invalid-input guarantee.",
+        "Names and pointer types are descriptive working interfaces; original symbols/classes and exact types remain unrecovered.",
+        "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "140169b20",
+      "original_name": null,
+      "applied_name": "DestroyPixelShaderResource",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DestroyPixelShaderResource(void * resource)",
+      "evidence": [
+        "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+        "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+        "Original __cxa_atexit registration associates this callback with the PixelShader accessors.",
+        "Frees a non-null pointer at wrapper+0x68 and clears it; cleans three 32-byte allocation records at+0x40,+0x20,+0 with flag1, in that order.",
+        "The outer wrapper and other fields are preserved; 12 native cases per callback execute the actual release helper."
+      ],
+      "caveats": [
+        "Dependencies are models: actual pool reclamation, free effects, owner unregistration, deferred-queue draining and GPU execution were not tested.",
+        "Only valid non-null wrapper/record pointers tested; deferred queue pre-counts0..7. No capacity, concurrency or invalid-input guarantee.",
+        "Names and pointer types are descriptive working interfaces; original symbols/classes and exact types remain unrecovered.",
+        "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14016afc0",
+      "original_name": null,
+      "applied_name": "DestroyComputeShaderResource",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DestroyComputeShaderResource(void * resource)",
+      "evidence": [
+        "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+        "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+        "Original __cxa_atexit registration associates this callback with the ComputeShader accessors.",
+        "Frees a non-null pointer at wrapper+0x68 and clears it; cleans three 32-byte allocation records at+0x40,+0x20,+0 with flag1, in that order.",
+        "The outer wrapper and other fields are preserved; 12 native cases per callback execute the actual release helper."
+      ],
+      "caveats": [
+        "Dependencies are models: actual pool reclamation, free effects, owner unregistration, deferred-queue draining and GPU execution were not tested.",
+        "Only valid non-null wrapper/record pointers tested; deferred queue pre-counts0..7. No capacity, concurrency or invalid-input guarantee.",
+        "Names and pointer types are descriptive working interfaces; original symbols/classes and exact types remain unrecovered.",
+        "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1413a9680",
+      "original_name": "FUN_1413a9680",
+      "applied_name": "ReleaseTrackedAllocationOrDefer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReleaseTrackedAllocationOrDefer(void * allocation, uchar allow_defer)",
+      "evidence": [
+        "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+        "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+        "Kind39 and42..47 attempt immediate pool release. Kinds40/41 may defer only on a designated matching thread, nonzero low flag byte, non-null pointer and unsigned frame difference0 or1.",
+        "Immediate handle selection uses the kind table: mode2 reads its pool handle; otherwise -1 is forwarded. Unrecognized kinds skip pool release.",
+        "All branches call sceGnmUnregisterOwnerAndResources and reset pointer,+8,+0x10,+0x18; the kind and remaining fields are preserved. Pool-release return is ignored, so cleared state does not prove successful reclamation.",
+        "Platform import independently resolved using original SELF relocation/NID and the local symbol database. Native cases check unsigned wrap, type boundaries, low-byte flag semantics, null payloads and guarded queue writes."
+      ],
+      "caveats": [
+        "Dependencies are models: actual pool reclamation, free effects, owner unregistration, deferred-queue draining and GPU execution were not tested.",
+        "Only valid non-null wrapper/record pointers tested; deferred queue pre-counts0..7. No capacity, concurrency or invalid-input guarantee.",
+        "Names and pointer types are descriptive working interfaces; original symbols/classes and exact types remain unrecovered.",
+        "Some imported-call arguments are missing from generated C; original register setup and native call observations govern those arguments."
       ]
     }
   ],

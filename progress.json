@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 896,
+    "done": 900,
     "todo": 1439,
-    "total": 2335,
-    "behavior_or_helpers_reviewed": 822,
+    "total": 2339,
+    "behavior_or_helpers_reviewed": 826,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -29977,12 +29977,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 125,
+        "done": 129,
         "todo": 268,
-        "total": 393,
-        "behavior_or_helpers_reviewed": 125,
+        "total": 397,
+        "behavior_or_helpers_reviewed": 129,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 367,
+        "runtime_functions_identified": 371,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -30078,6 +30078,9 @@
           "InitializeQrReservedModuleMask",
           "ApplyQrMaskToUnreservedModules",
           "WriteHighCorrectionQrFormatBits",
+          "DestroyVertexShaderResource",
+          "DestroyPixelShaderResource",
+          "DestroyComputeShaderResource",
           "UpdateQrCodeEncodingJob",
           "UpdateQrCodeImageFromText",
           "ComputeLayeredBlendTokenWeight",
@@ -30101,6 +30104,7 @@
           "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
           "CreateAndQueueDeferredDrawJob",
+          "ReleaseTrackedAllocationOrDefer",
           "ConvertOwnedImageByteChannels",
           "TryAllocateGraphicsResourceStorage",
           "InitializeShaderResourceFromEmbeddedBlobOrFiles",
@@ -30475,6 +30479,9 @@
           "140157910",
           "140158ab0",
           "140158ca0",
+          "140169730",
+          "140169b20",
+          "14016afc0",
           "14021b090",
           "14021b300",
           "140752eb0",
@@ -30498,6 +30505,7 @@
           "14139fd80",
           "1413a00c0",
           "1413a0150",
+          "1413a9680",
           "1413b90a0",
           "1413c2ee0",
           "1413c3050",
@@ -34233,13 +34241,13 @@
           },
           {
             "name": "rendering/compute",
-            "label": "GPU compute support",
-            "done": 50,
+            "label": "GPU resources & dispatch",
+            "done": 54,
             "todo": 0,
-            "total": 50,
-            "behavior_or_helpers_reviewed": 50,
+            "total": 54,
+            "behavior_or_helpers_reviewed": 54,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 50,
+            "runtime_functions_identified": 54,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -34269,6 +34277,9 @@
               "InitializeQrReservedModuleMask",
               "ApplyQrMaskToUnreservedModules",
               "WriteHighCorrectionQrFormatBits",
+              "DestroyVertexShaderResource",
+              "DestroyPixelShaderResource",
+              "DestroyComputeShaderResource",
               "UpdateQrCodeEncodingJob",
               "UpdateQrCodeImageFromText",
               "InternAndBeginComputeProfilingRegion",
@@ -34286,6 +34297,7 @@
               "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
+              "ReleaseTrackedAllocationOrDefer",
               "ConvertOwnedImageByteChannels",
               "TryAllocateGraphicsResourceStorage",
               "InitializeShaderResourceFromEmbeddedBlobOrFiles",
@@ -34322,6 +34334,9 @@
               "140157910",
               "140158ab0",
               "140158ca0",
+              "140169730",
+              "140169b20",
+              "14016afc0",
               "14021b090",
               "14021b300",
               "141297630",
@@ -34339,6 +34354,7 @@
               "14139fbf0",
               "14139fd80",
               "1413a00c0",
+              "1413a9680",
               "1413b90a0",
               "1413c2ee0",
               "1413c3050",
@@ -34621,6 +34637,73 @@
                 ]
               },
               {
+                "name": "rendering/compute/shader-sections",
+                "label": "Shader binary sections",
+                "done": 6,
+                "todo": 0,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 6,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 6,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ExtractShaderBinarySections",
+                  "DestroyVertexShaderResource",
+                  "DestroyPixelShaderResource",
+                  "DestroyComputeShaderResource",
+                  "InitializeShaderResourceFromEmbeddedBlobOrFiles",
+                  "InitializeShaderResourceFromBinaryBlob"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140011fb0",
+                  "140169730",
+                  "140169b20",
+                  "14016afc0",
+                  "1413c3050",
+                  "1413c31e0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/shader-sections/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 6,
+                    "todo": 0,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 6,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 6,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ExtractShaderBinarySections",
+                      "DestroyVertexShaderResource",
+                      "DestroyPixelShaderResource",
+                      "DestroyComputeShaderResource",
+                      "InitializeShaderResourceFromEmbeddedBlobOrFiles",
+                      "InitializeShaderResourceFromBinaryBlob"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140011fb0",
+                      "140169730",
+                      "140169b20",
+                      "14016afc0",
+                      "1413c3050",
+                      "1413c31e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/completion",
                 "label": "Queue completion",
                 "done": 4,
@@ -34680,8 +34763,8 @@
                 ]
               },
               {
-                "name": "rendering/compute/shader-sections",
-                "label": "Shader binary sections",
+                "name": "rendering/compute/resource-storage",
+                "label": "Resource storage",
                 "done": 3,
                 "todo": 0,
                 "total": 3,
@@ -34692,21 +34775,21 @@
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
-                  "ExtractShaderBinarySections",
-                  "InitializeShaderResourceFromEmbeddedBlobOrFiles",
-                  "InitializeShaderResourceFromBinaryBlob"
+                  "InitializeDoubleBufferedGpuRecordStorage",
+                  "ReleaseTrackedAllocationOrDefer",
+                  "TryAllocateGraphicsResourceStorage"
                 ],
                 "todo_names": [],
                 "done_addresses": [
-                  "140011fb0",
-                  "1413c3050",
-                  "1413c31e0"
+                  "14139f160",
+                  "1413a9680",
+                  "1413c2ee0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
-                    "name": "rendering/compute/shader-sections/runtime-implementation",
+                    "name": "rendering/compute/resource-storage/runtime-implementation",
                     "label": "Runtime & implementation",
                     "done": 3,
                     "todo": 0,
@@ -34718,15 +34801,15 @@
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
-                      "ExtractShaderBinarySections",
-                      "InitializeShaderResourceFromEmbeddedBlobOrFiles",
-                      "InitializeShaderResourceFromBinaryBlob"
+                      "InitializeDoubleBufferedGpuRecordStorage",
+                      "ReleaseTrackedAllocationOrDefer",
+                      "TryAllocateGraphicsResourceStorage"
                     ],
                     "todo_names": [],
                     "done_addresses": [
-                      "140011fb0",
-                      "1413c3050",
-                      "1413c31e0"
+                      "14139f160",
+                      "1413a9680",
+                      "1413c2ee0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -34880,57 +34963,6 @@
                     "done_addresses": [
                       "14139fd80",
                       "1413a00c0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/resource-storage",
-                "label": "Resource storage",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "InitializeDoubleBufferedGpuRecordStorage",
-                  "TryAllocateGraphicsResourceStorage"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14139f160",
-                  "1413c2ee0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/resource-storage/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "InitializeDoubleBufferedGpuRecordStorage",
-                      "TryAllocateGraphicsResourceStorage"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14139f160",
-                      "1413c2ee0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -47977,5 +48009,5 @@
       }
     ]
   },
-  "unmapped": 7354
+  "unmapped": 7353
 }

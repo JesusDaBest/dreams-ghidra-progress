@@ -8388,3 +8388,16 @@ A non-null embedded blob goes directly to the common binary initializer. Otherwi
 **60 new isolated native cases** exercised embedded, override-file, ordinary-file and missing-file outcomes, five stage bit patterns and three filename lengths. The original wrapper instructions stayed unchanged. Formatting, file-reader outcomes, initialization and free were explicit models; the fixtures did not run the real initializer, filesystem loading or GPU. Read-failure models returned null buffers. Filename bounds and real dependency failure behavior remain separate requirements; the original formatting uses a1024-byte local buffer without an observed length guard. The wrapper has no established unified success return contract.
 
 This adds one CPU helper review under shared shader support. Totals: **942 reviewed names /9,689 defined functions**, **2,335 mapped /7,354 unmapped**. These counts do not establish complete shader or whole-game behavior. No completed native suite was rerun.
+
+
+### Shader cleanup and tracked allocation lifetime
+
+Three missing **78-byte cleanup callbacks** are now defined and named **DestroyVertexShaderResource**, **DestroyPixelShaderResource** and **DestroyComputeShaderResource**. Their registration is visible in the reviewed shader accessors. Each frees the non-null pointer at wrapper offset `0x68`, clears it and cleans three 32-byte allocation records in reverse order. The wrapper itself is preserved by these bodies.
+
+The shared **ReleaseTrackedAllocationOrDefer** helper is also named and typed. It attempts immediate release for selected allocation kinds. Two other kinds can be queued for later release only when the designated thread matches, the low flag byte is nonzero, a payload exists and the unsigned frame age is 0 or 1. Other kinds can skip pool release. All paths call **sceGnmUnregisterOwnerAndResources** and reset the pointer, size-like field, frame stamp and registration-owner field, preserving other fields. The pool-release result is ignored; reset state alone does not prove actual reclamation.
+
+The complete **487 original bytes / 127 instructions** and all **72 nonempty lines of typed C** were reviewed, saved and independently checked after reopening. **816 new isolated native cases** comprise 780 helper cases and 36 composed callback cases. Coverage includes kind boundaries, null payloads, table modes, same/different threads, upper flag bits, unsigned frame wrap, guarded deferred writes and exact field preservation. The actual helper executes inside callback cases. Thread identity, pool release, free and platform unregister are explicit models. Real pool reclamation, unregister effects, queue draining/capacity, concurrency and GPU behavior remain unverified. No completed suite was rerun.
+
+The graph uses **GPU resources & dispatch** for the shared shader, allocation, descriptor and compute code in this group.
+
+Totals: **946 reviewed names / 9,692 defined functions**, **2,339 mapped / 7,353 unmapped**. This batch adds three definitions and reviews one existing function. These are scoped code-review counts, not whole-game completion.

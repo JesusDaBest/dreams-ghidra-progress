@@ -4,9 +4,9 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9689,
-  "mapped_total": 2335,
-  "unmapped_total": 7354,
+  "inventory_total": 9692,
+  "mapped_total": 2339,
+  "unmapped_total": 7353,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -59904,6 +59904,115 @@
           ]
         }
       ]
+    },
+    "140169730": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "shader-sections",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared shader cleanup registrations and original resource-release/defer behavior; not exclusive to Imp.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body, typed C and scoped whole-original native fixtures.",
+      "code_sha256": "f8ad9a9d5e7af741cb62678f31de9ed40cf9feda021632c55e871146f836a8ee",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DestroyVertexShaderResource",
+          "support": [
+            "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+            "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+            "Original __cxa_atexit registration associates this callback with the VertexShader accessors.",
+            "Frees a non-null pointer at wrapper+0x68 and clears it; cleans three 32-byte allocation records at+0x40,+0x20,+0 with flag1, in that order.",
+            "The outer wrapper and other fields are preserved; 12 native cases per callback execute the actual release helper."
+          ]
+        }
+      ]
+    },
+    "140169b20": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "shader-sections",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared shader cleanup registrations and original resource-release/defer behavior; not exclusive to Imp.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body, typed C and scoped whole-original native fixtures.",
+      "code_sha256": "b227bd287c780e88bb28963f1d8876ca2a073066430da241b13dd80c9197cb7e",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DestroyPixelShaderResource",
+          "support": [
+            "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+            "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+            "Original __cxa_atexit registration associates this callback with the PixelShader accessors.",
+            "Frees a non-null pointer at wrapper+0x68 and clears it; cleans three 32-byte allocation records at+0x40,+0x20,+0 with flag1, in that order.",
+            "The outer wrapper and other fields are preserved; 12 native cases per callback execute the actual release helper."
+          ]
+        }
+      ]
+    },
+    "14016afc0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "shader-sections",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared shader cleanup registrations and original resource-release/defer behavior; not exclusive to Imp.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body, typed C and scoped whole-original native fixtures.",
+      "code_sha256": "7ef12cd555d9d890bb546d4794f6982e7352c399d2d34300fba9a32f13681353",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DestroyComputeShaderResource",
+          "support": [
+            "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+            "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+            "Original __cxa_atexit registration associates this callback with the ComputeShader accessors.",
+            "Frees a non-null pointer at wrapper+0x68 and clears it; cleans three 32-byte allocation records at+0x40,+0x20,+0 with flag1, in that order.",
+            "The outer wrapper and other fields are preserved; 12 native cases per callback execute the actual release helper."
+          ]
+        }
+      ]
+    },
+    "1413a9680": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared shader cleanup registrations and original resource-release/defer behavior; not exclusive to Imp.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body, typed C and scoped whole-original native fixtures.",
+      "code_sha256": "475073dc2aeb43217999eb169c46f194937f6495b619a5019987ecda5fe3b869",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseTrackedAllocationOrDefer",
+          "support": [
+            "Complete original function body and typed C reviewed; saved names/interfaces independently verified after reopening with original code bytes unchanged.",
+            "816 new whole-original native cases:780 release/defer helper cases and36 composed cleanup callback cases, with explicit thread/pool/free/unregister models.",
+            "Kind39 and42..47 attempt immediate pool release. Kinds40/41 may defer only on a designated matching thread, nonzero low flag byte, non-null pointer and unsigned frame difference0 or1.",
+            "Immediate handle selection uses the kind table: mode2 reads its pool handle; otherwise -1 is forwarded. Unrecognized kinds skip pool release.",
+            "All branches call sceGnmUnregisterOwnerAndResources and reset pointer,+8,+0x10,+0x18; the kind and remaining fields are preserved. Pool-release return is ignored, so cleared state does not prove successful reclamation.",
+            "Platform import independently resolved using original SELF relocation/NID and the local symbol database. Native cases check unsigned wrap, type boundaries, low-byte flag semantics, null payloads and guarded queue writes."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -67253,7 +67362,7 @@
         },
         {
           "id": "compute",
-          "label": "GPU compute support",
+          "label": "GPU resources & dispatch",
           "children": [
             {
               "id": "completion",
