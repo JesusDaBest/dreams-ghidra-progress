@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 933,
+    "checked_and_applied_names": 941,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 933,
+    "verified_names": 941,
     "function_count": 9689,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2064,7 +2064,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "794 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "802 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29393,5 +29393,106 @@
       "Shader selection proves Imp-related command construction, not shader correctness, final GPU particle layout, live rendering, or successful photo-file saving.",
       "Upstream particle functions are classified through direct queue and dataflow evidence; the shader helper source filename is not claimed as their original source location."
     ]
+  },
+  "imp_shader_accessors_checkpoint": {
+    "functions": {
+      "1415ae120": {
+        "name": "GetOrLoadPrimImpVertexShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpVertexShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "8dc4dd13371a1a33b8e5c7b4f459d45080cbc04d2f9db74f43b6f817cbdb9da2",
+        "size": 926,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "fbafb8bf9023abec21166521429a977d680e05a831ff63face76349fdb9906e7",
+        "nonempty_c_lines": 168
+      },
+      "1415ae4c0": {
+        "name": "GetOrLoadPrimImpFilledBodyVertexShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpFilledBodyVertexShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "0812f1685472c40f724aa03543e254b5f336efd419e694f7c149543b70fa03f4",
+        "size": 926,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "fc1519a83a274e6b4c9e012ff620dc0d590aa11eed91ac2512ed7b080573d4de",
+        "nonempty_c_lines": 183
+      },
+      "1415ae860": {
+        "name": "GetOrLoadPrimImpStickVertexShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpStickVertexShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "48987806fb1a9d48b475841ec712dc6f7fc1d30d5c18845c0891fa65165b4a97",
+        "size": 934,
+        "instructions": 209,
+        "created": false,
+        "c_sha256": "32304c54de7c14db82c77b670497a489df2606b64d21eb800a6d4efffd34c13e",
+        "nonempty_c_lines": 170
+      },
+      "1415aec10": {
+        "name": "GetOrLoadPrimImpInWorldPixelShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpInWorldPixelShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "94429d4f3f49b0c41c1e23458450d387e7be3a25e635d2dd25292f9bc08e9d60",
+        "size": 923,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "9044f40b15438b09ad2eebf12ce432e2f4288309c224366deb25a0e15920f560",
+        "nonempty_c_lines": 183
+      },
+      "1415aefb0": {
+        "name": "GetOrLoadPrimImpInWorldAlphaOnePixelShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpInWorldAlphaOnePixelShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "7fd690894909c21d6f29bbb029f90cc63f77f0828dc867779dc4a89f8ce65ea1",
+        "size": 932,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "dc47b3945f52bef4183edb13c4c91896917fd29472941004dae56dddcdb7e068",
+        "nonempty_c_lines": 194
+      },
+      "1415af360": {
+        "name": "GetOrLoadPrimImpOverBokehPixelShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpOverBokehPixelShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "755d48c8748fd61f74312a22d92410cca119a9ed483d5907087535f3e7be072f",
+        "size": 926,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "45f3931d9d26b02786d59070ed1d6e08da952c7b469423fe9fc069a90164ee61",
+        "nonempty_c_lines": 176
+      },
+      "1415af700": {
+        "name": "GetOrLoadPrimImpTemporalUpdateComputeShader",
+        "signature": "void * PS4_SYSV GetOrLoadPrimImpTemporalUpdateComputeShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "0fd2bc469ad8d0c6a0f93f966724b53352787dbf0529a9249004483b09161352",
+        "size": 917,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "4977b487d9c33c7965a6279988a35e4a0145bb851ca2f0df0b92e389f238d074",
+        "nonempty_c_lines": 183
+      },
+      "1415afaa0": {
+        "name": "GetOrLoadImpPhotoDownsampleComputeShader",
+        "signature": "void * PS4_SYSV GetOrLoadImpPhotoDownsampleComputeShader(void)",
+        "return_storage": "RAX:8",
+        "original_sha256": "71365df502e56d3f8c3e157dbca721bd441be2b1e038e07773266fdb6eb6023c",
+        "size": 926,
+        "instructions": 208,
+        "created": false,
+        "c_sha256": "8aab9447ddfeb464f6a2644aed5bd88327e0ae2019f6ca4c15cc9192d950e9ae",
+        "nonempty_c_lines": 194
+      }
+    },
+    "new_checked_names": 8,
+    "new_definitions": 0,
+    "static_body_bytes": 7410,
+    "static_body_instructions": 1665,
+    "typed_c_nonempty_lines": 1313,
+    "native_tests_run": false,
+    "gpu_or_game_verified": false,
+    "scope": "CPU shader-resource accessors only. Shader binary programs and broader Imp behavior remain unverified.",
+    "mapped_counts": "All 19 currently identified functions in this Imp visuals subsection have a naming review; this is not completion of the Imp system."
   }
 }

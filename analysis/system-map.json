@@ -39061,6 +39061,20 @@
           "site": "1415ae1e9",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpVertexShader",
+          "original_eh_sha256": "8dc4dd13371a1a33b8e5c7b4f459d45080cbc04d2f9db74f43b6f817cbdb9da2",
+          "support": [
+            "Complete 926-byte original body (208 instructions) and all 151 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpVS.vs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 2.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "f96fd2bb92fd37ce56391894d5acda8558b4f4515ec565369137671b11825859",
@@ -39072,7 +39086,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415ae4c0": {
       "system": "interface",
@@ -39088,6 +39102,20 @@
           "site": "1415ae589",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpFilledBodyVertexShader",
+          "original_eh_sha256": "0812f1685472c40f724aa03543e254b5f336efd419e694f7c149543b70fa03f4",
+          "support": [
+            "Complete 926-byte original body (208 instructions) and all 166 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpFilledBodyVS.vs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 2.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "012aa9bd10d8344fcb0a0b8d16cc8559caf7ebc17838070e932bfd9f8aa02fe3",
@@ -39099,7 +39127,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415ae860": {
       "system": "interface",
@@ -39115,6 +39143,20 @@
           "site": "1415ae929",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpStickVertexShader",
+          "original_eh_sha256": "48987806fb1a9d48b475841ec712dc6f7fc1d30d5c18845c0891fa65165b4a97",
+          "support": [
+            "Complete 934-byte original body (209 instructions) and all 153 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpStickVS.vs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 2.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "ca6bfbcbd3ffdb0e6fe6407bfae173bfe8f583372ecdadfd11ba998978818c96",
@@ -39126,7 +39168,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415aec10": {
       "system": "interface",
@@ -39142,6 +39184,20 @@
           "site": "1415aecd9",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpInWorldPixelShader",
+          "original_eh_sha256": "94429d4f3f49b0c41c1e23458450d387e7be3a25e635d2dd25292f9bc08e9d60",
+          "support": [
+            "Complete 923-byte original body (208 instructions) and all 166 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpInWorldPS.ps.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 1.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "b5ba5d90aa3d20303ddd3c3addb471b2c543758665910d2926976f6f1cbd73f7",
@@ -39153,7 +39209,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415aefb0": {
       "system": "interface",
@@ -39169,6 +39225,20 @@
           "site": "1415af079",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpInWorldAlphaOnePixelShader",
+          "original_eh_sha256": "7fd690894909c21d6f29bbb029f90cc63f77f0828dc867779dc4a89f8ce65ea1",
+          "support": [
+            "Complete 932-byte original body (208 instructions) and all 176 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpInWorldAlphaOnePS.ps.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 1.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "3bae8139fe87a94635acd51ee881fd4fc8aa0cd8770f8a504ef67d524dfdc2d4",
@@ -39180,7 +39250,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415af360": {
       "system": "interface",
@@ -39196,6 +39266,20 @@
           "site": "1415af429",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpOverBokehPixelShader",
+          "original_eh_sha256": "755d48c8748fd61f74312a22d92410cca119a9ed483d5907087535f3e7be072f",
+          "support": [
+            "Complete 926-byte original body (208 instructions) and all 159 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpOverBokehPS.ps.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 1.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "a378b8da996f1f13aaf360ec1c5df57940a37ea57139158cbec25aa1e4f6d48d",
@@ -39207,7 +39291,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415af700": {
       "system": "interface",
@@ -39223,6 +39307,20 @@
           "site": "1415af7c9",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPrimImpTemporalUpdateComputeShader",
+          "original_eh_sha256": "0fd2bc469ad8d0c6a0f93f966724b53352787dbf0529a9249004483b09161352",
+          "support": [
+            "Complete 917-byte original body (208 instructions) and all 166 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimImpTAAUpdate.cs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 0.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "b91cb86b2ff6ffb3323794b0f2a4936b6f7944917a13eede2b10e5ebf287cc35",
@@ -39234,7 +39332,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415afaa0": {
       "system": "interface",
@@ -39250,6 +39348,20 @@
           "site": "1415afb69",
           "target": "141758177",
           "anchor_sha256": "fe889f36fdf65dcbe8316fa9ce3762a5de21daf1895c28b334fc92e01035223d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadImpPhotoDownsampleComputeShader",
+          "original_eh_sha256": "71365df502e56d3f8c3e157dbca721bd441be2b1e038e07773266fdb6eb6023c",
+          "support": [
+            "Complete 926-byte original body (208 instructions) and all 176 nonempty lines of typed C reviewed.",
+            "Original shader identity PrimDownSampleImpPhotoCS.cs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+            "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 0.",
+            "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+            "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+            "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+            "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+          ]
         }
       ],
       "code_sha256": "3ee700bc6a6d439639dad9699f71da60b45ecc1957a6c1197ea32f8107ed2d5a",
@@ -39261,7 +39373,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "complete_original_body_and_typed_C_review"
     },
     "1415b75a0": {
       "system": "interface",

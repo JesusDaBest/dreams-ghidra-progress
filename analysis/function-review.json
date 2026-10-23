@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "794 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "802 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9689,
-    "default_fun_names": 8601,
-    "other_names": 1088,
-    "verification": "complete_inventory_matches_baseline_plus_794_renames_and_138_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8593,
+    "other_names": 1096,
+    "verification": "complete_inventory_matches_baseline_plus_802_renames_and_138_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22201,6 +22201,230 @@
         "A slow resource-initialization branch preserves an uninitialized local high nibble. Full deterministic initialization is not claimed.",
         "Shader selection proves Imp-related command construction, not shader correctness, final GPU particle layout, live rendering, or successful photo-file saving.",
         "Upstream particle functions are classified through direct queue and dataflow evidence; the shader helper source filename is not claimed as their original source location."
+      ]
+    },
+    {
+      "address": "1415ae120",
+      "original_name": "FUN_1415ae120",
+      "applied_name": "GetOrLoadPrimImpVertexShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpVertexShader(void)",
+      "evidence": [
+        "Complete 926-byte original body (208 instructions) and all 151 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpVS.vs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 2.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415ae4c0",
+      "original_name": "FUN_1415ae4c0",
+      "applied_name": "GetOrLoadPrimImpFilledBodyVertexShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpFilledBodyVertexShader(void)",
+      "evidence": [
+        "Complete 926-byte original body (208 instructions) and all 166 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpFilledBodyVS.vs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 2.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415ae860",
+      "original_name": "FUN_1415ae860",
+      "applied_name": "GetOrLoadPrimImpStickVertexShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpStickVertexShader(void)",
+      "evidence": [
+        "Complete 934-byte original body (209 instructions) and all 153 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpStickVS.vs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 2.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415aec10",
+      "original_name": "FUN_1415aec10",
+      "applied_name": "GetOrLoadPrimImpInWorldPixelShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpInWorldPixelShader(void)",
+      "evidence": [
+        "Complete 923-byte original body (208 instructions) and all 166 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpInWorldPS.ps.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 1.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415aefb0",
+      "original_name": "FUN_1415aefb0",
+      "applied_name": "GetOrLoadPrimImpInWorldAlphaOnePixelShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpInWorldAlphaOnePixelShader(void)",
+      "evidence": [
+        "Complete 932-byte original body (208 instructions) and all 176 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpInWorldAlphaOnePS.ps.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 1.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415af360",
+      "original_name": "FUN_1415af360",
+      "applied_name": "GetOrLoadPrimImpOverBokehPixelShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpOverBokehPixelShader(void)",
+      "evidence": [
+        "Complete 926-byte original body (208 instructions) and all 159 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpOverBokehPS.ps.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 1.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415af700",
+      "original_name": "FUN_1415af700",
+      "applied_name": "GetOrLoadPrimImpTemporalUpdateComputeShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPrimImpTemporalUpdateComputeShader(void)",
+      "evidence": [
+        "Complete 917-byte original body (208 instructions) and all 166 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimImpTAAUpdate.cs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 0.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1415afaa0",
+      "original_name": "FUN_1415afaa0",
+      "applied_name": "GetOrLoadImpPhotoDownsampleComputeShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadImpPhotoDownsampleComputeShader(void)",
+      "evidence": [
+        "Complete 926-byte original body (208 instructions) and all 176 nonempty lines of typed C reviewed.",
+        "Original shader identity PrimDownSampleImpPhotoCS.cs.pssl and src/ui/prim_imp.cpp references; called by the reviewed Imp particle command consumer.",
+        "No consumed incoming arguments; returns a resource-wrapper pointer in RAX when its +0x68 readiness field is nonzero, otherwise null. Stage code 0.",
+        "Static resource construction uses original C++ guard imports and destructor registration. Later path construction/loading is a separate operation; broader thread safety is not established.",
+        "Builds an ORBIS_shaders path, hashes its normalized form and searches a shared table by the low64 hash. Passes the optional relative blob pointer to a shared initialization helper.",
+        "On an existing-path cache miss, tries the .reasm.sb filename before the ordinary binary, initializes from a successful read and frees the temporary buffer.",
+        "Descriptive name and no-argument pointer-return working interface saved and independently verified after reopening. Original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Accessors identify CPU resource loading/caching, not decompilation of the shader binaries.",
+        "C++ guard covers object construction; no broader thread-safety guarantee.",
+        "Low64 hash lookup has no additional path-string equality check in these bodies.",
+        "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
+        "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
+        "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
       ]
     }
   ],

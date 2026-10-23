@@ -8353,3 +8353,27 @@ Ten already-reviewed functions that directly build, update, dispatch or submit t
 This consumer received static review only. Arena/resource validity, initialization padding, shader execution and final GPU field meanings remain unresolved. No completed native tests were rerun and no live rendering verification is claimed.
 
 Totals: **933 checked names across 9,689 defined functions**, with **2,334 mapped and 7,355 unmapped**. These are reviewed-function counts, not whole-game completion.
+
+
+### Imp shader-resource accessors
+
+Eight CPU-side accessors called by the Imp command consumer now have descriptive names and no-argument pointer-return interfaces. Their complete **7,410 bytes / 1,665 instructions** and **1,313 nonempty lines of typed C** were reviewed, saved and independently checked after reopening.
+
+| Original shader identity | Reviewed accessor |
+| --- | --- |
+| `PrimImpVS.vs.pssl` | `GetOrLoadPrimImpVertexShader` |
+| `PrimImpFilledBodyVS.vs.pssl` | `GetOrLoadPrimImpFilledBodyVertexShader` |
+| `PrimImpStickVS.vs.pssl` | `GetOrLoadPrimImpStickVertexShader` |
+| `PrimImpInWorldPS.ps.pssl` | `GetOrLoadPrimImpInWorldPixelShader` |
+| `PrimImpInWorldAlphaOnePS.ps.pssl` | `GetOrLoadPrimImpInWorldAlphaOnePixelShader` |
+| `PrimImpOverBokehPS.ps.pssl` | `GetOrLoadPrimImpOverBokehPixelShader` |
+| `PrimImpTAAUpdate.cs.pssl` | `GetOrLoadPrimImpTemporalUpdateComputeShader` |
+| `PrimDownSampleImpPhotoCS.cs.pssl` | `GetOrLoadImpPhotoDownsampleComputeShader` |
+
+These functions construct and cache resource wrappers, build source-derived shader paths, search a shared embedded-binary index by a path hash and use file-loading fallbacks when an existing-path resource is missing. The fallback tries `.reasm.sb` before the ordinary shader binary. A successful readiness-field check returns the resource wrapper; otherwise the accessor returns null. Static object initialization uses C++ guards and destructor registration, which does not establish synchronization of later loading operations.
+
+The names identify **CPU resource-loading behavior**. The shader programs themselves, exact resource types, full dependency behavior, hash-collision handling, GPU output and live rendering remain unresolved. Generated C retains intrinsic and overlapping-global artifacts. This batch used static review; no native or live-game execution is claimed, and completed test suites were not rerun.
+
+The graph's Imp visuals subsection now has naming reviews for **19 of its 19 currently identified functions**. That denominator covers only functions mapped to this subsection so far; it does **not** mean the Imp system or its shaders are fully reverse engineered. **7,355 functions remain unmapped across Dreams.**
+
+Totals: **941 reviewed names across 9,689 defined functions**, with **2,334 mapped functions**. These counts do not establish a whole-game completion percentage.
