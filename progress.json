@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 902,
+    "done": 904,
     "todo": 1439,
-    "total": 2341,
-    "behavior_or_helpers_reviewed": 828,
+    "total": 2343,
+    "behavior_or_helpers_reviewed": 830,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -29985,12 +29985,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 130,
+        "done": 132,
         "todo": 268,
-        "total": 398,
-        "behavior_or_helpers_reviewed": 130,
+        "total": 400,
+        "behavior_or_helpers_reviewed": 132,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 372,
+        "runtime_functions_identified": 374,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -30107,6 +30107,8 @@
           "LookupOrRequestImageCacheSlice",
           "TryGetCachedImageColorSample",
           "TestSpriteBoundsAgainstViewPlanes",
+          "ConfigureVideoOutputBuffersAndCursor",
+          "TearDownVideoOutputResources",
           "InitializeDoubleBufferedGpuRecordStorage",
           "RegisterDeferredShaderConstants",
           "FinalizeAndQueueDeferredGraphicsJob",
@@ -30509,6 +30511,8 @@
           "141331520",
           "1413317f0",
           "141361110",
+          "14139df10",
+          "14139e6c0",
           "14139f160",
           "14139fbf0",
           "14139fd80",
@@ -34252,12 +34256,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU resources & dispatch",
-            "done": 55,
+            "done": 57,
             "todo": 0,
-            "total": 55,
-            "behavior_or_helpers_reviewed": 55,
+            "total": 57,
+            "behavior_or_helpers_reviewed": 57,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 55,
+            "runtime_functions_identified": 57,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -34303,6 +34307,8 @@
               "LoadPhotoCacheImagePixels",
               "LookupOrRequestImageCacheSlice",
               "TryGetCachedImageColorSample",
+              "ConfigureVideoOutputBuffersAndCursor",
+              "TearDownVideoOutputResources",
               "InitializeDoubleBufferedGpuRecordStorage",
               "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
@@ -34361,6 +34367,8 @@
               "141331220",
               "141331520",
               "1413317f0",
+              "14139df10",
+              "14139e6c0",
               "14139f160",
               "14139fbf0",
               "14139fd80",
@@ -34928,6 +34936,57 @@
                     "done_addresses": [
                       "14003b5e0",
                       "14139fbf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/display-output",
+                "label": "Video output",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ConfigureVideoOutputBuffersAndCursor",
+                  "TearDownVideoOutputResources"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14139df10",
+                  "14139e6c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/display-output/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ConfigureVideoOutputBuffersAndCursor",
+                      "TearDownVideoOutputResources"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14139df10",
+                      "14139e6c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -48025,5 +48084,5 @@
       }
     ]
   },
-  "unmapped": 7351
+  "unmapped": 7349
 }

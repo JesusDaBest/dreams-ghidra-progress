@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 948,
+    "checked_and_applied_names": 950,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 948,
+    "verified_names": 950,
     "function_count": 9692,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2067,7 +2067,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "806 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "808 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29660,5 +29660,85 @@
     ],
     "pool_success_storage": "AL:1; upper return bits are not a32-bit success contract",
     "completion_producers_verified": false
+  },
+  "video_output_lifecycle_checkpoint": {
+    "functions": {
+      "14139df10": {
+        "name": "ConfigureVideoOutputBuffersAndCursor",
+        "signature": "void PS4_SYSV ConfigureVideoOutputBuffersAndCursor(int output_mode, uchar output_option)",
+        "return_storage": "<VOID>",
+        "original_sha256": "9a2750c27cacdfce635e1c80641418e8d3cc8d36c6f0c573c91584988f0b9d8c",
+        "size": 1965,
+        "instructions": 387,
+        "created": false,
+        "c_sha256": "1f5dfa7153f5e7d7ab1b8a0f90741e7cb8fd61c2235d8d02b07b234edc6b0644",
+        "nonempty_c_lines": 327
+      },
+      "14139e6c0": {
+        "name": "TearDownVideoOutputResources",
+        "signature": "void PS4_SYSV TearDownVideoOutputResources(void)",
+        "return_storage": "<VOID>",
+        "original_sha256": "106e80bac8c2685169962de5453ff775b171a86e48093072594121b748a0b1fa",
+        "size": 413,
+        "instructions": 84,
+        "created": false,
+        "c_sha256": "51ec6f1812b1dc1e9419e7b191026cdc1c2cc36b0e0a21c9a66a67ca0ac18a3b",
+        "nonempty_c_lines": 67
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "original_bytes": 2378,
+    "original_instructions": 471,
+    "typed_c_nonempty_lines": 363,
+    "teardown_native_cases": 576,
+    "initializer_native_tested": false,
+    "modeled_dependencies": [
+      "HMD finalization",
+      "video cursor disable",
+      "sleep without actual delay",
+      "flip-status writer supplies64 bytes",
+      "flip submission",
+      "buffer unregistration",
+      "two virtual cleanup hooks",
+      "ReleaseTrackedAllocationOrDefer records arguments and models only its established record-reset fields"
+    ],
+    "switch_analysis_metadata": {
+      "known_in_body_modes": 21,
+      "unique_destinations": 16,
+      "every_original_mode_target_pair_verified": true,
+      "runtime_bounds_guard_present": false
+    },
+    "tail_call_analysis_metadata": {
+      "14139e6a4": "CALL_RETURN"
+    },
+    "layout_cross_check": {
+      "primary_source": "https://raw.githubusercontent.com/shadps4-emu/shadPS4/main/src/core/libraries/videoout/video_out.h",
+      "reference_sha256": "408f5e63b87dfbd170a8bc47ec192c15f6e719e85c3a7c1233991856ef21cdd5",
+      "fields": {
+        "count": 0,
+        "process_time": 8,
+        "tsc": 16,
+        "flip_arg": 24,
+        "submit_tsc": 32,
+        "reserved0": 40,
+        "gc_queue_num": 48,
+        "flip_pending_num": 52,
+        "current_buffer": 56,
+        "reserved1": 60
+      },
+      "size": 64,
+      "matched_original_reads": {
+        "buffer_base": "RBP-0x58",
+        "pending": "RBP-0x24 = base+0x34",
+        "current_buffer": "RBP-0x20 = base+0x38"
+      },
+      "scope": "Current emulator header cross-check against original offsets; not proof of exact original Sony SDK/source version."
+    },
+    "limits": [
+      "Names/interfaces describe reviewed CPU behavior, not original source symbols or exact SDK/source-build equivalence.",
+      "Generated C still omits some imported/virtual call arguments and retains intrinsic/overlapping-global artifacts; original register instructions are authoritative.",
+      "No actual output device, HMD, cursor, allocator reclamation, virtual-method implementation or asynchronous GPU completion was executed in this checkpoint."
+    ]
   }
 }

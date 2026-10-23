@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9692,
-  "mapped_total": 2341,
-  "unmapped_total": 7351,
+  "mapped_total": 2343,
+  "unmapped_total": 7349,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60071,6 +60071,60 @@
           ]
         }
       ]
+    },
+    "14139df10": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "display-output",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original video-output/HMD/cursor imports and complete target/registration/teardown dataflow.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original and typed C review; per-function evidence separates static initializer review from scoped teardown fixtures.",
+      "code_sha256": "9a2750c27cacdfce635e1c80641418e8d3cc8d36c6f0c573c91584988f0b9d8c",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConfigureVideoOutputBuffersAndCursor",
+          "support": [
+            "Complete 1965-byte original function (387 instructions) and all 311 nonempty lines of typed C reviewed.",
+            "Saved name and consumed-register interface independently verified after reopening; original instruction bytes unchanged. Platform imports resolved from original SELF relocation/NIDs.",
+            "Consumes output-mode low32 EDI and raw low8 SIL option. Builds primary/optional auxiliary target state, registers two video-output buffers, configures output/HDR state and optional HMD reprojection for modes17/18, and manages the cached cursor.",
+            "Original21 signed-relative entries for modes0..20 map to16 in-body destinations. Saved analysis override matches every original mode/target pair; a direct tail jump is recorded as the resolved cursor-position import call.",
+            "Nonzero option selects the BT2020/PQ pixel-format branch and HDR tone-map luminance query. This records requested behavior, not verified hardware HDR output."
+          ]
+        }
+      ]
+    },
+    "14139e6c0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "display-output",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original video-output/HMD/cursor imports and complete target/registration/teardown dataflow.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original and typed C review; per-function evidence separates static initializer review from scoped teardown fixtures.",
+      "code_sha256": "106e80bac8c2685169962de5453ff775b171a86e48093072594121b748a0b1fa",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TearDownVideoOutputResources",
+          "support": [
+            "Complete 413-byte original function (84 instructions) and all 52 nonempty lines of typed C reviewed.",
+            "Saved name and consumed-register interface independently verified after reopening; original instruction bytes unchanged. Platform imports resolved from original SELF relocation/NIDs.",
+            "Modes17/18 finalize HMD reprojection; other values disable the cursor. First poll waits for pending-count0; after flip index-1 it exits when current-buffer is-1 OR pending-count is0.",
+            "Unregisters the stored buffer registration, sets its ID-1, invokes two virtual methods, forwards raw flags to four tracked-allocation cleanup calls, and resets exact global arrays/descriptor fields.",
+            "576 new whole-original cases verify mode/flag boundaries, distinct polling exits, exact arguments/order, resets, preserved bytes and original code using explicit dependencies."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -67513,6 +67567,17 @@
             {
               "id": "image-cache",
               "label": "Image cache",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "display-output",
+              "label": "Video output",
               "children": [
                 {
                   "id": "runtime-implementation",

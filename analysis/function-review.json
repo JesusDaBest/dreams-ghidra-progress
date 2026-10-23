@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "806 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "808 existing-function renames, 141 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9692,
-    "default_fun_names": 8589,
-    "other_names": 1103,
-    "verification": "complete_inventory_matches_baseline_plus_806_renames_and_141_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8587,
+    "other_names": 1105,
+    "verification": "complete_inventory_matches_baseline_plus_808_renames_and_141_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22606,6 +22606,58 @@
         "Pool metadata is valid, sorted and non-overlapping. Invalid pointers, cycles, overlap, pool-index validity, capacity and integer-overflow behavior are not established.",
         "Queue counts tested are0,1,4. No proof of error recovery or forward progress if completion slots never match.",
         "Names and types are descriptive working interfaces, not recovered source symbols/classes."
+      ]
+    },
+    {
+      "address": "14139df10",
+      "original_name": "FUN_14139df10",
+      "applied_name": "ConfigureVideoOutputBuffersAndCursor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConfigureVideoOutputBuffersAndCursor(int output_mode, uchar output_option)",
+      "evidence": [
+        "Complete 1965-byte original function (387 instructions) and all 311 nonempty lines of typed C reviewed.",
+        "Saved name and consumed-register interface independently verified after reopening; original instruction bytes unchanged. Platform imports resolved from original SELF relocation/NIDs.",
+        "Consumes output-mode low32 EDI and raw low8 SIL option. Builds primary/optional auxiliary target state, registers two video-output buffers, configures output/HDR state and optional HMD reprojection for modes17/18, and manages the cached cursor.",
+        "Original21 signed-relative entries for modes0..20 map to16 in-body destinations. Saved analysis override matches every original mode/target pair; a direct tail jump is recorded as the resolved cursor-position import call.",
+        "Nonzero option selects the BT2020/PQ pixel-format branch and HDR tone-map luminance query. This records requested behavior, not verified hardware HDR output."
+      ],
+      "caveats": [
+        "Names/interfaces describe reviewed CPU behavior, not original source symbols or exact SDK/source-build equivalence.",
+        "Generated C still omits some imported/virtual call arguments and retains intrinsic/overlapping-global artifacts; original register instructions are authoritative.",
+        "No actual output device, HMD, cursor, allocator reclamation, virtual-method implementation or asynchronous GPU completion was executed in this checkpoint.",
+        "Static review only: initializer not native-tested. Its resource factory and platform outcomes remain unverified.",
+        "No original bounds guard: modes outside0..20 are not established safe. The decompiler default is not an original invalid-mode fallback.",
+        "Allocation/registration failure handling and cached cursor-index validity are not proved."
+      ]
+    },
+    {
+      "address": "14139e6c0",
+      "original_name": "FUN_14139e6c0",
+      "applied_name": "TearDownVideoOutputResources",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TearDownVideoOutputResources(void)",
+      "evidence": [
+        "Complete 413-byte original function (84 instructions) and all 52 nonempty lines of typed C reviewed.",
+        "Saved name and consumed-register interface independently verified after reopening; original instruction bytes unchanged. Platform imports resolved from original SELF relocation/NIDs.",
+        "Modes17/18 finalize HMD reprojection; other values disable the cursor. First poll waits for pending-count0; after flip index-1 it exits when current-buffer is-1 OR pending-count is0.",
+        "Unregisters the stored buffer registration, sets its ID-1, invokes two virtual methods, forwards raw flags to four tracked-allocation cleanup calls, and resets exact global arrays/descriptor fields.",
+        "576 new whole-original cases verify mode/flag boundaries, distinct polling exits, exact arguments/order, resets, preserved bytes and original code using explicit dependencies."
+      ],
+      "caveats": [
+        "Names/interfaces describe reviewed CPU behavior, not original source symbols or exact SDK/source-build equivalence.",
+        "Generated C still omits some imported/virtual call arguments and retains intrinsic/overlapping-global artifacts; original register instructions are authoritative.",
+        "No actual output device, HMD, cursor, allocator reclamation, virtual-method implementation or asynchronous GPU completion was executed in this checkpoint.",
+        "Video/HMD, sleep/status, virtual methods and allocation cleanup are models, not real dependency execution.",
+        "Models populate full status even when returning an error; this does not prove real failed-call output behavior or guaranteed progress.",
+        "Valid non-null virtual-method state is assumed."
       ]
     }
   ],

@@ -8414,3 +8414,16 @@ The complete **758 original bytes / 204 instructions** and **145 nonempty lines 
 Mutex, thread-ID, event and timing primitives are explicit models. The second completion slot starts complete; delayed spinning there, live OS/GPU completion, concurrency, invalid/cyclic/overlapping metadata, queue capacity and guaranteed progress remain unverified. No completed fixture suite was rerun. The code does not become a verified live renderer because these metadata paths pass.
 
 Totals: **948 reviewed names / 9,692 defined functions**, **2,341 mapped / 7,351 unmapped**. This batch reviews two existing functions and creates no definitions. These are code-review counts, not a whole-game completion percentage.
+
+
+### Video-output configuration and teardown
+
+**ConfigureVideoOutputBuffersAndCursor** now identifies the output-mode initializer: target/resource setup, registration of two video buffers, output/HDR configuration, conditional HMD reprojection and cached cursor selection/positioning. **TearDownVideoOutputResources** identifies the paired finalization, polling, unregistration, virtual-method calls and allocation/descriptor cleanup. Their complete **2,378 original bytes / 471 instructions** and **363 nonempty lines of typed C** were reviewed, saved and independently checked after reopening.
+
+The initializer originally decompiled as an unresolved indirect jump. An analysis override now matches all **21 original mode entries (0..20) / 16 destinations**, and the original direct tail jump is recorded as the cursor-position import call. No executable bytes changed. **There is no original bounds guard**: the displayed C default must not be taken as an invalid-mode fallback. This initializer received static review only; it was not executed in a fixture or on hardware. Allocation/registration outcomes and cursor-state validity remain unresolved.
+
+The teardown received **576 new isolated whole-original cases**. The first polling loop requires pending-count zero. After submitting a flip with index -1, the second loop exits when **either** current-buffer is -1 **or** pending-count is zero. Tests distinguish those exits and check mode branches, raw flags, exact call order, global resets and preserved bytes. Video/HMD, status/sleep, virtual methods and tracked-allocation cleanup are explicit models. Models supply status even for negative API results; real failed-call outputs, asynchronous progress and GPU/deallocation effects are not verified. Completed suites were not rerun.
+
+The observed status offsets `0x34` and `0x38` agree with `flip_pending_num` and `current_buffer` in [shadPS4's FlipStatus definition](https://github.com/shadps4-emu/shadPS4/blob/main/src/core/libraries/videoout/video_out.h). This is a field-layout cross-check against the original reads, not an exact original SDK/source-version claim.
+
+These two functions are mapped under **Rendering → GPU resources & dispatch → Video output**. Totals: **950 reviewed names / 9,692 defined functions**, **2,343 mapped / 7,349 unmapped**. These are scoped code reviews, not verified whole-game rendering or original source recovery.
