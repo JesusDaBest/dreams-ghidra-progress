@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "852 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "853 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9703,
-    "default_fun_names": 8543,
-    "other_names": 1160,
-    "verification": "complete_inventory_matches_baseline_plus_852_renames_and_152_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8542,
+    "other_names": 1161,
+    "verification": "complete_inventory_matches_baseline_plus_853_renames_and_152_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23825,6 +23825,27 @@
         "No original class/source or Media Molecule equivalence claimed."
       ],
       "created_function": true
+    },
+    {
+      "address": "141449ec0",
+      "original_name": "FUN_141449ec0",
+      "applied_name": "LoadOrQueueImpStateByName",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV LoadOrQueueImpStateByName(void * state_name_working, void * payload_output_working, void * variant_name_working, uint minimum_revision_working, uint check_magic_working, uint mode_working)",
+      "evidence": [
+        "Entire original 7276-byte body (1165 instructions) and all 1157 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Mode!=1: opens built-in debug Imp directory then data directory asrb,builds1MiB serializer buffer,optionlow8 controls5f496d70 magic check,readsrevision andonlycalls SerializeImpStatePayload ifminimum_revision<=revision<=99999. ReturnAL reflects serializererrorzero; out-of-range revision canreturntruewithoutdecoding output. Mode1:rejectsnamelength>64,expires pending records usingprocesscounter/frequency; cachekey0=low64 Murmur128(name,seed0) xor286d375e ifoptionlow8nonzero;key1=low64 Murmur128(variant,seed0) xorzeroextended32(minimum_revision*cd99). Reusesmatchingcachepayload onactive request; otherwise reservescacheentry ifcount<8,builds load/find/remove callback descriptors,queuesdeduplicated work,broadcastscondition,andreturnsfalse pending. Lookup/removal callbacks are reviewed14144bb40/14144bc10; loadcallback14144bb30 forcesmode0. Output is4220-byte Imp payload; originalclasses unresolved. Full7276-byte original/1165instructions and1157 nonempty typedC read; bothdirectincomingwindows read,caller14148a3d7 testsAL. SixSysV workingargs RDI/RSI/RDX/ECX/R8D/R9D,AL byte success. Static-only,zero newnativecases. FileI/O,allocation,asynchronouscompletion,locking/pointerlifetime,malformeddata andlivegame untested; callback manager andworker bodies notimplicitlyreviewed. OriginalC++/MMsource identity unclaimed."
+      ],
+      "caveats": [
+        "Complete7276-byte original body (1165 instructions) and1157 nonempty typed C lines read; both direct incoming windows checked, including AL result use.",
+        "Static-only:zero new native cases. File I/O,allocation,asynchronous completion,callback managers,worker bodies,locking andpointer lifetime not runtime verified.",
+        "File version outside the accepted interval can skip decode without setting error; true does not guarantee output was populated. Cache mode false may mean queued/pending work.",
+        "Original classes/field names,malformed-data safety,all caller contracts and Media Molecule source equivalence remain unproven."
+      ]
     }
   ],
   "deferred": [

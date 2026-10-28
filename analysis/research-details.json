@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1005,
+    "checked_and_applied_names": 1006,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1005,
+    "verified_names": 1006,
     "function_count": 9703,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2078,7 +2078,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "852 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "853 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31105,6 +31105,34 @@
       "216 isolated original lookup cases passed with controlled mutex/threadID substitutes,initializedguard,count0..8,duplicates andhalf-key mismatch queries. Exact borrowed payloadpointer andwholefixture checked.",
       "Removal/compaction and lazyguard initialization are static-only. No real mutex/platform implementation,pointer-lifetime guarantee,invalidcounts,aliases,concurrency orlivegame validation.",
       "No original class/source or Media Molecule equivalence claimed."
+    ]
+  },
+  "imp_file_cache_load_checkpoint": {
+    "functions": {
+      "141449ec0": {
+        "name": "LoadOrQueueImpStateByName",
+        "signature": "uchar PS4_SYSV LoadOrQueueImpStateByName(void * state_name_working, void * payload_output_working, void * variant_name_working, uint minimum_revision_working, uint check_magic_working, uint mode_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "3b6efbc1d0165ea944c2c21453c177b93929b6967437dc4d2e419e8c97663bcd",
+        "size": 7276,
+        "instructions": 1165,
+        "created": false,
+        "c_sha256": "b42550510b438ec21a3f1e16e6248e775c1bb6021e4d197f3d021e3a3d66bccf",
+        "nonempty_c_lines": 1179
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 7276,
+    "original_instructions": 1165,
+    "typed_c_nonempty_lines": 1157,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete7276-byte original body (1165 instructions) and1157 nonempty typed C lines read; both direct incoming windows checked, including AL result use.",
+      "Static-only:zero new native cases. File I/O,allocation,asynchronous completion,callback managers,worker bodies,locking andpointer lifetime not runtime verified.",
+      "File version outside the accepted interval can skip decode without setting error; true does not guarantee output was populated. Cache mode false may mean queued/pending work.",
+      "Original classes/field names,malformed-data safety,all caller contracts and Media Molecule source equivalence remain unproven."
     ]
   }
 }

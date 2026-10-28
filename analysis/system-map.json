@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9703,
-  "mapped_total": 2398,
-  "unmapped_total": 7305,
+  "mapped_total": 2399,
+  "unmapped_total": 7304,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61442,6 +61442,30 @@
           "support": [
             "Entire original 903-byte body (158 instructions) and all 124 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Searches same128-bit cache key andremovesfirstmatch. Laterrecords shift down:key16 bytes copied,inline payloaddefaults andfour emote-keypack calls executed,then4220-byte nextpayload copied. Countdecremented once;returns AL1 onmatch,AL0 onmiss. Lastinactive slotnotcleared. Constant arithmetic inversely divides4230-byte offset tocompute remainingrecords; modularidentity (423*820e0551772d3475)==-1 mod2^64 independentlychecked. Locks/unlocks same mutex; lazyguard initialized count. Entire original andtypedC read;static-only,including compaction/memcpy/packerpaths. No native removal orallocator/synchronization execution. SysV RDI/RSI keywords byvalue,notpointers. Fulloriginal andtypedC read. Recorded callback descriptors from141449ec0 reference bothfunctions; enclosing registrationbody notfullyreviewed. Mutex/threadID/guard/memcpy imports independentlyresolved. Allindirectcallers,aliases,invalidcounts,concurrency andlivegame unverified. Originalclassidentity andMMsourceequivalence unclaimed."
+          ]
+        }
+      ]
+    },
+    "141449ec0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct Imp file paths,payload serializer call,matching4220-byte cache records and load/find/remove callback descriptors.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original and typed C review with independently resolved imports and both direct caller windows;static-only.",
+      "code_sha256": "3b6efbc1d0165ea944c2c21453c177b93929b6967437dc4d2e419e8c97663bcd",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "LoadOrQueueImpStateByName",
+          "support": [
+            "Entire original 7276-byte body (1165 instructions) and all 1157 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Mode!=1: opens built-in debug Imp directory then data directory asrb,builds1MiB serializer buffer,optionlow8 controls5f496d70 magic check,readsrevision andonlycalls SerializeImpStatePayload ifminimum_revision<=revision<=99999. ReturnAL reflects serializererrorzero; out-of-range revision canreturntruewithoutdecoding output. Mode1:rejectsnamelength>64,expires pending records usingprocesscounter/frequency; cachekey0=low64 Murmur128(name,seed0) xor286d375e ifoptionlow8nonzero;key1=low64 Murmur128(variant,seed0) xorzeroextended32(minimum_revision*cd99). Reusesmatchingcachepayload onactive request; otherwise reservescacheentry ifcount<8,builds load/find/remove callback descriptors,queuesdeduplicated work,broadcastscondition,andreturnsfalse pending. Lookup/removal callbacks are reviewed14144bb40/14144bc10; loadcallback14144bb30 forcesmode0. Output is4220-byte Imp payload; originalclasses unresolved. Full7276-byte original/1165instructions and1157 nonempty typedC read; bothdirectincomingwindows read,caller14148a3d7 testsAL. SixSysV workingargs RDI/RSI/RDX/ECX/R8D/R9D,AL byte success. Static-only,zero newnativecases. FileI/O,allocation,asynchronouscompletion,locking/pointerlifetime,malformeddata andlivegame untested; callback manager andworker bodies notimplicitlyreviewed. OriginalC++/MMsource identity unclaimed."
           ]
         }
       ]

@@ -9478,3 +9478,18 @@ Both use the same mutex and lazy count initialization. The lookup releases the m
 Removal/compaction, lazy guard initialization and its callback registration remain **static-only**. Mutex/thread ID/guard/memcpy imports were independently resolved, but linked platform implementations were not executed. Invalid counts, aliases, concurrency, pointer lifetime and live-game behavior remain untested. Original class identity and Media Molecule source equivalence are not claimed.
 
 Both helpers are counted once under Imp visuals. Totals: **1,005 reviewed names /9,703 defined functions**, **2,398 mapped /7,305 unmapped**. Whole-game completion remains unknown.
+
+
+### Loading or queuing Imp state by name
+
+**LoadOrQueueImpStateByName** was read in full: **7,276 original bytes /1,165 instructions** and **1,157 nonempty diagnostic C lines**. Its descriptive name, six working parameters and byte success result survived independent reopening with original bytes unchanged. Both direct incoming windows were checked; the substantive caller tests AL.
+
+Modes other than 1 try two built-in Imp data directories in order, open the file for binary reading, prepare a 1 MiB serializer buffer and optionally check the Imp magic prefix. The stored revision is decoded only when it is at least the requested minimum and below 100000. An out-of-range revision can skip decoding without setting a serializer error: **true alone does not prove the output payload was populated**.
+
+Mode 1 rejects names longer than 64 bytes, expires pending records using a process counter/frequency, and derives a two-word key from the names, minimum revision and magic-check option. It checks cached payloads or reserves an entry while count is below 8. On a miss it prepares load/find/remove callbacks, deduplicates queued requests, broadcasts the worker condition and returns false while unavailable. The load callback forces file mode; lookup and removal are the previously reviewed cache helpers. Actual worker completion is not implicitly verified.
+
+The output is the same 0x4220-byte Imp payload. Cache keys use the low 64-bit halves of two seeded-zero Murmur128 hashes, with the name option XOR and a zero-extended 32-bit minimum-revision product applied separately. These are descriptive dataflow findings, not recovered original class/field names.
+
+**Static analysis only; zero new native cases.** File I/O, allocation/failure, callback management, worker execution, asynchronous completion, malformed inputs, synchronization/pointer lifetime and live-game behavior remain untested. Related import names were independently resolved, without executing their linked implementations. No Media Molecule source match or server/authentication behavior is claimed.
+
+The routine is counted once under Imp visuals. Totals: **1,006 reviewed names /9,703 defined functions**, **2,399 mapped /7,304 unmapped**. Whole-game completion remains unknown.
