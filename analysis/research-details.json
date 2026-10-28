@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1007,
+    "checked_and_applied_names": 1008,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1007,
+    "verified_names": 1008,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "853 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "854 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31162,6 +31162,32 @@
       "Static-only:zero native cases. Real condition/mutex/TLS,callback managers,allocation/failure,asynchronous completion and live-game behavior untested.",
       "No normal return instruction observed; void/noargs is an opaque working interface,not a recovered original pthread prototype or shutdown guarantee.",
       "Callback lifetime,capacity behavior under races,malformed data and Media Molecule source equivalence remain unproven."
+    ]
+  },
+  "imp_named_state_caller_checkpoint": {
+    "functions": {
+      "14148a0c0": {
+        "name": "LoadImpCustomizationByDescriptorIndex",
+        "signature": "uchar PS4_SYSV LoadImpCustomizationByDescriptorIndex(int descriptor_index_working, void * payload_output_working, uint mode_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "880aca1402018af82611d42dfa5bfc1183163c0ba50c2519f075ee498cf57163",
+        "size": 1028,
+        "instructions": 199,
+        "created": false,
+        "c_sha256": "44b85bbfe0dd599b2dbc43350083a77263a0676ec7f04adde2cc423203526b46",
+        "nonempty_c_lines": 196
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 1028,
+    "original_instructions": 199,
+    "typed_c_nonempty_lines": 179,
+    "new_native_cases": 60,
+    "scope_limits": [
+      "Cache-hit and rejection paths passed60 isolated original cases with original hash and pool lookup, synthetic disjoint buffers and controlled strlen/memcpy. Reload path statically reviewed only.",
+      "Unsupported file revisions may yield loader success without decoding; valid pointer/count invariants required. No live game, I/O, concurrency or original-source equivalence established."
     ]
   }
 }

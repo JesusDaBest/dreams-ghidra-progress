@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "853 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "854 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8542,
-    "other_names": 1162,
-    "verification": "complete_inventory_matches_baseline_plus_853_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8541,
+    "other_names": 1163,
+    "verification": "complete_inventory_matches_baseline_plus_854_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23868,6 +23868,25 @@
         "Callback lifetime,capacity behavior under races,malformed data and Media Molecule source equivalence remain unproven."
       ],
       "created_function": true
+    },
+    {
+      "address": "14148a0c0",
+      "original_name": "FUN_14148a0c0",
+      "applied_name": "LoadImpCustomizationByDescriptorIndex",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV LoadImpCustomizationByDescriptorIndex(int descriptor_index_working, void * payload_output_working, uint mode_working)",
+      "evidence": [
+        "Entire1028-byte body (199 instructions) and all179 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+        "Analyst descriptive name. Loads Imp customization using an indexed 80-byte descriptor. Rejects out-of-range index or empty name. Cache key is lower64 MurmurHash3_x64_128(name,seed0) XOR descriptor+0x30, plus descriptor+0x38; pool kind3. Matching nonzero descriptor+0x48 and payload hash copies0x4220 bytes directly. Otherwise builds chars/%s.dat, initializes temporary defaults, and calls LoadOrQueueImpStateByName with variant customization, minimum revision3, magic check1 and supplied mode. False propagates; true installs payload, calls ClearUnusedImpBlocksAndHashPayload twice, updates descriptor hash and, only in mode0, global usage/time stamps, then copies output. AL boolean return. Whole1028-byte original/199 instructions and typed C read.60 isolated original cache/rejection cases passed with original hash/pool lookup and controlled strlen/memcpy, complete output/descriptor/pool/global checks. Reload path static only; loader success does not guarantee decode for unsupported revision. Valid pointer/count invariants required; concurrency, I/O and live game untested. No original source-name or MM-source equivalence claim."
+      ],
+      "caveats": [
+        "Cache-hit and rejection paths passed60 isolated original cases with original hash and pool lookup, synthetic disjoint buffers and controlled strlen/memcpy. Reload path statically reviewed only.",
+        "Unsupported file revisions may yield loader success without decoding; valid pointer/count invariants required. No live game, I/O, concurrency or original-source equivalence established."
+      ]
     }
   ],
   "deferred": [

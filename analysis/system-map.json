@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2400,
-  "unmapped_total": 7304,
+  "mapped_total": 2401,
+  "unmapped_total": 7303,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61490,6 +61490,30 @@
           "support": [
             "Entire original 3244-byte body (705 instructions) and all 528 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Threadstartup window passes thisentry toindependentlyresolved scePthreadCreate withname ImpSerialiser. Complete3244-byte original/705instructions and528 nonempty typedC read. Reads currentthreadname andsets TLS,locksqueue mutex148a546e0,waitsoncondition148a546d8 whenneitherqueuedrequestsnorinvalidatedactiveentries. Queuedrecords stridef0,activeentries stride50; limit8 activeentries. Clonesrequestname/callbackobjects. Onavailableactivecapacity,unlocksqueuemutex,invokeslookupforpayload thenloadcallbackwithname/output/variant/minrevision/magicarguments;relocksaftercallback. Successfulload records128-bit key anddeadline nowseconds+3 usingprocesscounter/frequency. Failure/capacity invokesremovalcallback. Dequeuesmatchingrequestbydestroyingcallbacks/ownedstring andcompactingf0 records. Invalidatedactiveentries invoke removal,thencompact50 records/decrementcount. Requiredmissingcallback takesbad_function_call importthenUD2. No normal RET inbody;void/noargs isopaque workinginterface,originalpthreadprototype unrecovered. Allnormalpathsloop; no shutdownprotocolproved. Static-only,zero newnativecases. Realcondition/mutex,TLS,callbackclones/destructors,allocationfailure,capacity/lifetime/concurrency andlivegame untested. NooriginalC++classname/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "14148a0c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Loads named Imp customization payloads through the reviewed cache/file loader.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original and typed C review plus60 isolated original cache/rejection cases.",
+      "code_sha256": "880aca1402018af82611d42dfa5bfc1183163c0ba50c2519f075ee498cf57163",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "LoadImpCustomizationByDescriptorIndex",
+          "support": [
+            "Entire1028-byte body (199 instructions) and all179 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name. Loads Imp customization using an indexed 80-byte descriptor. Rejects out-of-range index or empty name. Cache key is lower64 MurmurHash3_x64_128(name,seed0) XOR descriptor+0x30, plus descriptor+0x38; pool kind3. Matching nonzero descriptor+0x48 and payload hash copies0x4220 bytes directly. Otherwise builds chars/%s.dat, initializes temporary defaults, and calls LoadOrQueueImpStateByName with variant customization, minimum revision3, magic check1 and supplied mode. False propagates; true installs payload, calls ClearUnusedImpBlocksAndHashPayload twice, updates descriptor hash and, only in mode0, global usage/time stamps, then copies output. AL boolean return. Whole1028-byte original/199 instructions and typed C read.60 isolated original cache/rejection cases passed with original hash/pool lookup and controlled strlen/memcpy, complete output/descriptor/pool/global checks. Reload path static only; loader success does not guarantee decode for unsupported revision. Valid pointer/count invariants required; concurrency, I/O and live game untested. No original source-name or MM-source equivalence claim."
           ]
         }
       ]

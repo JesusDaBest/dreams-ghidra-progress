@@ -8937,3 +8937,14 @@ The queued and active lists use 0xf0-byte and 0x50-byte records respectively. Ca
 **Static analysis only; zero new native cases.** Real thread/TLS/condition/mutex execution, callback ownership, allocation/failure, asynchronous completion, races/deadlocks, malformed inputs and live-game behavior remain untested. Import bindings and the 3.0 deadline constant were independently inspected without executing platform implementations. No Media Molecule source match or whole-system correctness claim is made.
 
 The worker is counted once under Imp visuals. Totals: **1,007 reviewed names /9,704 defined functions**, **2,400 mapped /7,304 unmapped**. Whole-game completion remains unknown.
+
+
+### Indexed Imp customization loading
+
+**LoadImpCustomizationByDescriptorIndex** was read in full: **1,028 original bytes /199 instructions** and **179 nonempty diagnostic C lines**. Its working interface and name were independently reopened with executable bytes unchanged.
+
+An 80-byte descriptor supplies the name and cache keys. A matching nonzero payload hash lets the routine copy the full payload directly. Otherwise it loads `chars/<name>.dat` with variant `customization`, minimum revision 3 and the supplied mode. Successful loading installs the payload, calls the reviewed cleanup/hash routine twice, updates the descriptor hash and copies the output. Mode zero also updates usage/time stamps. The duplicate postprocessing calls are present in the executable.
+
+**60 new isolated original cache-hit/rejection cases passed**, using the original hash and pool lookup plus controlled strlen/memcpy. Complete descriptor, pool, globals, output and guards were compared. Reload behavior is statically reviewed only; unsupported revisions can report loader success without decoding. Pointer/count invariants, concurrency, file I/O and live-game behavior remain unproven.
+
+Totals: **1,008 reviewed names /9,704 defined functions**, **2,401 mapped /7,303 unmapped**. These are reviewed-code counts; whole-game completion remains unknown.
