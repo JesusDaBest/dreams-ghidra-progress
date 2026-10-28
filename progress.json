@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 974,
+    "done": 975,
     "todo": 1439,
-    "total": 2413,
-    "behavior_or_helpers_reviewed": 900,
+    "total": 2414,
+    "behavior_or_helpers_reviewed": 901,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -20306,12 +20306,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 160,
+        "done": 161,
         "todo": 302,
-        "total": 462,
-        "behavior_or_helpers_reviewed": 156,
+        "total": 463,
+        "behavior_or_helpers_reviewed": 157,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 253,
+        "runtime_functions_identified": 254,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -20340,6 +20340,7 @@
           "PruneInvalidKeyedRecords",
           "RemoveFirstKey16RecordMatchingOrder",
           "InsertKey16RecordIfKeyAndOrderAbsent",
+          "RefreshPadSampleRingAndMotionState",
           "ComposeIndexedPaletteRotationTransform",
           "ComputePaletteSamplingOffsetTransform",
           "ComputeSpatiallyWeightedPaletteColor",
@@ -20806,6 +20807,7 @@
           "140767c70",
           "140767ce0",
           "140767e80",
+          "1408ad160",
           "1408fdf10",
           "1408fe340",
           "1408fe6e0",
@@ -26193,16 +26195,17 @@
           {
             "name": "interface/input",
             "label": "Controls & input",
-            "done": 6,
+            "done": 7,
             "todo": 32,
-            "total": 38,
-            "behavior_or_helpers_reviewed": 6,
+            "total": 39,
+            "behavior_or_helpers_reviewed": 7,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 6,
+            "runtime_functions_identified": 7,
             "property_type_functions_identified": 32,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "RefreshPadSampleRingAndMotionState",
               "AdjustEditorScalarFromRelativeRotation",
               "BuildLocalInputAndTrackingBundle",
               "BuildVRTrackedPadInputPacket",
@@ -26245,6 +26248,7 @@
               "0x140d2f5d0"
             ],
             "done_addresses": [
+              "1408ad160",
               "140a034d0",
               "140a635b0",
               "14121a320",
@@ -26288,6 +26292,65 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "interface/input/input-state-records",
+                "label": "Input state records",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RefreshPadSampleRingAndMotionState",
+                  "BuildLocalInputAndTrackingBundle",
+                  "BuildVRTrackedPadInputPacket",
+                  "InitializeFiveUIInputRecords"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1408ad160",
+                  "140a635b0",
+                  "14121a320",
+                  "1412a57a0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/input/input-state-records/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RefreshPadSampleRingAndMotionState",
+                      "BuildLocalInputAndTrackingBundle",
+                      "BuildVRTrackedPadInputPacket",
+                      "InitializeFiveUIInputRecords"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ad160",
+                      "140a635b0",
+                      "14121a320",
+                      "1412a57a0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "interface/input/econtrollertypefilter",
                 "label": "Controller Type Filter",
@@ -26448,61 +26511,6 @@
                       "140cca4d0",
                       "140cca520"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "interface/input/input-state-records",
-                "label": "Input state records",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "BuildLocalInputAndTrackingBundle",
-                  "BuildVRTrackedPadInputPacket",
-                  "InitializeFiveUIInputRecords"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140a635b0",
-                  "14121a320",
-                  "1412a57a0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "interface/input/input-state-records/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "BuildLocalInputAndTrackingBundle",
-                      "BuildVRTrackedPadInputPacket",
-                      "InitializeFiveUIInputRecords"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140a635b0",
-                      "14121a320",
-                      "1412a57a0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -48757,5 +48765,5 @@
       }
     ]
   },
-  "unmapped": 7291
+  "unmapped": 7290
 }

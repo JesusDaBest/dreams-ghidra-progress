@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "866 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "867 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8529,
-    "other_names": 1175,
-    "verification": "complete_inventory_matches_baseline_plus_866_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8528,
+    "other_names": 1176,
+    "verification": "complete_inventory_matches_baseline_plus_867_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24126,6 +24126,26 @@
         "Static full original and typed C review; no whole-function native or real pad/VR execution.",
         "Complete original structures, device/slot enums and capture-option meaning remain unresolved. False can follow partial packet/cache/global writes.",
         "16 direct import bindings and selected pad-refresh dependency verified; no whole-child credit. Diagnostic C has missing arguments/raw-bitcast artifacts; original assembly governs. No MM/source equivalence."
+      ]
+    },
+    {
+      "address": "1408ad160",
+      "original_name": "FUN_1408ad160",
+      "applied_name": "RefreshPadSampleRingAndMotionState",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RefreshPadSampleRingAndMotionState(void * pad_state_working)",
+      "evidence": [
+        "Whole 2249-byte original /474 instructions and587 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name; original class and field enums unresolved. PS4_SYSV RDI opaque mutable pad state, void. Calls scePadRead(handle,temporary_samples,64); signed nonpositive count returns without state updates. Positive count refreshes controller information at state+0x38, ignores its return code, and detects last-sample connectivity/controller-info-byte changes. Copies each 120-byte sample into state+0x58+(counter&255)*120; increments DWORD counter+0x54. Computes per-slot activity metric at+0x7858 and updates distinct activity timestamps. Optional motion path selected by controller-info byte+0x42 integrates angular velocity minus stored bias, uses timestamp delta scaled1e-6 capped0.1, normalizes quaternion-like orientation and applies acceleration-based gravity correction using expf. Keeps that controller-info byte unnamed: it is not established as connectedCount. Updates button/analog/motion threshold timestamps; Options bit8 separately updates+0x18. Final connected/enabled policy may toggle scePadSetAngularVelocityBiasCorrectionState only on state change; ignores platform result then records requested boolean. Policy uses unsigned timestamp differences with strict6000000/20000000 boundaries. GetInfo failure handling, actual hardware timing, full class layout and floating-point edge behavior remain unresolved. Whole2249 original bytes/474 instructions and587 nonempty typed C lines read, five import bindings and six direct caller windows inspected. Static review only, zero new native cases, no live platform calls or MM/source equivalence."
+      ],
+      "caveats": [
+        "Static whole original and typed C review; zero new native cases and no real pad/hardware execution.",
+        "Controller-information byte+0x42 remains opaque; full original class layout and hardware timing remain unresolved.",
+        "Platform information/bias-set return codes are ignored; floating-point edge behavior and positive count maximum64 contract are not runtime validated. No MM/source equivalence."
       ]
     }
   ],

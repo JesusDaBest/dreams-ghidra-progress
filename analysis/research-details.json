@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1020,
+    "checked_and_applied_names": 1021,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1020,
+    "verified_names": 1021,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "866 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "867 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31514,6 +31514,41 @@
       "Remaps buttons while preserving selected destination bits, copies analog bytes, packs up to two auxiliary records, and normalizes/quantizes pose.",
       "False is not an atomic no-op: metadata, tracking cache or global state may already change.",
       "Sample refresh dependency imports scePadRead and controller information; whole dependency implementation not yet reviewed."
+    ]
+  },
+  "input_sample_ring_refresh_checkpoint": {
+    "functions": {
+      "1408ad160": {
+        "name": "RefreshPadSampleRingAndMotionState",
+        "signature": "void PS4_SYSV RefreshPadSampleRingAndMotionState(void * pad_state_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "9f64960a905bcbf74ddfc935eac767f028517127c6228994842940890f9cec23",
+        "size": 2249,
+        "instructions": 474,
+        "created": false,
+        "c_sha256": "af302a9bac8445652bf018f83487206d636362710c7e9eada38ba2b35f8dfd02",
+        "nonempty_c_lines": 609
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 2249,
+    "original_instructions": 474,
+    "typed_c_nonempty_lines": 587,
+    "new_native_cases": 0,
+    "verified_direct_import_bindings": 5,
+    "direct_caller_windows": 6,
+    "scope_limits": [
+      "Static whole original and typed C review; zero new native cases and no real pad/hardware execution.",
+      "Controller-information byte+0x42 remains opaque; full original class layout and hardware timing remain unresolved.",
+      "Platform information/bias-set return codes are ignored; floating-point edge behavior and positive count maximum64 contract are not runtime validated. No MM/source equivalence."
+    ],
+    "findings": [
+      "Reads up to64 pad samples into a temporary buffer and appends returned samples to a256-slot history of120-byte records.",
+      "Computes input/motion activity measures and distinct activity timestamps.",
+      "Optional orientation integration/filtering and angular-velocity bias correction policy are present; platform results are not checked.",
+      "Controller-information byte used for the optional motion branch remains opaque; do not equate it with a connection count."
     ]
   }
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2413,
-  "unmapped_total": 7291,
+  "mapped_total": 2414,
+  "unmapped_total": 7290,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61802,6 +61802,30 @@
           "support": [
             "Whole 3567-byte original /731 instructions and701 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
             "Analyst descriptive name; original enums/classes not recovered. PS4_SYSV: RDIpreinitialized65-bytepacket,RSIopaque sample mutex,RDXpad sample ring,RCXlast-sample timestamp pointer,R8Blow-byte aggregation flag,R9Dopaque capture option(low-byte0/1 cases),stack+8 tracking device i32,stack+16 slot i32;ALboolean packet-built result. Device-1 or disabled tracker returnsfalse early. Reads VR tracker result at adjusted tracking time; maintains per-slot0x5f0 cache,can use flagged cached result/recalibrate/reregister. Slot3 selects0x800 flag,others0x100; original slot enum unresolved. Calls pad sample-ring refresh under supplied mutex; selected child entry/import proof establishes scePadRead/controllerinformation,not full child semantics. Reads latest120-byte ring sample; option0 scans at most255 records for samples newer than last timestamp,ORs32-bit buttons,updates timestamp; first sample or zeroaggregateflag uses latest buttons. Remaps bits,preserves destinationmaskf8051000,copies4analogbytes,encodes up to2 auxiliary records,sets packet status/metadata. Normalizes and packs quaternion-like pose into three15-bit components plus omitted-component tag,and writes transformed position/tracking values. Resultfalse may follow tracker cache/global/packet metadata changes; no rollback/no-write promise. Whole3567 original bytes/731instructions and701nonempty typedC lines read;16 direct import bindings/original thunks verified;two original caller windows from reviewed bundle producer read. Static only,zero new native cases,real pad/VR behavior not executed; sample child not implicitly reviewed; complete field types/touch enums/capture mode/frame cadence unresolved. Generated C missing helperarg and rawbitcast artifacts; original registers govern. No MM/source equivalence."
+          ]
+        }
+      ]
+    },
+    "1408ad160": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-state-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Refreshes the pad sample ring consumed by the reviewed tracked input packet builder; whole original/typed C and six direct caller windows reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full2249-byte original/474 instructions and587 C lines;5 direct import bindings verified, six caller windows read. Static only; no new native execution.",
+      "code_sha256": "9f64960a905bcbf74ddfc935eac767f028517127c6228994842940890f9cec23",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RefreshPadSampleRingAndMotionState",
+          "support": [
+            "Whole 2249-byte original /474 instructions and587 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+            "Analyst descriptive name; original class and field enums unresolved. PS4_SYSV RDI opaque mutable pad state, void. Calls scePadRead(handle,temporary_samples,64); signed nonpositive count returns without state updates. Positive count refreshes controller information at state+0x38, ignores its return code, and detects last-sample connectivity/controller-info-byte changes. Copies each 120-byte sample into state+0x58+(counter&255)*120; increments DWORD counter+0x54. Computes per-slot activity metric at+0x7858 and updates distinct activity timestamps. Optional motion path selected by controller-info byte+0x42 integrates angular velocity minus stored bias, uses timestamp delta scaled1e-6 capped0.1, normalizes quaternion-like orientation and applies acceleration-based gravity correction using expf. Keeps that controller-info byte unnamed: it is not established as connectedCount. Updates button/analog/motion threshold timestamps; Options bit8 separately updates+0x18. Final connected/enabled policy may toggle scePadSetAngularVelocityBiasCorrectionState only on state change; ignores platform result then records requested boolean. Policy uses unsigned timestamp differences with strict6000000/20000000 boundaries. GetInfo failure handling, actual hardware timing, full class layout and floating-point edge behavior remain unresolved. Whole2249 original bytes/474 instructions and587 nonempty typed C lines read, five import bindings and six direct caller windows inspected. Static review only, zero new native cases, no live platform calls or MM/source equivalence."
           ]
         }
       ]

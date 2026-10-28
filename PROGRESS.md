@@ -9075,3 +9075,14 @@ The helper combines VR-tracker results or selected cached tracking data with a p
 A false result does **not** promise an unchanged packet or state: tracking caches, globals or packet metadata can already have been written. This is static review with **zero new native cases**. Complete original structures, slot/device enums, option meanings and real pad/VR behavior remain unresolved. Some decompiler arguments and bitcasts are inaccurate; original assembly governs. No source-build equivalence is claimed.
 
 Totals: **1,020 reviewed names /9,704 defined functions**, **2,413 mapped /7,291 unmapped**. Whole-game completion remains unknown.
+
+
+### Pad sample history and motion state
+
+**RefreshPadSampleRingAndMotionState** was read in full: **2,249 original bytes /474 instructions** and **587 nonempty diagnostic C lines**. The saved descriptive name and working pointer interface passed independent reopening with executable bytes unchanged. Five direct import bindings and six caller windows were inspected.
+
+It reads up to 64 controller samples, appends returned samples to a 256-slot history of 120-byte records, computes activity measures and updates separate activity timestamps. Its optional motion path integrates angular velocity and applies acceleration-based orientation correction. A later policy can request a change to angular-velocity bias correction.
+
+This is **static analysis, with zero new native cases**. Hardware behavior, complete original structures and floating-point edge behavior remain unresolved. The controller-information byte selecting the optional motion path remains unnamed. The game ignores the information-query and bias-setting return codes. No original-source equivalence is claimed.
+
+Totals: **1,021 reviewed names /9,704 defined functions**, **2,414 mapped /7,290 unmapped**. Whole-game completion remains unknown.
