@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "867 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "868 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8528,
-    "other_names": 1176,
-    "verification": "complete_inventory_matches_baseline_plus_867_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8527,
+    "other_names": 1177,
+    "verification": "complete_inventory_matches_baseline_plus_868_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24146,6 +24146,26 @@
         "Static whole original and typed C review; zero new native cases and no real pad/hardware execution.",
         "Controller-information byte+0x42 remains opaque; full original class layout and hardware timing remain unresolved.",
         "Platform information/bias-set return codes are ignored; floating-point edge behavior and positive count maximum64 contract are not runtime validated. No MM/source equivalence."
+      ]
+    },
+    {
+      "address": "1408ae960",
+      "original_name": "FUN_1408ae960",
+      "applied_name": "BuildPadMotionInputPacket",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV BuildPadMotionInputPacket(void * packet_working, int user_working, void * mutex_working, void * pad_state_working, uchar interpolation_working, uchar aggregate_working, float scale_working, void * setting_working, void * motion_state_working, uchar option_working)",
+      "evidence": [
+        "Whole 7876-byte original /1576 instructions and1863 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name; original enums/classes unresolved. PS4_SYSV: RDI preinitialized65-bytepacket,ESI user-like integer,RDXexternal sample mutex,RCXpadstate,R8Blow-byte interpolation flag,R9Blow-byte aggregation flag,XMM0float scale;entry stack+8 setting pointer,+16 mutable motion/reference-state pointer,+24 low-byte option;AL saved post-refresh sample-connected byte. Original entry/caller registers govern generated C, whose untyped imported math returns and bitcasts are inaccurate. Writes packet header before connected check;false does not promise unchanged packet. Estimates sample interval from pre-refresh ring timestamps128 records apart; optional target time uses current process time minus1.5 estimated intervals. Refreshes sample ring under mutex, copies latest120-byte sample; optional backward search up to255 samples and hemisphere-correct normalized linear quaternion interpolation. Option0 scans history newer than saved motionstate+0x20,ORs buttons and conditionally carries nonzero trigger values;uses aggregate result only if prior timestamp nonzero and aggregation flag equals1,then advances timestamp. Remaps buttons,triggers,analogbytes and up to2 auxiliary records. Computes projected motion values from normalized relative orientation,reference quaternion and scale/settings;may rebase reference when settings change,initialize incomplete reference or adjust at clamp boundary. Uses tanf,powf,atan2f,acosf,sincosf and isfinite checks; exact original setting/option semantics and pathological floating point behavior remain unresolved. Packs normalized quaternion into three15-bit components plus omitted-component tag,clamps two motion components to+-100,writes third projected component,zeroes packet+0x14..0x1f. Option0 can update global imp-position snapshot or emit formatted imp_position_x/imp_abs_position_x/imp_position_y/imp_abs_position_y/imp_position_z and controller_type fields;original strings DS4/Gun independently checked. Updates motionstate flag+0x29. Full7876original bytes/1576instructions and1863nonempty typedC lines read;14 direct imports matched original thunks;both direct caller windows in reviewed input-bundle producer read. Static only,zero new native cases;hardware/MM/source equivalence not claimed. Query child1408b8f10 whole1026-byte original read but not fully semantically resolved or credited."
+      ],
+      "caveats": [
+        "Static full original/typed C review; zero new native cases and no real controller execution.",
+        "Complete original classes, setting/option meanings, motion math edge behavior and hardware timing remain unresolved.",
+        "Diagnostic C omits indirect formatting arguments and has inaccurate imported-math return types. Two exact reviewed formatting renderings are accepted for naming verification only; original bytes and ABI remain strict. No runnable-C or MM/source equivalence."
       ]
     }
   ],

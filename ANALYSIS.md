@@ -9655,3 +9655,14 @@ It reads up to 64 controller samples, appends returned samples to a 256-slot his
 This is **static analysis, with zero new native cases**. Hardware behavior, complete original structures and floating-point edge behavior remain unresolved. The controller-information byte selecting the optional motion path remains unnamed. The game ignores the information-query and bias-setting return codes. No original-source equivalence is claimed.
 
 Totals: **1,021 reviewed names /9,704 defined functions**, **2,414 mapped /7,290 unmapped**. Whole-game completion remains unknown.
+
+
+### Controller motion packet construction
+
+**BuildPadMotionInputPacket** was read in full: **7,876 original bytes /1,576 instructions** and **1,863 nonempty diagnostic C lines**. Its saved descriptive name and ten-argument working interface passed independent reopening with executable bytes unchanged. Fourteen direct import bindings and both direct caller windows in the reviewed local input-bundle producer were inspected.
+
+It consumes refreshed controller history, optionally interpolates orientation by sample time and combines recent button/trigger activity. It adjusts a stored orientation reference, derives bounded motion values and packs a 65-byte input packet. Original `imp_position_x`, `imp_position_y`, `imp_position_z` and `controller_type` field strings connect its optional formatted output to imp motion data. Its return value reports saved sample connectivity; a disconnected return can follow packet-header writes.
+
+**Static analysis only; zero new native cases.** Complete original classes, setting meanings, floating-point edge behavior and real controller behavior remain unresolved. Generated C has inaccurate imported-math types and omits indirect formatting arguments. Two exact reviewed formatting renderings are accepted solely for naming-persistence checks; executable bytes and ABI checks remain strict. Neither rendering is claimed as correct compilable source. No Media Molecule source-build match is claimed.
+
+Totals: **1,022 reviewed names /9,704 defined functions**, **2,415 mapped /7,289 unmapped**. Whole-game completion remains unknown.

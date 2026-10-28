@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2414,
-  "unmapped_total": 7290,
+  "mapped_total": 2415,
+  "unmapped_total": 7289,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61826,6 +61826,30 @@
           "support": [
             "Whole 2249-byte original /474 instructions and587 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
             "Analyst descriptive name; original class and field enums unresolved. PS4_SYSV RDI opaque mutable pad state, void. Calls scePadRead(handle,temporary_samples,64); signed nonpositive count returns without state updates. Positive count refreshes controller information at state+0x38, ignores its return code, and detects last-sample connectivity/controller-info-byte changes. Copies each 120-byte sample into state+0x58+(counter&255)*120; increments DWORD counter+0x54. Computes per-slot activity metric at+0x7858 and updates distinct activity timestamps. Optional motion path selected by controller-info byte+0x42 integrates angular velocity minus stored bias, uses timestamp delta scaled1e-6 capped0.1, normalizes quaternion-like orientation and applies acceleration-based gravity correction using expf. Keeps that controller-info byte unnamed: it is not established as connectedCount. Updates button/analog/motion threshold timestamps; Options bit8 separately updates+0x18. Final connected/enabled policy may toggle scePadSetAngularVelocityBiasCorrectionState only on state change; ignores platform result then records requested boolean. Policy uses unsigned timestamp differences with strict6000000/20000000 boundaries. GetInfo failure handling, actual hardware timing, full class layout and floating-point edge behavior remain unresolved. Whole2249 original bytes/474 instructions and587 nonempty typed C lines read, five import bindings and six direct caller windows inspected. Static review only, zero new native cases, no live platform calls or MM/source equivalence."
+          ]
+        }
+      ]
+    },
+    "1408ae960": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-state-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Builds a pad motion packet consumed by the reviewed local input bundle producer; whole original/typed C and both direct caller windows reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full7876-byte original/1576 instructions and1863 C lines;14 direct import bindings verified, two caller windows read. Static only; no new native execution.",
+      "code_sha256": "c9791e52ab5ac0169db1e1f16716c75c9cf6aacbf5425deb255dcc04313cdd8a",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildPadMotionInputPacket",
+          "support": [
+            "Whole 7876-byte original /1576 instructions and1863 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+            "Analyst descriptive name; original enums/classes unresolved. PS4_SYSV: RDI preinitialized65-bytepacket,ESI user-like integer,RDXexternal sample mutex,RCXpadstate,R8Blow-byte interpolation flag,R9Blow-byte aggregation flag,XMM0float scale;entry stack+8 setting pointer,+16 mutable motion/reference-state pointer,+24 low-byte option;AL saved post-refresh sample-connected byte. Original entry/caller registers govern generated C, whose untyped imported math returns and bitcasts are inaccurate. Writes packet header before connected check;false does not promise unchanged packet. Estimates sample interval from pre-refresh ring timestamps128 records apart; optional target time uses current process time minus1.5 estimated intervals. Refreshes sample ring under mutex, copies latest120-byte sample; optional backward search up to255 samples and hemisphere-correct normalized linear quaternion interpolation. Option0 scans history newer than saved motionstate+0x20,ORs buttons and conditionally carries nonzero trigger values;uses aggregate result only if prior timestamp nonzero and aggregation flag equals1,then advances timestamp. Remaps buttons,triggers,analogbytes and up to2 auxiliary records. Computes projected motion values from normalized relative orientation,reference quaternion and scale/settings;may rebase reference when settings change,initialize incomplete reference or adjust at clamp boundary. Uses tanf,powf,atan2f,acosf,sincosf and isfinite checks; exact original setting/option semantics and pathological floating point behavior remain unresolved. Packs normalized quaternion into three15-bit components plus omitted-component tag,clamps two motion components to+-100,writes third projected component,zeroes packet+0x14..0x1f. Option0 can update global imp-position snapshot or emit formatted imp_position_x/imp_abs_position_x/imp_position_y/imp_abs_position_y/imp_position_z and controller_type fields;original strings DS4/Gun independently checked. Updates motionstate flag+0x29. Full7876original bytes/1576instructions and1863nonempty typedC lines read;14 direct imports matched original thunks;both direct caller windows in reviewed input-bundle producer read. Static only,zero new native cases;hardware/MM/source equivalence not claimed. Query child1408b8f10 whole1026-byte original read but not fully semantically resolved or credited."
           ]
         }
       ]

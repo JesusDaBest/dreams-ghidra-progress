@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1021,
+    "checked_and_applied_names": 1022,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1021,
+    "verified_names": 1022,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "867 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "868 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31549,6 +31549,41 @@
       "Computes input/motion activity measures and distinct activity timestamps.",
       "Optional orientation integration/filtering and angular-velocity bias correction policy are present; platform results are not checked.",
       "Controller-information byte used for the optional motion branch remains opaque; do not equate it with a connection count."
+    ]
+  },
+  "input_standard_packet_builder_checkpoint": {
+    "functions": {
+      "1408ae960": {
+        "name": "BuildPadMotionInputPacket",
+        "signature": "uchar PS4_SYSV BuildPadMotionInputPacket(void * packet_working, int user_working, void * mutex_working, void * pad_state_working, uchar interpolation_working, uchar aggregate_working, float scale_working, void * setting_working, void * motion_state_working, uchar option_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "c9791e52ab5ac0169db1e1f16716c75c9cf6aacbf5425deb255dcc04313cdd8a",
+        "size": 7876,
+        "instructions": 1576,
+        "created": false,
+        "c_sha256": "6d4bfdf44037d183bb230338b58b291a1ad5e1d130afe7a81e823fa08c710fe9",
+        "nonempty_c_lines": 1901
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 7876,
+    "original_instructions": 1576,
+    "typed_c_nonempty_lines": 1863,
+    "new_native_cases": 0,
+    "verified_direct_import_bindings": 14,
+    "direct_caller_windows": 2,
+    "scope_limits": [
+      "Static full original/typed C review; zero new native cases and no real controller execution.",
+      "Complete original classes, setting/option meanings, motion math edge behavior and hardware timing remain unresolved.",
+      "Diagnostic C omits indirect formatting arguments and has inaccurate imported-math return types. Two exact reviewed formatting renderings are accepted for naming verification only; original bytes and ABI remain strict. No runnable-C or MM/source equivalence."
+    ],
+    "findings": [
+      "Consumes refreshed pad history with optional sample-time orientation interpolation and recent button/trigger aggregation.",
+      "Adjusts a mutable orientation reference and derives bounded motion values before packing a65-byte input packet.",
+      "Original imp-position/controller-type strings connect the optional formatted output to imp motion data.",
+      "AL returns saved connectivity; disconnected return may follow packet header writes."
     ]
   }
 }
