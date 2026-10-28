@@ -4,9 +4,9 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9706,
-  "mapped_total": 2420,
-  "unmapped_total": 7286,
+  "inventory_total": 9707,
+  "mapped_total": 2422,
+  "unmapped_total": 7285,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61970,6 +61970,54 @@
           "support": [
             "Entire original 557-byte body (121 instructions) and all 239 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Reviewed original 557-byte EH body (121 instructions) and complete typed C. Initializes interaction point only when state+180 is zero and transform/point checks pass. Selects cached local point using FLT_MAX sentinel or inverse-transforms supplied point with finite reciprocal-scale mask; stores local point+1b0, transformed point+190, resets+184 and sets state+180=2. No positive-scale or unit-quaternion validation is implied. Static review only; descriptive name."
+          ]
+        }
+      ]
+    },
+    "140bd8810": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both predicates are used by the reviewed imp pilot pose update; original EHitType bindings, closure construction and stack-copy callsite establish their role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, original33-entry switch and hit namespace, caller windows and25888 isolated original-code checks.",
+      "code_sha256": "819add669fb8e4febc003e223c35c476ae661dee6b88ff1782fa6fbc61219f1d",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DoesRecipientHoverHitMatchImpPosePolicy",
+          "support": [
+            "Entire original 306-byte body (84 instructions) and all 86 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Reviewed complete306-byte original body/84 instructions and86 nonempty typed C lines. Classifies recipient hover hit at+104 using payload-type4 override, selected port/gadget resolved object byte2e, stroke object kind15, KitchenSlice handle presence and StrokeWidget. Original EHitType binding and33-entry jump table checked. Descriptive policy name; raw object/payload labels remain unresolved. Included in25888 new isolated original-code cases. Synthetic fixtures only; no live-game validation."
+          ]
+        }
+      ]
+    },
+    "14147fec0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both predicates are used by the reviewed imp pilot pose update; original EHitType bindings, closure construction and stack-copy callsite establish their role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, original33-entry switch and hit namespace, caller windows and25888 isolated original-code checks.",
+      "code_sha256": "11953be63d628a5107dece25b061eb8cf347095f67c8487c1ee9e186bf12aac8",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IsImpHitEligibleForFullPoseBlend",
+          "support": [
+            "Entire original 304-byte body (86 instructions) and all 59 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Reviewed complete304-byte original body/86 instructions and59 nonempty typed C lines. Tests input-index match and non-Wire by-value96-byte hit snapshot, then kind2/identity pose shortcut, selected hit classes, hover policy and resolved object-kind exclusions. Caller combines result with active-widget/missing-handle conditions before forcing pose blend factor1. Working96-byte opaque snapshot models proven stack copy, not recovered full RayHitId source layout. Included in25888 new isolated original-code cases; valid synthetic pointers only."
           ]
         }
       ]

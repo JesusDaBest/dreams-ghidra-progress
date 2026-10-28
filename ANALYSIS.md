@@ -9708,3 +9708,14 @@ The input routine updates tool/hit-dependent imp pose, interaction state, analog
 **Static review only; zero new native cases.** Several state/glyph IDs, unreviewed child behavior and live-game correctness remain unresolved. These are descriptive names, not recovered source names. No Media Molecule source or livestream match is claimed. Each function is mapped once under Imp visuals.
 
 Totals: **1,027 reviewed names /9,706 defined functions**, **2,420 mapped /7,286 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp hit eligibility policies
+
+**DoesRecipientHoverHitMatchImpPosePolicy** and **IsImpHitEligibleForFullPoseBlend** were read in full: **610 original bytes /170 instructions** and **145 nonempty diagnostic C lines**. The descriptive names and working interfaces passed independent reopening with original bytes unchanged. One previously undefined body was added.
+
+The hover predicate classifies hit/payload and resolved-object cases. The enclosing predicate checks input ownership, rejects Wire, and evaluates pose/hit shortcuts and object-kind exclusions. Its caller combines the result with other conditions before selecting a full pose-blend factor. The original33-entry switch, EHitType registration and96-byte by-value stack copy were checked. The saved snapshot structure deliberately keeps unknown fields opaque.
+
+**25,888 new original-code cases passed**:20,800 root-plus-original-child cases and5,088 child cases, with exact flag and fixture/code-integrity checks. Coverage includes hit IDs0..49, selected invalid bytes in the child, all128 low-seven-bit object kinds, payload overrides, pose/input ownership and eight signed22-bit handle values. Fixtures use valid readable pointers and a two-slot object table; malformed pointers, concurrency, real editor state and visual correctness remain untested. Raw payload/object kind names remain unresolved. No original source or livestream match is claimed.
+
+Totals: **1,029 reviewed names /9,707 defined functions**, **2,422 mapped /7,285 unmapped**. Whole-game completion remains unknown.

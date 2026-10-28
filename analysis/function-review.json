@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "871 existing-function renames, 155 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "872 existing-function renames, 156 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9706,
-    "default_fun_names": 8524,
-    "other_names": 1182,
-    "verification": "complete_inventory_matches_baseline_plus_871_renames_and_155_created_functions_and_1_reviewed_existing_name"
+    "total": 9707,
+    "default_fun_names": 8523,
+    "other_names": 1184,
+    "verification": "complete_inventory_matches_baseline_plus_872_renames_and_156_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24267,6 +24267,47 @@
         "Complete original assembly and typed C read; static analysis only, zero new native cases or live game validation.",
         "Names describe supported roles; original function names, several state/glyph IDs and whole-system correctness remain unresolved.",
         "Original imp_pilot.cpp diagnostic reference is not a Media Molecule source-code or livestream match."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "140bd8810",
+      "original_name": "FUN_140bd8810",
+      "applied_name": "DoesRecipientHoverHitMatchImpPosePolicy",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV DoesRecipientHoverHitMatchImpPosePolicy(void * recipient_working, void * context_working)",
+      "evidence": [
+        "Entire original 306-byte body (84 instructions) and all 86 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Reviewed complete306-byte original body/84 instructions and86 nonempty typed C lines. Classifies recipient hover hit at+104 using payload-type4 override, selected port/gadget resolved object byte2e, stroke object kind15, KitchenSlice handle presence and StrokeWidget. Original EHitType binding and33-entry jump table checked. Descriptive policy name; raw object/payload labels remain unresolved. Included in25888 new isolated original-code cases. Synthetic fixtures only; no live-game validation."
+      ],
+      "caveats": [
+        "Complete original assembly and typed C read;25888 new isolated original-code cases passed; no live game or visual validation.",
+        "Names describe policy roles; raw payload/object kind labels and whole-system correctness remain unresolved. Synthetic readable pointers and fixed two-slot object table only.",
+        "Opaque96-byte stack snapshot is a working ABI model, not recovered original source. No Media Molecule source-code or livestream match."
+      ]
+    },
+    {
+      "address": "14147fec0",
+      "original_name": null,
+      "applied_name": "IsImpHitEligibleForFullPoseBlend",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV IsImpHitEligibleForFullPoseBlend(void * closure_working, ImpPilotHitSnapshotWorking96 hit_snapshot_working)",
+      "evidence": [
+        "Entire original 304-byte body (86 instructions) and all 59 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Reviewed complete304-byte original body/86 instructions and59 nonempty typed C lines. Tests input-index match and non-Wire by-value96-byte hit snapshot, then kind2/identity pose shortcut, selected hit classes, hover policy and resolved object-kind exclusions. Caller combines result with active-widget/missing-handle conditions before forcing pose blend factor1. Working96-byte opaque snapshot models proven stack copy, not recovered full RayHitId source layout. Included in25888 new isolated original-code cases; valid synthetic pointers only."
+      ],
+      "caveats": [
+        "Complete original assembly and typed C read;25888 new isolated original-code cases passed; no live game or visual validation.",
+        "Names describe policy roles; raw payload/object kind labels and whole-system correctness remain unresolved. Synthetic readable pointers and fixed two-slot object table only.",
+        "Opaque96-byte stack snapshot is a working ABI model, not recovered original source. No Media Molecule source-code or livestream match."
       ],
       "created_function": true
     }

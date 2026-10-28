@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1027,
+    "checked_and_applied_names": 1029,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1027,
-    "function_count": 9706,
+    "verified_names": 1029,
+    "function_count": 9707,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2069,6 +2069,7 @@
       "14147cde0",
       "14147f1b0",
       "14147fc90",
+      "14147fec0",
       "14147fff0",
       "14148a980",
       "1414f5a90",
@@ -2081,7 +2082,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "871 existing-function renames, 155 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "872 existing-function renames, 156 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31729,6 +31730,44 @@
       "Complete original assembly and typed C read; static analysis only, zero new native cases or live game validation.",
       "Names describe supported roles; original function names, several state/glyph IDs and whole-system correctness remain unresolved.",
       "Original imp_pilot.cpp diagnostic reference is not a Media Molecule source-code or livestream match."
+    ]
+  },
+  "imp_hit_policy_pair_checkpoint": {
+    "functions": {
+      "140bd8810": {
+        "name": "DoesRecipientHoverHitMatchImpPosePolicy",
+        "signature": "uchar PS4_SYSV DoesRecipientHoverHitMatchImpPosePolicy(void * recipient_working, void * context_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "819add669fb8e4febc003e223c35c476ae661dee6b88ff1782fa6fbc61219f1d",
+        "size": 306,
+        "instructions": 84,
+        "created": false,
+        "c_sha256": "3a098483157219a0762ddd5ed5024534f3415f36014d2a762e06b4edf4584dc0",
+        "nonempty_c_lines": 94
+      },
+      "14147fec0": {
+        "name": "IsImpHitEligibleForFullPoseBlend",
+        "signature": "uchar PS4_SYSV IsImpHitEligibleForFullPoseBlend(void * closure_working, ImpPilotHitSnapshotWorking96 hit_snapshot_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "11953be63d628a5107dece25b061eb8cf347095f67c8487c1ee9e186bf12aac8",
+        "size": 304,
+        "instructions": 86,
+        "created": true,
+        "c_sha256": "67ca655fbbbec35f6b067044a01bac2923d0d0403daffd48cfd4fec7dc94399e",
+        "nonempty_c_lines": 71
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 1,
+    "existing_renames": 1,
+    "original_bytes": 610,
+    "original_instructions": 170,
+    "typed_c_nonempty_lines": 145,
+    "new_native_cases": 25888,
+    "scope_limits": [
+      "Complete original assembly and typed C read;25888 new isolated original-code cases passed; no live game or visual validation.",
+      "Names describe policy roles; raw payload/object kind labels and whole-system correctness remain unresolved. Synthetic readable pointers and fixed two-slot object table only.",
+      "Opaque96-byte stack snapshot is a working ABI model, not recovered original source. No Media Molecule source-code or livestream match."
     ]
   }
 }
