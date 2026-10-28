@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2408,
-  "unmapped_total": 7296,
+  "mapped_total": 2410,
+  "unmapped_total": 7294,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61685,6 +61685,54 @@
           ]
         }
       ]
+    },
+    "1412a5fd0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-mask-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Five-bank input-mask query helpers used by the reviewed UI navigation routine; role established from full original bodies and typed interfaces.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C and parent callsite review;45696 isolated original query cases with signed-mask and comparison semantics.",
+      "code_sha256": "75c6468589fe732789aeca6c525078739fd9413383b72254688b6ac06fe9cdb7",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueryUIInputSlotsMatchingMask",
+          "support": [
+            "Entire 157-byte body (44 instructions) and all 24 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+            "Tests primary qword at149f39848+i*180hex against sign-extendedquery; selected/enabled slot contributesbit iff intersection nonzero. Analyst descriptive name; source enum/slot identities unresolved. Five banks stride0x180. Low five selector bits only; returns matching slot bits in EAX, not input-bit values. ESI signed32 query sign-extends to64 before qword tests, so bit31-set queries include upper32 bits. Nonzero per-slot disable byte suppresses result. SysV EDIselector,ESI signedquery,EAXu32. Whole original and typed C read.22848 isolated whole-original cases for this entry passed, no substitutes:all low5 selectors plus ignored highbits,seven disable masks with1/255 flags,six bank profiles,eight signed queries,two patterns,exact result and entire fixture read-only. Comparison-bank writer/lifecycle, device semantics,concurrency and live input unverified; no source/MM equivalence. Prior completed suites not rerun."
+          ]
+        }
+      ]
+    },
+    "1412a6070": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-mask-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Five-bank input-mask query helpers used by the reviewed UI navigation routine; role established from full original bodies and typed interfaces.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C and parent callsite review;45696 isolated original query cases with signed-mask and comparison semantics.",
+      "code_sha256": "1c30d33a847e800594642616fda4f4b12adcd67fbc133e4287790106c85fa412",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueryUIInputSlotsMatchingMaskAbsentFromComparison",
+          "support": [
+            "Entire 202-byte body (54 instructions) and all 29 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+            "Requires primary qword149f39848+i*180hex to intersect query and comparison qword149f39889+i*180hex not to intersect it. This is whole-query suppression, not per-bit current&~comparison:primary2/comparison1/query3 returns0. Temporal previous-frame meaning not established; name deliberately states comparison relation. Analyst descriptive name; source enum/slot identities unresolved. Five banks stride0x180. Low five selector bits only; returns matching slot bits in EAX, not input-bit values. ESI signed32 query sign-extends to64 before qword tests, so bit31-set queries include upper32 bits. Nonzero per-slot disable byte suppresses result. SysV EDIselector,ESI signedquery,EAXu32. Whole original and typed C read.22848 isolated whole-original cases for this entry passed, no substitutes:all low5 selectors plus ignored highbits,seven disable masks with1/255 flags,six bank profiles,eight signed queries,two patterns,exact result and entire fixture read-only. Comparison-bank writer/lifecycle, device semantics,concurrency and live input unverified; no source/MM equivalence. Prior completed suites not rerun."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -64189,6 +64237,17 @@
                 {
                   "id": "runtime-implementation",
                   "label": "Runtime behavior",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "input-mask-query",
+              "label": "Input mask queries",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "861 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "863 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8534,
-    "other_names": 1170,
-    "verification": "complete_inventory_matches_baseline_plus_861_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8532,
+    "other_names": 1172,
+    "verification": "complete_inventory_matches_baseline_plus_863_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24026,6 +24026,46 @@
         "Whole12342-byte original/2541 instructions and1739 nonempty typed C lines read; two direct caller windows inspected. Zero new native cases.",
         "Static evidence supports selection/navigation, history, repeat timing and geometry ranking. Input helper bodies/ABIs,dispatch delivery,concurrency and live UI remain unverified; prior helper tests give no whole-parent validation.",
         "Diagnostic C removes three unreachable blocks and misinfers some helper arguments and ID comparisons; original instructions were read throughout. Valid root/count/reference invariants required; original source types and Media Molecule equivalence unknown."
+      ]
+    },
+    {
+      "address": "1412a5fd0",
+      "original_name": "FUN_1412a5fd0",
+      "applied_name": "QueryUIInputSlotsMatchingMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV QueryUIInputSlotsMatchingMask(uint slot_mask_working, int input_mask_working)",
+      "evidence": [
+        "Entire 157-byte body (44 instructions) and all 24 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+        "Tests primary qword at149f39848+i*180hex against sign-extendedquery; selected/enabled slot contributesbit iff intersection nonzero. Analyst descriptive name; source enum/slot identities unresolved. Five banks stride0x180. Low five selector bits only; returns matching slot bits in EAX, not input-bit values. ESI signed32 query sign-extends to64 before qword tests, so bit31-set queries include upper32 bits. Nonzero per-slot disable byte suppresses result. SysV EDIselector,ESI signedquery,EAXu32. Whole original and typed C read.22848 isolated whole-original cases for this entry passed, no substitutes:all low5 selectors plus ignored highbits,seven disable masks with1/255 flags,six bank profiles,eight signed queries,two patterns,exact result and entire fixture read-only. Comparison-bank writer/lifecycle, device semantics,concurrency and live input unverified; no source/MM equivalence. Prior completed suites not rerun."
+      ],
+      "caveats": [
+        "Both whole original bodies and typed C read.45696 new isolated original cases passed,22848 per entry,no substitutes; full fixture unchanged.",
+        "Five synthetic input banks only. Slot identities,button enums,comparison-bank writer ordering/temporal role,concurrency and live input remain unresolved. Multi-bit comparison is whole-query suppression,not per-bit rising edges.",
+        "Selected parent callsites recaptured after signatures; no duplicate parent review credit or native parent validation. No original source/Media Molecule equivalence."
+      ]
+    },
+    {
+      "address": "1412a6070",
+      "original_name": "FUN_1412a6070",
+      "applied_name": "QueryUIInputSlotsMatchingMaskAbsentFromComparison",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV QueryUIInputSlotsMatchingMaskAbsentFromComparison(uint slot_mask_working, int input_mask_working)",
+      "evidence": [
+        "Entire 202-byte body (54 instructions) and all 29 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+        "Requires primary qword149f39848+i*180hex to intersect query and comparison qword149f39889+i*180hex not to intersect it. This is whole-query suppression, not per-bit current&~comparison:primary2/comparison1/query3 returns0. Temporal previous-frame meaning not established; name deliberately states comparison relation. Analyst descriptive name; source enum/slot identities unresolved. Five banks stride0x180. Low five selector bits only; returns matching slot bits in EAX, not input-bit values. ESI signed32 query sign-extends to64 before qword tests, so bit31-set queries include upper32 bits. Nonzero per-slot disable byte suppresses result. SysV EDIselector,ESI signedquery,EAXu32. Whole original and typed C read.22848 isolated whole-original cases for this entry passed, no substitutes:all low5 selectors plus ignored highbits,seven disable masks with1/255 flags,six bank profiles,eight signed queries,two patterns,exact result and entire fixture read-only. Comparison-bank writer/lifecycle, device semantics,concurrency and live input unverified; no source/MM equivalence. Prior completed suites not rerun."
+      ],
+      "caveats": [
+        "Both whole original bodies and typed C read.45696 new isolated original cases passed,22848 per entry,no substitutes; full fixture unchanged.",
+        "Five synthetic input banks only. Slot identities,button enums,comparison-bank writer ordering/temporal role,concurrency and live input remain unresolved. Multi-bit comparison is whole-query suppression,not per-bit rising edges.",
+        "Selected parent callsites recaptured after signatures; no duplicate parent review credit or native parent validation. No original source/Media Molecule equivalence."
       ]
     }
   ],

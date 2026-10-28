@@ -9590,3 +9590,18 @@ It updates selected group/key and active/transition state, prepares mutex-protec
 **Static analysis only: zero new native cases.** Earlier helper suites do not validate this complete routine. Both indexed direct caller windows were inspected without full caller review credit. Diagnostic C omits some call arguments, miscasts ID comparisons and removes three unreachable blocks; the complete original instructions were reviewed and control interpretation. No original source-type or Media Molecule source match is claimed.
 
 Totals: **1,015 reviewed names /9,704 defined functions**, **2,408 mapped /7,296 unmapped**. Whole-game completion remains unknown.
+
+
+### Five-bank input-mask queries
+
+**QueryUIInputSlotsMatchingMask** and **QueryUIInputSlotsMatchingMaskAbsentFromComparison** were read in full: **359 original bytes /98 instructions** and **53 nonempty diagnostic C lines**. Both names and working interfaces survived independent reopening with executable bytes unchanged.
+
+Both inspect five banks, ignore selector bits above the low five, suppress slots with a nonzero disable byte, and return matching slot bits. The signed 32-bit input query is extended to 64 bits before testing stored qwords; queries with bit 31 set therefore include the upper 32 bits.
+
+The second helper additionally requires no matching bits in a separate comparison bank. This is a whole-query rule: primary `2`, comparison `1`, query `3` returns zero, although a per-bit rising-edge test would see bit 2. The comparison bank has not been traced through its write lifecycle, so the name does not claim it is previous-frame or button-press detection.
+
+**45,696 new isolated whole-original cases passed with no substitutes**, 22,848 per helper. Coverage includes all low-five selectors, ignored-high-bit selectors, disabled slots with 1/255 flags, six bank profiles, eight signed query masks and two patterns. Exact results and the whole fixture were checked. Slot identities, original button enums, writer ordering, races and live input remain unverified.
+
+A read-only follow-up of the already reviewed UI-navigation routine now shows both slot selector and query-mask arguments at the affected callsites. It adds no parent review credit or whole-parent runtime validation. The two helpers are counted once under Controls & input / Input mask queries; no Media Molecule source match is claimed.
+
+Totals: **1,017 reviewed names /9,704 defined functions**, **2,410 mapped /7,294 unmapped**. Whole-game completion remains unknown.

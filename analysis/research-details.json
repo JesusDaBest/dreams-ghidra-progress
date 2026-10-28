@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1015,
+    "checked_and_applied_names": 1017,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1015,
+    "verified_names": 1017,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "861 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "863 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31354,5 +31354,59 @@
       "Static evidence supports selection/navigation, history, repeat timing and geometry ranking. Input helper bodies/ABIs,dispatch delivery,concurrency and live UI remain unverified; prior helper tests give no whole-parent validation.",
       "Diagnostic C removes three unreachable blocks and misinfers some helper arguments and ID comparisons; original instructions were read throughout. Valid root/count/reference invariants required; original source types and Media Molecule equivalence unknown."
     ]
+  },
+  "ui_input_query_checkpoint": {
+    "functions": {
+      "1412a5fd0": {
+        "name": "QueryUIInputSlotsMatchingMask",
+        "signature": "uint PS4_SYSV QueryUIInputSlotsMatchingMask(uint slot_mask_working, int input_mask_working)",
+        "return_storage": "EAX:4",
+        "original_sha256": "75c6468589fe732789aeca6c525078739fd9413383b72254688b6ac06fe9cdb7",
+        "size": 157,
+        "instructions": 44,
+        "created": false,
+        "c_sha256": "cc3cc8b0c884f3600555da44df5bfd92b1627a6032964ac39bd2d87333986a9d",
+        "nonempty_c_lines": 37
+      },
+      "1412a6070": {
+        "name": "QueryUIInputSlotsMatchingMaskAbsentFromComparison",
+        "signature": "uint PS4_SYSV QueryUIInputSlotsMatchingMaskAbsentFromComparison(uint slot_mask_working, int input_mask_working)",
+        "return_storage": "EAX:4",
+        "original_sha256": "1c30d33a847e800594642616fda4f4b12adcd67fbc133e4287790106c85fa412",
+        "size": 202,
+        "instructions": 54,
+        "created": false,
+        "c_sha256": "0d450ebc4b1b6f2ad6d33839e6cd11b3d226281fc83f93b1bf814e0b1245a603",
+        "nonempty_c_lines": 46
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 359,
+    "original_instructions": 98,
+    "typed_c_nonempty_lines": 53,
+    "new_native_cases": 45696,
+    "native_case_assignment": {
+      "1412a5fd0": 22848,
+      "1412a6070": 22848
+    },
+    "scope_limits": [
+      "Both whole original bodies and typed C read.45696 new isolated original cases passed,22848 per entry,no substitutes; full fixture unchanged.",
+      "Five synthetic input banks only. Slot identities,button enums,comparison-bank writer ordering/temporal role,concurrency and live input remain unresolved. Multi-bit comparison is whole-query suppression,not per-bit rising edges.",
+      "Selected parent callsites recaptured after signatures; no duplicate parent review credit or native parent validation. No original source/Media Molecule equivalence."
+    ],
+    "parent_callsite_followup": {
+      "address": "140232460",
+      "c_sha256": "c8879fd7f17823dc23a5ec4acce58eaea3a7c3151fe27a7829c1ac63d637a17c",
+      "original_bytes_unchanged": true,
+      "project_modified": false,
+      "new_parent_review_credit": 0,
+      "reviewed": true,
+      "selected_callsite_count": 19,
+      "both_query_arguments_visible": true,
+      "scope": "All 19 affected query call expressions inspected with adjacent context; no full parent rereview or runtime validation.",
+      "file_newline_translation_verified": true
+    }
   }
 }
