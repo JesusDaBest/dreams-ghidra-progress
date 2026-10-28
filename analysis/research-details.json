@@ -31619,5 +31619,30 @@
       "Original property name/offset and existing control-mode/kind registrations checked against executable bytes.",
       "All5184 synthetic exact-result and input/code immutability checks completed; receipt recovered after wrong final expected-count assertion without rerunning native code."
     ]
+  },
+  "input_motion_policy_namespace_checkpoint": {
+    "original_enum_counts": {
+      "ETool": 77,
+      "EHitType": 50,
+      "EToolSetup": 22
+    },
+    "one_byte_types_saved_and_independently_reopened": true,
+    "original_bytes_unchanged": true,
+    "new_function_name_credit": 0,
+    "new_native_cases": 0,
+    "field_bindings": {
+      "tool": "ETool at auxiliary record+0x190",
+      "focused.hit_type": "EHitType at auxiliary record+0xa4: focused RayHitId+0x50 plus nested hit_type+0x54",
+      "tool_setup": "EToolSetup at auxiliary record+0x197"
+    },
+    "findings": [
+      "The focused-hit masks use EHitType, not ETool or EToolTag.",
+      "ETool values8/24/74 are Imp/SelectThingForTweak/SnapPoint.",
+      "EToolSetup values3/17 are SculptBrushMenu/StrokeBrushMenu."
+    ],
+    "scope_limits": [
+      "Complete owning structures and the full user-policy association/object-chain rules remain unresolved.",
+      "Enum/property recovery adds no reviewed-function completion credit and establishes no Media Molecule source equivalence."
+    ]
   }
 }

@@ -9677,3 +9677,12 @@ The helper decodes a signed 22-bit object handle, checks its table bounds and ve
 **5,184 synthetic whole-original checks completed**, covering association branches, handle bounds/ignored upper bits, object kinds, control modes and possession flags, with exact result and fixture/code immutability checks. The script then failed only on an incorrect final expected-count assertion (10,368 instead of 5,184). The completed count was independently recomputed, the original log/script retained, and native code was not rerun. These checks do not establish live editor or concurrency behavior, malformed-pointer safety, or the full parent policy.
 
 Totals: **1,023 reviewed names /9,704 defined functions**, **2,416 mapped /7,288 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp-input policy: original enum and field identities
+
+Recovered and saved three original one-byte enum types: **ETool (77 values)**, **EHitType (50 values)** and **EToolSetup (22 values)**. Independent reopening verified the types and corrected field annotations; executable bytes and function inventory are unchanged.
+
+The policy reads three distinct fields: `tool` at auxiliary-record offset `0x190`, `focused.hit_type` at `0xa4`, and `tool_setup` at `0x197`. The nested focused-hit offset comes from `focused` (`RayHitId`) at `0x50` plus its `hit_type` at `0x54`. The focused-hit masks therefore use **EHitType**, rather than editor-tool or UI tool-tag IDs. The setup checks compare **SculptBrushMenu (3)** and **StrokeBrushMenu (17)**. These identities were linked through original registration code and strings.
+
+This improves type and behavioral understanding but adds **zero reviewed function names** and **zero new native cases**. The larger policy still has unresolved association and object-chain rules; its full behavior has not been credited. The count remains **1,023 reviewed names /9,704 defined functions**. Whole-game completion remains unknown.
