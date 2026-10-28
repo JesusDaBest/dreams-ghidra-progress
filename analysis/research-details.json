@@ -31769,5 +31769,33 @@
       "Names describe policy roles; raw payload/object kind labels and whole-system correctness remain unresolved. Synthetic readable pointers and fixed two-slot object table only.",
       "Opaque96-byte stack snapshot is a working ABI model, not recovered original source. No Media Molecule source-code or livestream match."
     ]
+  },
+  "imp_canvas_type_checkpoint": {
+    "enum": "ECanvasType",
+    "values": {
+      "Invalid": 0,
+      "TweakMenu": 1,
+      "Microchip": 2,
+      "Timeline": 3,
+      "Sound": 4,
+      "Script": 5,
+      "Animation": 6,
+      "LAST": 7
+    },
+    "working_storage_bytes": 1,
+    "independent_reopen_verified": true,
+    "new_function_name_credit": 0,
+    "new_native_cases": 0,
+    "findings": [
+      "Resolved object+0x2e is registered as placed_on_canvas using ECanvasType;Sound=4.",
+      "Canvas and CanvasWidget hit payloads use CanvasSeq.Type at+4, also ECanvasType.",
+      "Object kind15 separately maps to EThingType::Sound.",
+      "The Thing_TweakMenuItem path reads hit-relative+0x53; that namespace remains unresolved."
+    ],
+    "limits": [
+      "Original C++ enum width and full class layouts remain unproven.",
+      "Selected windows of large metadata parents only; no whole-parent review credit.",
+      "No native suites rerun and no live-game or Media Molecule source match claim."
+    ]
   }
 }

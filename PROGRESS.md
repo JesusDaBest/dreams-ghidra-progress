@@ -9150,3 +9150,12 @@ The hover predicate classifies hit/payload and resolved-object cases. The enclos
 **25,888 new original-code cases passed**:20,800 root-plus-original-child cases and5,088 child cases, with exact flag and fixture/code-integrity checks. Coverage includes hit IDs0..49, selected invalid bytes in the child, all128 low-seven-bit object kinds, payload overrides, pose/input ownership and eight signed22-bit handle values. Fixtures use valid readable pointers and a two-slot object table; malformed pointers, concurrency, real editor state and visual correctness remain untested. Raw payload/object kind names remain unresolved. No original source or livestream match is claimed.
 
 Totals: **1,029 reviewed names /9,707 defined functions**, **2,422 mapped /7,285 unmapped**. Whole-game completion remains unknown.
+
+
+### Sound-canvas type bindings
+
+Original metadata connects **placed_on_canvas** at resolved-object offset **0x2e** and **CanvasSeq.Type** at hit-payload offset **4** to **ECanvasType**. Its labels are Invalid0, TweakMenu1, Microchip2, Timeline3, Sound4, Script5, Animation6 and LAST7 (sentinel). The enum and six bounded notes were saved in Ghidra and independently reopened with function inventory and executable bytes unchanged. The one-byte working enum models observed byte storage; it does not establish the original C++ enum width.
+
+This explains the sound-canvas comparisons in the reviewed hover-hit policy. **EThingType::Sound=15** is a separate namespace. The full-pose-blend predicate excludes Group, Sculpt, LightPaint, PuppetHeart, Sprite, PrizeBubble, Collectabubble, HeadGadget and HandGadget in its final object-kind branch. Earlier shortcuts can still return true. The separate tweak-menu path reads hit-relative **0x53**; its namespace remains unresolved and is not assigned the canvas enum.
+
+**No additional function-review credit and no new native cases.** Selected windows of large metadata parents support these bindings; they do not count as whole-function reviews. Counts remain **1,029 reviewed names /9,707 defined functions**. No live-game correctness or Media Molecule source equivalence is claimed.
