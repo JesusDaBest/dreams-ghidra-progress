@@ -9686,3 +9686,14 @@ Recovered and saved three original one-byte enum types: **ETool (77 values)**, *
 The policy reads three distinct fields: `tool` at auxiliary-record offset `0x190`, `focused.hit_type` at `0xa4`, and `tool_setup` at `0x197`. The nested focused-hit offset comes from `focused` (`RayHitId`) at `0x50` plus its `hit_type` at `0x54`. The focused-hit masks therefore use **EHitType**, rather than editor-tool or UI tool-tag IDs. The setup checks compare **SculptBrushMenu (3)** and **StrokeBrushMenu (17)**. These identities were linked through original registration code and strings.
 
 This improves type and behavioral understanding but adds **zero reviewed function names** and **zero new native cases**. The larger policy still has unresolved association and object-chain rules; its full behavior has not been credited. The count remains **1,023 reviewed names /9,704 defined functions**. Whole-game completion remains unknown.
+
+
+### User imp-motion boundary policy
+
+**IsUserImpMotionBoundaryAdjustmentAllowed** was read in full: **1,026 original bytes /237 instructions** and **161 nonempty diagnostic C lines**. The saved descriptive name and integer-user/byte-result working interface passed independent reopening with executable bytes unchanged. Both direct caller windows were inspected; the reviewed pad-motion packet builder uses this result to permit reference adjustment at motion bounds.
+
+The policy pins the current context, matches input records by active group and user, then checks the focused hit classification, selected editor tool and brush-menu setup. It also evaluates association/context gates and selected Controlinator overrides. The field identities use independently verified **EHitType**, **ETool** and **EToolSetup** registrations. Missing matching input defaults to allow.
+
+**12,570 whole-original synthetic root-plus-child cases passed.** They cover all 77 tool IDs × 50 hit IDs × three setup states, plus targeted association, focus-handle, operation, selected-chain, float-threshold/NaN, reference-count and missing/multiple-input-record cases. Exact result, fixture/code integrity and expected pin/unpin call counts were checked. Four synchronization/thread imports used controlled no-op/counter substitutes; actual platform synchronization and live editor behavior are not verified. Fixtures use valid group/recipient zero, at most two input records and one selected-chain object. Invalid context, malformed pointers, cyclic chains, concurrent mutation and the associated records’ original labels remain unresolved. The second large caller is not counted as reviewed.
+
+Totals: **1,024 reviewed names /9,704 defined functions**, **2,417 mapped /7,287 unmapped**. Whole-game completion remains unknown.

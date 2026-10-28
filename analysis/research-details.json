@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1023,
+    "checked_and_applied_names": 1024,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1023,
+    "verified_names": 1024,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "869 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "870 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31643,6 +31643,41 @@
     "scope_limits": [
       "Complete owning structures and the full user-policy association/object-chain rules remain unresolved.",
       "Enum/property recovery adds no reviewed-function completion credit and establishes no Media Molecule source equivalence."
+    ]
+  },
+  "input_motion_policy_checkpoint": {
+    "functions": {
+      "1408b8f10": {
+        "name": "IsUserImpMotionBoundaryAdjustmentAllowed",
+        "signature": "uchar PS4_SYSV IsUserImpMotionBoundaryAdjustmentAllowed(int user_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "39ebe424fb4608b25c98d0a7eb886365a702817817d7143e185e3ca52ca35715",
+        "size": 1026,
+        "instructions": 237,
+        "created": false,
+        "c_sha256": "6b333990cf93a6321ea3fad2865d0363e6e9a083df75b1c3a347602a525c0c2a",
+        "nonempty_c_lines": 190
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 1026,
+    "original_instructions": 237,
+    "typed_c_nonempty_lines": 161,
+    "new_native_cases": 12570,
+    "direct_caller_windows": 2,
+    "controlled_imports": 4,
+    "scope_limits": [
+      "Synthetic valid context/group0/recipient0 fixtures only; malformed pointers, absent context, cyclic chains and concurrent mutation untested.",
+      "Four synchronization/thread imports replaced by no-op/counter stubs; actual platform synchronization is not verified.",
+      "Associated record labels remain unresolved. Selected chain fixtures contain at most one valid Controlinator; input scan fixtures at most two records. No whole large-caller or MM/source equivalence claim."
+    ],
+    "findings": [
+      "Pins current frame/context and matches input record by active group and user; no match defaults to allow.",
+      "Applies focused hit-type, active tool and brush-setup gates, then association/context checks and selected Controlinator overrides.",
+      "The reviewed pad-motion packet builder uses this flag to permit reference adjustment at motion bounds.",
+      "12570 whole-original root-plus-child synthetic cases passed with exact flag, reference-count/call-count and code/input integrity checks."
     ]
   }
 }

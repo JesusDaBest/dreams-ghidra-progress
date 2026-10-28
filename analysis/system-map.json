@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2416,
-  "unmapped_total": 7288,
+  "mapped_total": 2417,
+  "unmapped_total": 7287,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61874,6 +61874,30 @@
           "support": [
             "Whole 168-byte original /48 instructions and37 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
             "Analyst descriptive name; complete recipient/context classes unresolved. PS4_SYSV RDIrecipient,RSIframe/editor context;AL boolean. Reads association pointers recipient+0x19c38/+0x19c40; selected kind2/nonkind2 arrangements combined with first-record flag+0x261 reject early. Otherwise decodes signed low22 bits of recipient DWORD+0x17184,range-checks against context count+0x10b58c0,reads pointer table+0x10958c0. Requires nonnull object with kind(low7 headerbits)=20 Controlinator,original CtrlMode+0x1a0 in1Possessable/2FollowController,and original AllowImpDuringPossession+0x1bc zero. Original field name/offset independently tied via property descriptor writes; enum/kind registrations rechecked. Whole168original bytes/48instructions and complete typed C read;four direct caller windows inspected.5184 synthetic whole-original AL/immutability cases passed before a final metadata-only count assertion failed(expected10368 instead of actual5184);correct Cartesian count independently recomputed,original log/script retained,no native rerun. No calls/imports/global slots in this helper; no live game/concurrency execution. Association record kind2/flag261 meanings and malformed-pointer behavior unresolved. Name describes these gates,not all ways Dreams can hide/suppress an imp. No MM/source equivalence."
+          ]
+        }
+      ]
+    },
+    "1408b8f10": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-state-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Controls imp motion-boundary adjustment in the reviewed pad-motion packet builder; whole policy, exact enum/field bindings and both direct caller windows reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full1026-byte original/237 instructions and161 C lines;ETool/EHitType/EToolSetup and Controlinator field bindings verified;12570 synthetic root-plus-child original-code checks, two caller windows read.",
+      "code_sha256": "39ebe424fb4608b25c98d0a7eb886365a702817817d7143e185e3ca52ca35715",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IsUserImpMotionBoundaryAdjustmentAllowed",
+          "support": [
+            "Whole 1026-byte original /237 instructions and161 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+            "Analyst descriptive name based on reviewed pad-motion packet caller; exact original class names unresolved. PS4_SYSV EDIuser-like i32,AL allow flag. Pins current frame/context under pool mutex/reference count,scans input records stride0x270 matching active group and user; no match returns true. Reads auxiliary record stride0x19c50. Verified fields: tool+0x190 ETool;focused RayHitId+0x50 hit_type+0x54 gives EHitType at+0xa4;tool_setup+0x197 EToolSetup. Applies focused-hit masks,selected-handle/tool/setup/operation/float gates;ETool24 SelectThingForTweak bypasses initial gates,ETool74 SnapPoint rejects on ordinary branch. Selected tools require SculptBrushMenu3 or StrokeBrushMenu17 setup;raw BT indices mask to6bits. Additional associated pointer/kind and current-group ID/flag gates retain opaque original labels. For Imp8 in selected group/editor state,inverts IsRecipientImpSuppressedByControlinator result,then can force allow via selected valid FollowController object matching this recipient/player;InputDisableControls and playeridx gates verified from original property bindings. Queried by reviewed BuildPadMotionInputPacket to allow reference adjustment at motion bounds;second caller window in14147fff0 reads false into pose-related flag,whole29428-byte second caller not reviewed. Releases pin and condition-broadcasts when reference count reaches zero. Full1026 original bytes/237instructions and full fresh typed C read.12570 new whole-original synthetic root+original child checks passed,covering77tools*50hits*3setups plus focused-handle,association,operation,threshold/NaN,selected-chain,pin/refcount and missing/multiple-record cases. Four imports controlled no-op/counters;no actual synchronization/platform/live-game execution. Valid frame/group/object-chain invariants assumed;invalid pointer/null frame/cyclic chains and concurrent mutation untested. No MM/source equivalence or full structure claim."
           ]
         }
       ]

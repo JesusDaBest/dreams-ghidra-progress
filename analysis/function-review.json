@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "869 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "870 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8526,
-    "other_names": 1178,
-    "verification": "complete_inventory_matches_baseline_plus_869_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8525,
+    "other_names": 1179,
+    "verification": "complete_inventory_matches_baseline_plus_870_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24186,6 +24186,26 @@
         "Whole original helper validated with synthetic disjoint memory; no real editor, malformed pointer or concurrency validation.",
         "Association record kind2 and flag261 remain unnamed; full structures and whole parent policy remain unresolved.",
         "All5184 native case checks passed before final metadata assertion failed from incorrect expected count10368; actual Cartesian count independently recomputed, failure log/executed script retained, native suite not rerun. No MM/source equivalence."
+      ]
+    },
+    {
+      "address": "1408b8f10",
+      "original_name": "FUN_1408b8f10",
+      "applied_name": "IsUserImpMotionBoundaryAdjustmentAllowed",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV IsUserImpMotionBoundaryAdjustmentAllowed(int user_working)",
+      "evidence": [
+        "Whole 1026-byte original /237 instructions and161 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name based on reviewed pad-motion packet caller; exact original class names unresolved. PS4_SYSV EDIuser-like i32,AL allow flag. Pins current frame/context under pool mutex/reference count,scans input records stride0x270 matching active group and user; no match returns true. Reads auxiliary record stride0x19c50. Verified fields: tool+0x190 ETool;focused RayHitId+0x50 hit_type+0x54 gives EHitType at+0xa4;tool_setup+0x197 EToolSetup. Applies focused-hit masks,selected-handle/tool/setup/operation/float gates;ETool24 SelectThingForTweak bypasses initial gates,ETool74 SnapPoint rejects on ordinary branch. Selected tools require SculptBrushMenu3 or StrokeBrushMenu17 setup;raw BT indices mask to6bits. Additional associated pointer/kind and current-group ID/flag gates retain opaque original labels. For Imp8 in selected group/editor state,inverts IsRecipientImpSuppressedByControlinator result,then can force allow via selected valid FollowController object matching this recipient/player;InputDisableControls and playeridx gates verified from original property bindings. Queried by reviewed BuildPadMotionInputPacket to allow reference adjustment at motion bounds;second caller window in14147fff0 reads false into pose-related flag,whole29428-byte second caller not reviewed. Releases pin and condition-broadcasts when reference count reaches zero. Full1026 original bytes/237instructions and full fresh typed C read.12570 new whole-original synthetic root+original child checks passed,covering77tools*50hits*3setups plus focused-handle,association,operation,threshold/NaN,selected-chain,pin/refcount and missing/multiple-record cases. Four imports controlled no-op/counters;no actual synchronization/platform/live-game execution. Valid frame/group/object-chain invariants assumed;invalid pointer/null frame/cyclic chains and concurrent mutation untested. No MM/source equivalence or full structure claim."
+      ],
+      "caveats": [
+        "Synthetic valid context/group0/recipient0 fixtures only; malformed pointers, absent context, cyclic chains and concurrent mutation untested.",
+        "Four synchronization/thread imports replaced by no-op/counter stubs; actual platform synchronization is not verified.",
+        "Associated record labels remain unresolved. Selected chain fixtures contain at most one valid Controlinator; input scan fixtures at most two records. No whole large-caller or MM/source equivalence claim."
       ]
     }
   ],
