@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2404,
-  "unmapped_total": 7300,
+  "mapped_total": 2406,
+  "unmapped_total": 7298,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61586,6 +61586,54 @@
           "support": [
             "Entire 1205-byte body (239 instructions) and all 456 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
             "Analyst descriptive name. Appends one80-byte transformed UI region at149fdaa40; rejects context depth0 or unsigned count>=256. Conditional X mirror only when override0 and global147840008 nonzero. Uses context translation/scale and quaternion plus global UI transform; computes normalized relative quaternion with imported __isinff infinity-check helper and rsqrt refinement as required. Stores key+0, context-stack value+8, sentinelFFFFFFFF+c, three geometry vectors+10/+20/+30, group byte+40, flag0+41, contextQWORD+48; six padding bytes42..47 preserved. Increments149fdfa40 and returns AL1; rejectionAL0. SysV RDIkey64,SILgroup,DLmirroroverride,XMM0frame,XMM1bounds. Entire1205-byte body and456 nonempty typed C lines read.576 isolated original identity-transform cases passed:counts0/1/255/256,depth0/1/2,mirror/override0/1,group0/255,three bounds,two patterns,whole fixture checked. Controlled141608170 returns0 for finite unit-norm fixtures only. First oracle incorrectly expected corner-relative extents; failure retained and corrected to reference vector plus unchanged identity bounds. Nonidentity transforms, rsqrt branch, invalid depth, NaN/infinity, concurrency and live UI untested. Reader windows support keyed selection/group use, not whole consumer review or source equivalence."
+          ]
+        }
+      ]
+    },
+    "1402354a0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim",
+        "runtime-implementation"
+      ],
+      "component_basis": "Keyed/group UI-region preference lookup and active UI-state key update within the same region table system.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C review, direct caller windows and3264 isolated original cases split between lookup and integrated state update.",
+      "code_sha256": "4acde34922dec2e7bdac9f27acc44b915816ab1df6a6d3d1c6e71169be69cc1b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindPreferredUIRegionIndexForGroup",
+          "support": [
+            "Entire 470-byte body (118 instructions) and all 103 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name; original group/priority/marker field labels unknown. Finds first group descriptor matching EDI ID in48-byte table149fdfa50/count149fe0650. Tries stored key at descriptor+20 against80-byte regions149fdaa40/count149fdfa40 with matching descriptor index; absent/missing key falls back to first region whose referenced descriptor ID matches query. Duplicate group IDs therefore share fallback matches. Returns-1 on no group/region. If region priority+c is not-1, walks backward while previous priority is not-1 and <=current, then seeks a nonzero marker+41 forward without crossing a decreasing-priority boundary; falls back to run start when no marker qualifies. Returns signed index EAX, read-only; no bounds validation for malformed descriptor references. Whole470-byte/118-instruction original and103 nonempty typed C lines read; five indexed direct caller windows checked, not whole large callers.1728 isolated original cases passed with no substitutes:empty/duplicate group IDs,0/1/4 regions,preferred/missing keys,priority/marker layouts,two patterns,exact result and whole fixture unchanged. Additional integrated caller cases separate, no duplicate standalone credit. Concurrency/live UI/malformed data untested; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "140235bb0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim",
+        "runtime-implementation"
+      ],
+      "component_basis": "Keyed/group UI-region preference lookup and active UI-state key update within the same region table system.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C review, direct caller windows and3264 isolated original cases split between lookup and integrated state update.",
+      "code_sha256": "1ae7c20570d0237598a9e92ccf59ecb6b165433a8e6f5d88aaf7f2eefb4bd267",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateActiveUIStateRegionKeysForGroup",
+          "support": [
+            "Entire 121-byte body (37 instructions) and all 21 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name. Loops max(0,signed global14783f834) UI-state slots with stride11048, beginning at149f96940. For each nonzero byte at slot-24, calls FindPreferredUIRegionIndexForGroup(EDI group ID). Valid index copies region key into slot-8 and clears DWORD slot+0. Inactive slots and not-found results preserve existing fields. SysV EDI signed group ID,void. Whole121-byte original and21 nonempty typed C lines read.1536 isolated whole original caller cases with original470-byte lookup passed:no substitutes;counts-1/0/1/2,all two-slot active masks,found/missing queries,preferred keys,priority/marker layouts,two patterns,complete global/other fixture comparison. Two valid synthetic slots only; malformed counts/references,concurrency/live UI,input-state lifecycle and original field/source names unverified. No MM source equivalence."
           ]
         }
       ]

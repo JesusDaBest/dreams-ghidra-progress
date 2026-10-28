@@ -9545,3 +9545,18 @@ The appender requires an active context and fewer than 256 entries. It condition
 The wrapper itself remains **static-only**. Malformed pointers/counts, invalid context depth, NaN/infinity, concurrency, live UI and Media Molecule source equivalence remain unverified. Both helpers are counted once under UI primitives.
 
 Totals: **1,011 reviewed names /9,704 defined functions**, **2,404 mapped /7,300 unmapped**. Whole-game completion remains unknown.
+
+
+### Preferred UI-region lookup and state update
+
+**FindPreferredUIRegionIndexForGroup** and **UpdateActiveUIStateRegionKeysForGroup** were read in full: **591 original bytes /155 instructions** and **124 nonempty diagnostic C lines**. Both names and working interfaces survived independent reopening with executable bytes unchanged.
+
+The lookup first finds the group descriptor and tries its stored region key with the same descriptor index. If that fails, it accepts the first region whose referenced group ID matches, including duplicate group IDs. A priority run and marker byte can adjust the result. It returns an index or -1 and does not modify the tables. Source field labels remain descriptive.
+
+The caller loops the nonnegative UI-state count. For each slot with its flag set, a successful lookup copies the region key and clears a counter. Inactive slots and missing results keep their previous values. These fields have not been matched to original source names or the complete input-state lifecycle.
+
+**3,264 new isolated original cases passed with no substitutes:** 1,728 lookup cases and 1,536 distinct whole-caller cases using the original lookup. Coverage includes empty and duplicate groups, missing/preferred keys, priority/marker layouts, zero/negative state counts, active masks and full global fixture checks. These are two new suites; completed earlier suites were not rerun.
+
+Malformed counts/references/pointers, concurrency and live UI remain untested. Five indexed direct caller windows were inspected without full large-caller review credit. Both helpers are counted once under UI primitives; no Media Molecule source match is claimed.
+
+Totals: **1,013 reviewed names /9,704 defined functions**, **2,406 mapped /7,298 unmapped**. Whole-game completion remains unknown.

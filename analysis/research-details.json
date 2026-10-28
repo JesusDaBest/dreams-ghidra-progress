@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1011,
+    "checked_and_applied_names": 1013,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1011,
+    "verified_names": 1013,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "857 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "859 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31257,6 +31257,48 @@
       "Both full original bodies and typed C read. The display-record wrapper is static-only;576 new isolated cases cover only the original appender under identity transforms.",
       "Nonidentity transforms, rsqrt refinement, invalid context depth, malformed record/subrecord pointers, NaN/infinity, concurrency and live UI remain untested.",
       "Selected list-reader windows and one complete small lookup body are supporting evidence only, with no additional review credit. Original UI classes/type identities and Media Molecule source equivalence remain unknown."
+    ]
+  },
+  "ui_region_preference_checkpoint": {
+    "functions": {
+      "1402354a0": {
+        "name": "FindPreferredUIRegionIndexForGroup",
+        "signature": "int PS4_SYSV FindPreferredUIRegionIndexForGroup(int group_id_working)",
+        "return_storage": "EAX:4",
+        "original_sha256": "4acde34922dec2e7bdac9f27acc44b915816ab1df6a6d3d1c6e71169be69cc1b",
+        "size": 470,
+        "instructions": 118,
+        "created": false,
+        "c_sha256": "17d9206b3e85a843be6b84aa489421d63d5658509df915e082ae94e530a6ee22",
+        "nonempty_c_lines": 121
+      },
+      "140235bb0": {
+        "name": "UpdateActiveUIStateRegionKeysForGroup",
+        "signature": "void PS4_SYSV UpdateActiveUIStateRegionKeysForGroup(int group_id_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "1ae7c20570d0237598a9e92ccf59ecb6b165433a8e6f5d88aaf7f2eefb4bd267",
+        "size": 121,
+        "instructions": 37,
+        "created": false,
+        "c_sha256": "3e96f907efcf044d176ee82eae564197e96ea6d48aae52d644036ebce698e7b2",
+        "nonempty_c_lines": 33
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 591,
+    "original_instructions": 155,
+    "typed_c_nonempty_lines": 124,
+    "new_native_cases": 3264,
+    "native_case_assignment": {
+      "1402354a0": 1728,
+      "140235bb0": 1536
+    },
+    "scope_limits": [
+      "Both full original bodies and typed C read.1728 isolated original lookup cases plus1536 distinct original caller/lookup cases passed, with no substituted calls.",
+      "Synthetic valid group references and at most two UI-state slots only; malformed counts/indices/pointers,concurrency and live UI remain untested.",
+      "Priority/marker/preference and UI-state field labels are descriptive; original classes and full input-state lifecycle remain unresolved. Selected large-caller windows add no full caller credit or Media Molecule source-equivalence claim."
     ]
   }
 }

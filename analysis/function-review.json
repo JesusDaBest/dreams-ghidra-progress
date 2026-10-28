@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "857 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "859 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8538,
-    "other_names": 1166,
-    "verification": "complete_inventory_matches_baseline_plus_857_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8536,
+    "other_names": 1168,
+    "verification": "complete_inventory_matches_baseline_plus_859_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23946,6 +23946,46 @@
         "Both full original bodies and typed C read. The display-record wrapper is static-only;576 new isolated cases cover only the original appender under identity transforms.",
         "Nonidentity transforms, rsqrt refinement, invalid context depth, malformed record/subrecord pointers, NaN/infinity, concurrency and live UI remain untested.",
         "Selected list-reader windows and one complete small lookup body are supporting evidence only, with no additional review credit. Original UI classes/type identities and Media Molecule source equivalence remain unknown."
+      ]
+    },
+    {
+      "address": "1402354a0",
+      "original_name": "FUN_1402354a0",
+      "applied_name": "FindPreferredUIRegionIndexForGroup",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV FindPreferredUIRegionIndexForGroup(int group_id_working)",
+      "evidence": [
+        "Entire 470-byte body (118 instructions) and all 103 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+        "Analyst descriptive name; original group/priority/marker field labels unknown. Finds first group descriptor matching EDI ID in48-byte table149fdfa50/count149fe0650. Tries stored key at descriptor+20 against80-byte regions149fdaa40/count149fdfa40 with matching descriptor index; absent/missing key falls back to first region whose referenced descriptor ID matches query. Duplicate group IDs therefore share fallback matches. Returns-1 on no group/region. If region priority+c is not-1, walks backward while previous priority is not-1 and <=current, then seeks a nonzero marker+41 forward without crossing a decreasing-priority boundary; falls back to run start when no marker qualifies. Returns signed index EAX, read-only; no bounds validation for malformed descriptor references. Whole470-byte/118-instruction original and103 nonempty typed C lines read; five indexed direct caller windows checked, not whole large callers.1728 isolated original cases passed with no substitutes:empty/duplicate group IDs,0/1/4 regions,preferred/missing keys,priority/marker layouts,two patterns,exact result and whole fixture unchanged. Additional integrated caller cases separate, no duplicate standalone credit. Concurrency/live UI/malformed data untested; no MM source equivalence."
+      ],
+      "caveats": [
+        "Both full original bodies and typed C read.1728 isolated original lookup cases plus1536 distinct original caller/lookup cases passed, with no substituted calls.",
+        "Synthetic valid group references and at most two UI-state slots only; malformed counts/indices/pointers,concurrency and live UI remain untested.",
+        "Priority/marker/preference and UI-state field labels are descriptive; original classes and full input-state lifecycle remain unresolved. Selected large-caller windows add no full caller credit or Media Molecule source-equivalence claim."
+      ]
+    },
+    {
+      "address": "140235bb0",
+      "original_name": "FUN_140235bb0",
+      "applied_name": "UpdateActiveUIStateRegionKeysForGroup",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateActiveUIStateRegionKeysForGroup(int group_id_working)",
+      "evidence": [
+        "Entire 121-byte body (37 instructions) and all 21 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+        "Analyst descriptive name. Loops max(0,signed global14783f834) UI-state slots with stride11048, beginning at149f96940. For each nonzero byte at slot-24, calls FindPreferredUIRegionIndexForGroup(EDI group ID). Valid index copies region key into slot-8 and clears DWORD slot+0. Inactive slots and not-found results preserve existing fields. SysV EDI signed group ID,void. Whole121-byte original and21 nonempty typed C lines read.1536 isolated whole original caller cases with original470-byte lookup passed:no substitutes;counts-1/0/1/2,all two-slot active masks,found/missing queries,preferred keys,priority/marker layouts,two patterns,complete global/other fixture comparison. Two valid synthetic slots only; malformed counts/references,concurrency/live UI,input-state lifecycle and original field/source names unverified. No MM source equivalence."
+      ],
+      "caveats": [
+        "Both full original bodies and typed C read.1728 isolated original lookup cases plus1536 distinct original caller/lookup cases passed, with no substituted calls.",
+        "Synthetic valid group references and at most two UI-state slots only; malformed counts/indices/pointers,concurrency and live UI remain untested.",
+        "Priority/marker/preference and UI-state field labels are descriptive; original classes and full input-state lifecycle remain unresolved. Selected large-caller windows add no full caller credit or Media Molecule source-equivalence claim."
       ]
     }
   ],
