@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "860 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "861 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8535,
-    "other_names": 1169,
-    "verification": "complete_inventory_matches_baseline_plus_860_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8534,
+    "other_names": 1170,
+    "verification": "complete_inventory_matches_baseline_plus_861_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24006,6 +24006,26 @@
         "Entire2608-byte original/464 instructions and459 nonempty typed C lines read; two direct caller windows inspected, without full caller credit.",
         "720 isolated whole-original setup cases passed:counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,small nested records,view-key changes and full fixture/padding comparisons. Windows adapter probes stack pagewise; original code unchanged.",
         "Dropped-slot helper/mutex path remains static-only. Missing current root match may lead to null dereference. Malformed counts/pointers,concurrency/live UI and original source types remain unresolved; no Media Molecule source match."
+      ]
+    },
+    {
+      "address": "140232460",
+      "original_name": "FUN_140232460",
+      "applied_name": "UpdateUIRegionSelectionAndNavigation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateUIRegionSelectionAndNavigation(void * context_owner_working, uint mode_working, uint group_guard_working)",
+      "evidence": [
+        "Entire 12342-byte body (2541 instructions) and all 1739 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+        "Analyst descriptive name; original UI/source types unknown. Updates selection/navigation across current UI-state slots using80-byte regions and48-byte groups. Clears setup-ready flag; optional nonzero EDX defaults first group marker when none marked. Determines a type-membership policy from optional last UI object. For each current ID/context root, reconciles selected/forced region keys and countdown, restores per-view key/group preferences or nearest projected position, applies group modes2/3/4 and priority/marker traversal, and queries input masks via1412a5fd0. Uses1412a6440 origin/direction-like outputs; helper bodies/ABIs unresolved, so assembly controls argument interpretation. Directional candidate ranking includes region-edge intersections, distances and acosf angular terms; mirror handling and per-group direction restrictions. Maintains sorted0x220-byte per-view records, evicts minimum timestamp when count>=128, updates timestamps, and pushes/pops16-byte history items with32-item bound under valid counts. Selection changes prepare descriptor1b6a52b8/0x30-byte payload under mutex through unreviewed140a62d40 and reviewed editor events15b/15c. Repeat timer uses0.25 then0.1 then0.05 and frame-delta subtraction/clamp; analog bytes have neutral band70..90hex and flags80000/100000 gate pairs. Stores selected group/key,active/transition flags and navigation masks. Root search assumes matching valid entry; malformed counts/references and divisions/NaN not safety-proven. Whole12342-byte/2541-instruction original and1739 nonempty typed C lines read;both indexed direct caller windows inspected. Three decompiler-eliminated blocks still inspected in original; diagnostics misinfer IDfloat comparisons and omit some helper input arguments. Saved interface is working RDIowner,ESI mode(lowbyte observed),EDXgroupguard,void. Static only:zero new native cases; earlier helper suites do not validate this whole routine. Concurrency,dispatch delivery,all dependency bodies,live UI and MM source equivalence unverified."
+      ],
+      "caveats": [
+        "Whole12342-byte original/2541 instructions and1739 nonempty typed C lines read; two direct caller windows inspected. Zero new native cases.",
+        "Static evidence supports selection/navigation, history, repeat timing and geometry ranking. Input helper bodies/ABIs,dispatch delivery,concurrency and live UI remain unverified; prior helper tests give no whole-parent validation.",
+        "Diagnostic C removes three unreachable blocks and misinfers some helper arguments and ID comparisons; original instructions were read throughout. Valid root/count/reference invariants required; original source types and Media Molecule equivalence unknown."
       ]
     }
   ],

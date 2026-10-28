@@ -9006,3 +9006,18 @@ An unmatched old slot with its notification flag set prepares descriptor `0x1b6a
 Malformed counts/pointers, lost-slot dispatch, concurrency and live UI remain untested. The raw register pair and split stack transform describe working storage, not recovered original source types. Two direct caller windows add no full caller review credit; no Media Molecule source match is claimed.
 
 Totals: **1,014 reviewed names /9,704 defined functions**, **2,407 mapped /7,297 unmapped**. Whole-game completion remains unknown.
+
+
+### UI-region selection and navigation
+
+**UpdateUIRegionSelectionAndNavigation** was read in full: **12,342 original bytes /2,541 instructions** and **1,739 nonempty diagnostic C lines**. Its descriptive name and three-argument working interface survived independent reopening with executable bytes unchanged.
+
+It reconciles selected and forced region keys against the current region/group lists. It can restore a per-view key or group preference, choose a projected-position fallback, traverse group priority/marker runs, and rank directional candidates using region-edge intersections, distance and `acosf` angle terms. Input helpers and the optional UI-object type policy remain partly unresolved.
+
+The routine maintains sorted per-view 0x220-byte records. At a valid capacity of 128 it chooses a minimum-timestamp record for eviction; each record has a 32-item navigation history with push/pop/compaction logic. Repeat timing uses 0.25, 0.1 and 0.05 with frame-delta subtraction. Analog byte pairs have a neutral band from 0x70 through 0x90 and can cancel selection under the observed flags/policy.
+
+It updates selected group/key and active/transition state, prepares mutex-protected descriptor/payload calls and invokes the reviewed editor-event helper with IDs 0x15b/0x15c. Notification delivery and the unreviewed helper implementations are not established. The root search assumes a valid matching entry; malformed counts/references and numerical corner cases remain unverified.
+
+**Static analysis only: zero new native cases.** Earlier helper suites do not validate this complete routine. Both indexed direct caller windows were inspected without full caller review credit. Diagnostic C omits some call arguments, miscasts ID comparisons and removes three unreachable blocks; the complete original instructions were reviewed and control interpretation. No original source-type or Media Molecule source match is claimed.
+
+Totals: **1,015 reviewed names /9,704 defined functions**, **2,408 mapped /7,296 unmapped**. Whole-game completion remains unknown.

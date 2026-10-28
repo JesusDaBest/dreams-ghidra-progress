@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1014,
+    "checked_and_applied_names": 1015,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1014,
+    "verified_names": 1015,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "860 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "861 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31326,6 +31326,33 @@
       "Entire2608-byte original/464 instructions and459 nonempty typed C lines read; two direct caller windows inspected, without full caller credit.",
       "720 isolated whole-original setup cases passed:counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,small nested records,view-key changes and full fixture/padding comparisons. Windows adapter probes stack pagewise; original code unchanged.",
       "Dropped-slot helper/mutex path remains static-only. Missing current root match may lead to null dereference. Malformed counts/pointers,concurrency/live UI and original source types remain unresolved; no Media Molecule source match."
+    ]
+  },
+  "ui_region_consumer_checkpoint": {
+    "functions": {
+      "140232460": {
+        "name": "UpdateUIRegionSelectionAndNavigation",
+        "signature": "void PS4_SYSV UpdateUIRegionSelectionAndNavigation(void * context_owner_working, uint mode_working, uint group_guard_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "fb8410ae39991da68fe5d4eeafc56ff8111b2044c961c894413ffdc1a2200383",
+        "size": 12342,
+        "instructions": 2541,
+        "created": false,
+        "c_sha256": "af222068b9de10a5c2f006c1ff2571148ca9ec2c9c31778d569a08689078f085",
+        "nonempty_c_lines": 1770
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 12342,
+    "original_instructions": 2541,
+    "typed_c_nonempty_lines": 1739,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Whole12342-byte original/2541 instructions and1739 nonempty typed C lines read; two direct caller windows inspected. Zero new native cases.",
+      "Static evidence supports selection/navigation, history, repeat timing and geometry ranking. Input helper bodies/ABIs,dispatch delivery,concurrency and live UI remain unverified; prior helper tests give no whole-parent validation.",
+      "Diagnostic C removes three unreachable blocks and misinfers some helper arguments and ID comparisons; original instructions were read throughout. Valid root/count/reference invariants required; original source types and Media Molecule equivalence unknown."
     ]
   }
 }

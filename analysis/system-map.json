@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2407,
-  "unmapped_total": 7297,
+  "mapped_total": 2408,
+  "unmapped_total": 7296,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61658,6 +61658,30 @@
           "support": [
             "Entire 2608-byte body (464 instructions) and all 459 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
             "Analyst descriptive name. Compares incoming8-byte view key to149f968f0, stores changed flag149f96900 and key149f968f8; copies32-byte stack transform to149fe1ef0, raw low64 XMM0 bits to149f96908, sets flag149f96901 and float0.5 at149f96910; clears region count149fdfa40,group count149fe0650 and counter149fe1e60. Backs up four 0x11048-byte UI-state slots, including 0x220-byte outer records and16-byte inner items; resets their state headers/counts. For each current slot, finds root entry matching mapped ID and context, restores first matching old state by ID or initializes defaults/newID. Copies inner key8/value4, preserving destination4-byte padding; clears state+0x2c and moves its oldDWORD to+0x30. For unmatched old slots with flag+4 set, prepares descriptor 0x1b6a52b8 and calls unreviewed140a62d40 with 0x30-byte payload under imported mutex; delivery unverified. Whole2608-byte original and459 nonempty typed C lines read;two direct caller windows checked.720 isolated whole-original cases passed with valid synthetic roots,counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,0/1/2 outer and inner counts,view-key changes,two patterns and entire fixture comparisons. No substitutes; event/thread/mutex paths trapped and not reached. Windows adapter probes stack pagewise; original code unchanged. Lost-slot event path static-only. Missing root match can lead to null dereference; malformed counts/pointers,concurrency/live UI untested. Raw XMM0 pair and split32-byte stack transform are working storage descriptions, not recovered source types. No MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "140232460": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim",
+        "runtime-implementation"
+      ],
+      "component_basis": "Consumes UI-region/group tables to update per-slot selection, navigation, view-key history and repeat state.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original and typed C read plus both caller windows and verified acosf/memmove imports; static only.",
+      "code_sha256": "fb8410ae39991da68fe5d4eeafc56ff8111b2044c961c894413ffdc1a2200383",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateUIRegionSelectionAndNavigation",
+          "support": [
+            "Entire 12342-byte body (2541 instructions) and all 1739 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name; original UI/source types unknown. Updates selection/navigation across current UI-state slots using80-byte regions and48-byte groups. Clears setup-ready flag; optional nonzero EDX defaults first group marker when none marked. Determines a type-membership policy from optional last UI object. For each current ID/context root, reconciles selected/forced region keys and countdown, restores per-view key/group preferences or nearest projected position, applies group modes2/3/4 and priority/marker traversal, and queries input masks via1412a5fd0. Uses1412a6440 origin/direction-like outputs; helper bodies/ABIs unresolved, so assembly controls argument interpretation. Directional candidate ranking includes region-edge intersections, distances and acosf angular terms; mirror handling and per-group direction restrictions. Maintains sorted0x220-byte per-view records, evicts minimum timestamp when count>=128, updates timestamps, and pushes/pops16-byte history items with32-item bound under valid counts. Selection changes prepare descriptor1b6a52b8/0x30-byte payload under mutex through unreviewed140a62d40 and reviewed editor events15b/15c. Repeat timer uses0.25 then0.1 then0.05 and frame-delta subtraction/clamp; analog bytes have neutral band70..90hex and flags80000/100000 gate pairs. Stores selected group/key,active/transition flags and navigation masks. Root search assumes matching valid entry; malformed counts/references and divisions/NaN not safety-proven. Whole12342-byte/2541-instruction original and1739 nonempty typed C lines read;both indexed direct caller windows inspected. Three decompiler-eliminated blocks still inspected in original; diagnostics misinfer IDfloat comparisons and omit some helper input arguments. Saved interface is working RDIowner,ESI mode(lowbyte observed),EDXgroupguard,void. Static only:zero new native cases; earlier helper suites do not validate this whole routine. Concurrency,dispatch delivery,all dependency bodies,live UI and MM source equivalence unverified."
           ]
         }
       ]
