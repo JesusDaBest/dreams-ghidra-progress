@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1017,
+    "checked_and_applied_names": 1018,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1017,
+    "verified_names": 1018,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "863 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "864 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31408,5 +31408,39 @@
       "scope": "All 19 affected query call expressions inspected with adjacent context; no full parent rereview or runtime validation.",
       "file_newline_translation_verified": true
     }
+  },
+  "ui_input_bank_initializer_checkpoint": {
+    "functions": {
+      "1412a57a0": {
+        "name": "InitializeFiveUIInputRecords",
+        "signature": "void PS4_SYSV InitializeFiveUIInputRecords(void * input_records_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "4abe202139d1d28433847fab712620c1b75117389089035a4f222a72e8da0824",
+        "size": 1208,
+        "instructions": 146,
+        "created": false,
+        "c_sha256": "79a48b0292cb98ccb065e588d960241afe3c00c6c3786804fa3002c81520baeb",
+        "nonempty_c_lines": 183
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 1208,
+    "original_instructions": 146,
+    "typed_c_nonempty_lines": 166,
+    "new_native_cases": 32,
+    "scope_limits": [
+      "Analyst descriptive role; original class and device identities unresolved. No Media Molecule source equivalence or live game validation.",
+      "32 new isolated whole-original initializer cases passed without substitutes; runtime snapshot/rebuild code has only selected static windows reviewed.",
+      "Selected runtime path snapshots prior-pass records and uses key-matched comparison packets with current-packet fallback; frame cadence and input producer remain unproven."
+    ],
+    "snapshot_static_findings": [
+      "Current records are copied to a snapshot before the current list is cleared and rebuilt.",
+      "Comparison packet defaults to incoming packet; matching snapshot records replace it, with later matches taking precedence.",
+      "No match leaves comparison equal to current, suppressing the absent-from-comparison query in this path.",
+      "Whole containing update routine/cadence not reviewed; no previous-frame timing claim."
+    ],
+    "snapshot_followup_new_review_credit": 0
   }
 }

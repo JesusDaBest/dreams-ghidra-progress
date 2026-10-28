@@ -9605,3 +9605,16 @@ The second helper additionally requires no matching bits in a separate compariso
 A read-only follow-up of the already reviewed UI-navigation routine now shows both slot selector and query-mask arguments at the affected callsites. It adds no parent review credit or whole-parent runtime validation. The two helpers are counted once under Controls & input / Input mask queries; no Media Molecule source match is claimed.
 
 Totals: **1,017 reviewed names /9,704 defined functions**, **2,410 mapped /7,294 unmapped**. Whole-game completion remains unknown.
+
+
+### Input-record initialization and comparison lifecycle
+
+**InitializeFiveUIInputRecords** was read in full: **1,208 original bytes /146 instructions** and **166 nonempty diagnostic C lines**. Its descriptive name and working pointer/void interface survived independent reopening with executable bytes unchanged.
+
+It initializes five records with a 0x180-byte stride, setting both packet mask fields to zero, analog bytes to 0x80, and explicit header, packet, disable and auxiliary defaults. Unwritten padding is preserved. The direct initializer caller uses it for both current and snapshot arrays.
+
+**32 new isolated whole-original cases passed without substitutes or imports**: four initial byte patterns and eight destination offsets, including unaligned destinations. The complete 64 KiB fixture, preserved padding, original code and raw default constant were checked.
+
+Selected original windows in the runtime update show the current records copied to a snapshot before clearing and rebuilding the current list. A new record initially copies the incoming packet into both its primary and comparison fields. Matching snapshot records then replace the comparison packet; later matches win. If no match exists, comparison remains equal to current input, so the absent-from-comparison query yields no matching bits in this path. This establishes a prior-pass snapshot relationship; the enclosing call cadence and platform packet producer remain unproven. These selected windows add no whole-function review credit.
+
+Totals: **1,018 reviewed names /9,704 defined functions**, **2,411 mapped /7,293 unmapped**. These are code-review counts; whole-game completion remains unknown.

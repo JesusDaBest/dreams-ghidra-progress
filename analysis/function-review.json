@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "863 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "864 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8532,
-    "other_names": 1172,
-    "verification": "complete_inventory_matches_baseline_plus_863_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8531,
+    "other_names": 1173,
+    "verification": "complete_inventory_matches_baseline_plus_864_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24066,6 +24066,26 @@
         "Both whole original bodies and typed C read.45696 new isolated original cases passed,22848 per entry,no substitutes; full fixture unchanged.",
         "Five synthetic input banks only. Slot identities,button enums,comparison-bank writer ordering/temporal role,concurrency and live input remain unresolved. Multi-bit comparison is whole-query suppression,not per-bit rising edges.",
         "Selected parent callsites recaptured after signatures; no duplicate parent review credit or native parent validation. No original source/Media Molecule equivalence."
+      ]
+    },
+    {
+      "address": "1412a57a0",
+      "original_name": "FUN_1412a57a0",
+      "applied_name": "InitializeFiveUIInputRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeFiveUIInputRecords(void * input_records_working)",
+      "evidence": [
+        "Whole 1208-byte original /146 instructions and166 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name, not recovered source class. Initializes exactly five records at stride0x180 through destination+0x780, preserving unwritten padding. RDI writable destination,void return,PS4_SYSV. HeaderQWORD=-1; clears primary packet+0xc and comparison packet+0x4d, including maskQWORDs+0x38/+0x79; both analog byte quads+0x34/+0x75 are0x80808080; packet trailing bytes+0x4c/+0x8d=8. PrimaryDWORD+0x48=0x20000 for all five (remaining three emitted as twoWORDstores); comparisonWORD+0x8b=2. DisableBYTE+0xd0=0,adjacentBYTE+0xd1=1. Copies raw16-byte constant1416761d0 to+0xf0; sets+0x110/+0x114 maximum finite floats. Full1208 original bytes/146instructions and166 nonempty typedC lines read.32 new isolated whole-original cases passed without substitutes/imports:four fillers,eight aligned/unaligned destinations; complete64KiB fixture,untouched padding,original code and constant checked. Direct caller initializes both current and snapshot arrays. Selected runtime writer snapshots prior-pass records before rebuilding and key-matching comparison data; frame cadence/device identities/source packet producer remain unproven. No live game/MM source equivalence claim."
+      ],
+      "caveats": [
+        "Analyst descriptive role; original class and device identities unresolved. No Media Molecule source equivalence or live game validation.",
+        "32 new isolated whole-original initializer cases passed without substitutes; runtime snapshot/rebuild code has only selected static windows reviewed.",
+        "Selected runtime path snapshots prior-pass records and uses key-matched comparison packets with current-packet fallback; frame cadence and input producer remain unproven."
       ]
     }
   ],

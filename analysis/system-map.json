@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2410,
-  "unmapped_total": 7294,
+  "mapped_total": 2411,
+  "unmapped_total": 7293,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61733,6 +61733,30 @@
           ]
         }
       ]
+    },
+    "1412a57a0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-state-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Initializes five state records read by reviewed UI input queries; whole original and typed C plus direct initializer callsites reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original and typed C;32 original native initialization cases verify full memory output including preserved padding.",
+      "code_sha256": "4abe202139d1d28433847fab712620c1b75117389089035a4f222a72e8da0824",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeFiveUIInputRecords",
+          "support": [
+            "Whole 1208-byte original /146 instructions and166 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+            "Analyst descriptive name, not recovered source class. Initializes exactly five records at stride0x180 through destination+0x780, preserving unwritten padding. RDI writable destination,void return,PS4_SYSV. HeaderQWORD=-1; clears primary packet+0xc and comparison packet+0x4d, including maskQWORDs+0x38/+0x79; both analog byte quads+0x34/+0x75 are0x80808080; packet trailing bytes+0x4c/+0x8d=8. PrimaryDWORD+0x48=0x20000 for all five (remaining three emitted as twoWORDstores); comparisonWORD+0x8b=2. DisableBYTE+0xd0=0,adjacentBYTE+0xd1=1. Copies raw16-byte constant1416761d0 to+0xf0; sets+0x110/+0x114 maximum finite floats. Full1208 original bytes/146instructions and166 nonempty typedC lines read.32 new isolated whole-original cases passed without substitutes/imports:four fillers,eight aligned/unaligned destinations; complete64KiB fixture,untouched padding,original code and constant checked. Direct caller initializes both current and snapshot arrays. Selected runtime writer snapshots prior-pass records before rebuilding and key-matching comparison data; frame cadence/device identities/source packet producer remain unproven. No live game/MM source equivalence claim."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -64244,6 +64268,17 @@
             {
               "id": "input-mask-query",
               "label": "Input mask queries",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "input-state-records",
+              "label": "Input state records",
               "children": [
                 {
                   "id": "runtime-implementation",
