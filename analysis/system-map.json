@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2402,
-  "unmapped_total": 7302,
+  "mapped_total": 2404,
+  "unmapped_total": 7300,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61538,6 +61538,54 @@
           "support": [
             "Entire860-byte body (196 instructions) and all180 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
             "Analyst descriptive name; original class/source names unknown. Finds the first exact name in80-byte Imp descriptor table; hashes name with MurmurHash3_x64_128 seed badd5eed, acquires pool kind2 with high key0, then calls LoadImpCustomizationByDescriptorIndex(mode1) into that record payload. Returns0 for null name, empty table, missing descriptor, unavailable pool/load, or rejected clip with flags bit800. Calls sincosf(angle*0.5), uses bounds x/y and w for clip extents, layer plus global offset, edge factors from division by0.01 and clamping. Chooses display flags OR42 or442; packed options become (options & fffffffffeffff00)|100000b. Calls1412a88c0 to obtain pointer in RAX and handle in EDX; writes pool index+3b4, display flags+3b0, fixed vector+390 and angle-derived vector+3a0; calls1412ac6d0(record,0,XMM0zero), returns handle EAX. Original860-byte/196-instruction body and180 nonempty typed C lines fully read; downstream1211-byte body and selected constructor windows read, no extra review credit. Static only: zero new native tests. Rendering output, allocation failure/null constructor result, malformed pointers/counts, NaN and concurrency unverified. No MM source match."
+          ]
+        }
+      ]
+    },
+    "1412ac6d0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic display-record region generation and transformed keyed UI-region storage; used by the reviewed named Imp display path.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C review, caller/list-reader dataflow, and576 appender-only identity-transform cases. Wrapper statically reviewed.",
+      "code_sha256": "9e22efcb40b163438cf4e93f17de6974a5da4944820d293195c76e6af894dcb4",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterDisplayRecordRegions",
+          "support": [
+            "Entire 1211-byte body (259 instructions) and all 304 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name; original UI class/type names unknown. Builds one or more regions from a display record and calls AppendTransformedUIRegion. Skips flags400800. Margin coefficient0.015 for low-byte types6/10/14/15/16, otherwise0.005, scaled by149f96908/14783f528. Flag100000000 selects b0-byte subrecords at260/count268; skips null entries, optionally clips, derives mixed per-subrecord keys XOR record+18; flag argument also enables final aggregate registration. Other branches handle type4 bounds250/258 and flags278, or generic shape parameters130/13c/31c. Passes record byte80 and mirror override1; preserves detailed bounds/padding logic, no source enum identity claim. Void SysV RDIrecord, SILflag, XMM0float4. Entire1211-byte/259-instruction body and304 nonempty typed C lines read, reviewed Imp display caller traced. Static only; no native execution of this wrapper. Appender suite belongs only to callee; no duplicate credit. Allocation, malformed inputs, subrecord bounds, NaN, concurrency and live interaction untested; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "1402356f0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic display-record region generation and transformed keyed UI-region storage; used by the reviewed named Imp display path.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C review, caller/list-reader dataflow, and576 appender-only identity-transform cases. Wrapper statically reviewed.",
+      "code_sha256": "e4aade0c02f30b205752f0b022133869fb3123eb0c08c3d0c7fb0cb15aa38190",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendTransformedUIRegion",
+          "support": [
+            "Entire 1205-byte body (239 instructions) and all 456 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name. Appends one80-byte transformed UI region at149fdaa40; rejects context depth0 or unsigned count>=256. Conditional X mirror only when override0 and global147840008 nonzero. Uses context translation/scale and quaternion plus global UI transform; computes normalized relative quaternion with imported __isinff infinity-check helper and rsqrt refinement as required. Stores key+0, context-stack value+8, sentinelFFFFFFFF+c, three geometry vectors+10/+20/+30, group byte+40, flag0+41, contextQWORD+48; six padding bytes42..47 preserved. Increments149fdfa40 and returns AL1; rejectionAL0. SysV RDIkey64,SILgroup,DLmirroroverride,XMM0frame,XMM1bounds. Entire1205-byte body and456 nonempty typed C lines read.576 isolated original identity-transform cases passed:counts0/1/255/256,depth0/1/2,mirror/override0/1,group0/255,three bounds,two patterns,whole fixture checked. Controlled141608170 returns0 for finite unit-norm fixtures only. First oracle incorrectly expected corner-relative extents; failure retained and corrected to reference vector plus unchanged identity bounds. Nonidentity transforms, rsqrt branch, invalid depth, NaN/infinity, concurrency and live UI untested. Reader windows support keyed selection/group use, not whole consumer review or source equivalence."
           ]
         }
       ]

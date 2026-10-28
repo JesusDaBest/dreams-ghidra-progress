@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 963,
+    "done": 965,
     "todo": 1439,
-    "total": 2402,
-    "behavior_or_helpers_reviewed": 889,
+    "total": 2404,
+    "behavior_or_helpers_reviewed": 891,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -20306,12 +20306,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 149,
+        "done": 151,
         "todo": 302,
-        "total": 451,
-        "behavior_or_helpers_reviewed": 145,
+        "total": 453,
+        "behavior_or_helpers_reviewed": 147,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 242,
+        "runtime_functions_identified": 244,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -20323,6 +20323,7 @@
           "InsertSmallStringSpan",
           "BuildObjectDisplayName",
           "DrawInteractiveQrCode",
+          "AppendTransformedUIRegion",
           "ResolveTextReferenceObject",
           "SelectLocalizedInlineText64",
           "SelectLocalizedDynamicText",
@@ -20362,6 +20363,7 @@
           "DeleteBrowserDialogTextAction",
           "OpenBrowserDialogForQueuedTextAction",
           "PollBrowserDialogActionPending",
+          "RegisterDisplayRecordRegions",
           "CreateNamedImpDisplayRecord",
           "BuildTextLayoutRecord",
           "MeasureTextLayoutDimensions",
@@ -20778,6 +20780,7 @@
           "1401a5870",
           "1401a5af0",
           "140219710",
+          "1402356f0",
           "1403d6c80",
           "1406367f0",
           "1406368e0",
@@ -20817,6 +20820,7 @@
           "1410a6700",
           "1410a6740",
           "1410a6860",
+          "1412ac6d0",
           "1412b3230",
           "1412d7b40",
           "1412d8a40",
@@ -21230,22 +21234,24 @@
           {
             "name": "interface/display",
             "label": "UI drawing & interaction",
-            "done": 45,
+            "done": 47,
             "todo": 93,
-            "total": 138,
-            "behavior_or_helpers_reviewed": 45,
+            "total": 140,
+            "behavior_or_helpers_reviewed": 47,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 130,
+            "runtime_functions_identified": 132,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "DrawInteractiveQrCode",
+              "AppendTransformedUIRegion",
               "InsertQueuedActionByFlagAndPriority",
               "DestroyBrowserDialogTextAction",
               "DeleteBrowserDialogTextAction",
               "OpenBrowserDialogForQueuedTextAction",
               "PollBrowserDialogActionPending",
+              "RegisterDisplayRecordRegions",
               "CreateNamedImpDisplayRecord",
               "BuildRecipientBodyParticleRecords",
               "BuildRecipientStickParticleRecords",
@@ -21383,11 +21389,13 @@
             ],
             "done_addresses": [
               "140219710",
+              "1402356f0",
               "1410a53c0",
               "1410a66b0",
               "1410a6700",
               "1410a6740",
               "1410a6860",
+              "1412ac6d0",
               "1412b3230",
               "141441690",
               "141442600",
@@ -21727,16 +21735,19 @@
               {
                 "name": "interface/display/prim",
                 "label": "UI primitives",
-                "done": 0,
+                "done": 2,
                 "todo": 23,
-                "total": 23,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 25,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 23,
+                "runtime_functions_identified": 25,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "AppendTransformedUIRegion",
+                  "RegisterDisplayRecordRegions"
+                ],
                 "todo_names": [
                   "0x141564220",
                   "0x14156cc50",
@@ -21762,7 +21773,10 @@
                   "0x141571530",
                   "0x1415718e0"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "1402356f0",
+                  "1412ac6d0"
+                ],
                 "todo_addresses": [
                   "141564220",
                   "14156cc50",
@@ -21793,16 +21807,19 @@
                   {
                     "name": "interface/display/prim/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
+                    "done": 2,
                     "todo": 23,
-                    "total": 23,
-                    "behavior_or_helpers_reviewed": 0,
+                    "total": 25,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 23,
+                    "runtime_functions_identified": 25,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "AppendTransformedUIRegion",
+                      "RegisterDisplayRecordRegions"
+                    ],
                     "todo_names": [
                       "0x141564220",
                       "0x14156cc50",
@@ -21828,7 +21845,10 @@
                       "0x141571530",
                       "0x1415718e0"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "1402356f0",
+                      "1412ac6d0"
+                    ],
                     "todo_addresses": [
                       "141564220",
                       "14156cc50",
@@ -48579,5 +48599,5 @@
       }
     ]
   },
-  "unmapped": 7302
+  "unmapped": 7300
 }

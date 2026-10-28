@@ -8961,3 +8961,18 @@ The successful path uses `sincosf(angle * 0.5)`, bounds and clip edges, layer of
 **Static analysis only: zero new native cases.** Imported strcmp/sincosf bindings were independently checked. Selected caller and constructor windows plus the complete follow-up original body provide supporting evidence, without extra function-review credit. Live rendering, allocation failure, malformed inputs, NaN and concurrency remain unverified; original classes and Media Molecule source equivalence are unknown.
 
 Totals: **1,009 reviewed names /9,704 defined functions**, **2,402 mapped /7,302 unmapped**. Whole-game completion remains unknown.
+
+
+### Display-record region registration
+
+**RegisterDisplayRecordRegions** and **AppendTransformedUIRegion** were read in full: **2,416 original bytes /498 instructions** and **760 nonempty diagnostic C lines**. Both descriptive names and working interfaces survived independent reopening with executable bytes unchanged.
+
+The wrapper derives regions from display-record flags, shape/bounds fields or 0xb0-byte subrecords. It can skip suppressed records, clip subrecords and register an aggregate region. Subrecord keys mix their index with the record key. This is a generic UI helper used by the reviewed Imp display path. Original shape enum and class names remain unknown.
+
+The appender requires an active context and fewer than 256 entries. It conditionally mirrors X, applies context/global transforms and stores an 80-byte keyed region with stack/group data, three geometry vectors and a context value. Six padding bytes remain untouched. Selected readers resolve keys/groups and selection-related state; complete reader behavior has not been reviewed.
+
+**576 new isolated original appender cases passed**, covering identity transforms, counts 0/1/255/256, context depths 0/1/2, mirror overrides, group values, three bounds and two patterns. Whole global/transform fixtures were compared. The finite unit-norm fixture substitutes a zero result for imported `__isinff`; nonidentity and reciprocal-square-root paths remain untested. The first test expectation incorrectly treated stored bounds as corner-relative extents; that failure was retained and the identity model corrected. No executable changes were made.
+
+The wrapper itself remains **static-only**. Malformed pointers/counts, invalid context depth, NaN/infinity, concurrency, live UI and Media Molecule source equivalence remain unverified. Both helpers are counted once under UI primitives.
+
+Totals: **1,011 reviewed names /9,704 defined functions**, **2,404 mapped /7,300 unmapped**. Whole-game completion remains unknown.
