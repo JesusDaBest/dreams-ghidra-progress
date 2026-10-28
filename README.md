@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2684bcee102b8bacfef112d23eb5eef49d16916f/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c23376da6973e70f19579f7d0314162890e9647e/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**1,024 of 9,704 functions named and checked.** A function is one piece of the game's code.
+**1,027 of 9,706 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2684bcee102b8bacfef112d23eb5eef49d16916f/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c23376da6973e70f19579f7d0314162890e9647e/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,11 +70,11 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
 | Rendering & lighting | 411 | 142/385 | 0/26 |
-| Editor & interface | 466 | 159/257 | 4/207 |
+| Editor & interface | 469 | 162/260 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 478 | 355/391 | 17/82 |
 
-**2,417 of 9,704 discovered functions are mapped; 7,287 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,420 of 9,706 discovered functions are mapped; 7,286 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -647,10 +647,10 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 466 functions identified; 160 behavior/helper reviews; 4 property/type reviews
-  - **UI drawing & interaction** - 144 functions identified; 51 behavior/helper reviews; 0 property/type reviews
-    - **Imp visuals** - 39 functions identified; 39 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 39 functions identified; 39 behavior/helper reviews; 0 property/type reviews
+- **Editor & interface** - 469 functions identified; 163 behavior/helper reviews; 4 property/type reviews
+  - **UI drawing & interaction** - 147 functions identified; 54 behavior/helper reviews; 0 property/type reviews
+    - **Imp visuals** - 42 functions identified; 42 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 42 functions identified; 42 behavior/helper reviews; 0 property/type reviews
     - **UI primitives** - 29 functions identified; 6 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 29 functions identified; 6 behavior/helper reviews; 0 property/type reviews
     - **Transition** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1453,9 +1453,9 @@ Checked names cover reviewed functions across the systems listed above, includin
 ## Latest progress
 
 <!-- latest-counts:start -->
-- **1,024 of 9,704 functions named and checked.** Another 4 remain unclear after review. These counts measure function review, not whole-game completion.
-- **2,417 functions mapped to parts of Dreams; 7,287 still unmapped.** Of the mapped functions, 978 have checked names.
-- **9,666 functions have cached computer-generated code; 38 extraction failures remain.** Generated output is preparation for research, not proof that behavior is understood.
+- **1,027 of 9,706 functions named and checked.** Another 4 remain unclear after review. These counts measure function review, not whole-game completion.
+- **2,420 functions mapped to parts of Dreams; 7,286 still unmapped.** Of the mapped functions, 981 have checked names.
+- **9,668 functions have cached computer-generated code; 38 extraction failures remain.** Generated output is preparation for research, not proof that behavior is understood.
 <!-- latest-counts:end -->
 
 - **The complete Imp serializer passed 288 isolated integration cases for revision 1401.** Original parent and child code were checked against an independent wire model in both directions, including array counts up to 512, marker handling, counter wrap and scalar ordering. A declared local substitute handled only the imported string-length boundary. No additional names were credited for this validation.
