@@ -9062,3 +9062,16 @@ The function initializes a packed output bundle with eight 65-byte packet slots,
 Three original direct-call windows supply output pointers and options 0/1. This is **static review, with zero new native cases**; real device behavior, child implementations, reentrancy and exact update cadence remain unverified. Some generated C omits arguments or misrepresents raw bitcasts, so original instruction/register evidence governs. No Media Molecule source match is claimed.
 
 Totals: **1,019 reviewed names /9,704 defined functions**, **2,412 mapped /7,292 unmapped**. Whole-game completion remains unknown.
+
+
+### VR-tracked pad packet construction
+
+**BuildVRTrackedPadInputPacket** was read in full: **3,567 original bytes /731 instructions** and **701 nonempty diagnostic C lines**. Its descriptive name and eight-argument working interface survived independent reopening with executable bytes unchanged. The original ABI includes two stack arguments and an AL boolean result.
+
+The helper combines VR-tracker results or selected cached tracking data with a pad sample ring to update a preinitialized 65-byte packet. Under the zero-option path, it can OR button state across at most 255 recent 120-byte ring records and advance the saved sample timestamp; an initial timestamp or disabled aggregation selects the latest button state. It remaps button bits, preserves selected destination bits, copies analog bytes, packs up to two auxiliary records, and normalizes and quantizes pose data.
+
+**16 direct import bindings were checked against original thunks.** The selected sample-refresh dependency calls `scePadRead` and obtains controller information, establishing pad input as a source; its whole implementation is still pending review. Both direct caller windows in the reviewed bundle producer were inspected.
+
+A false result does **not** promise an unchanged packet or state: tracking caches, globals or packet metadata can already have been written. This is static review with **zero new native cases**. Complete original structures, slot/device enums, option meanings and real pad/VR behavior remain unresolved. Some decompiler arguments and bitcasts are inaccurate; original assembly governs. No source-build equivalence is claimed.
+
+Totals: **1,020 reviewed names /9,704 defined functions**, **2,413 mapped /7,291 unmapped**. Whole-game completion remains unknown.

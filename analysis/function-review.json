@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "865 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "866 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8530,
-    "other_names": 1174,
-    "verification": "complete_inventory_matches_baseline_plus_865_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8529,
+    "other_names": 1175,
+    "verification": "complete_inventory_matches_baseline_plus_866_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24106,6 +24106,26 @@
         "Static full original and typed C review; no whole-function native or real device/platform execution.",
         "Original mode enums, complete bundle/class types and frame cadence remain unresolved; opaque option retained.",
         "27 original import thunks verified; child callees not implicitly reviewed. Diagnostic C has missing arguments and raw-bitcast artifacts; original assembly governs. No MM/source-build equivalence."
+      ]
+    },
+    {
+      "address": "14121a320",
+      "original_name": "FUN_14121a320",
+      "applied_name": "BuildVRTrackedPadInputPacket",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV BuildVRTrackedPadInputPacket(void * packet_working, void * sample_mutex_working, void * sample_ring_working, void * last_sample_time_working, uchar aggregate_buttons_working, int capture_option_working, int tracking_device_working, int tracking_slot_working)",
+      "evidence": [
+        "Whole 3567-byte original /731 instructions and701 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name; original enums/classes not recovered. PS4_SYSV: RDIpreinitialized65-bytepacket,RSIopaque sample mutex,RDXpad sample ring,RCXlast-sample timestamp pointer,R8Blow-byte aggregation flag,R9Dopaque capture option(low-byte0/1 cases),stack+8 tracking device i32,stack+16 slot i32;ALboolean packet-built result. Device-1 or disabled tracker returnsfalse early. Reads VR tracker result at adjusted tracking time; maintains per-slot0x5f0 cache,can use flagged cached result/recalibrate/reregister. Slot3 selects0x800 flag,others0x100; original slot enum unresolved. Calls pad sample-ring refresh under supplied mutex; selected child entry/import proof establishes scePadRead/controllerinformation,not full child semantics. Reads latest120-byte ring sample; option0 scans at most255 records for samples newer than last timestamp,ORs32-bit buttons,updates timestamp; first sample or zeroaggregateflag uses latest buttons. Remaps bits,preserves destinationmaskf8051000,copies4analogbytes,encodes up to2 auxiliary records,sets packet status/metadata. Normalizes and packs quaternion-like pose into three15-bit components plus omitted-component tag,and writes transformed position/tracking values. Resultfalse may follow tracker cache/global/packet metadata changes; no rollback/no-write promise. Whole3567 original bytes/731instructions and701nonempty typedC lines read;16 direct import bindings/original thunks verified;two original caller windows from reviewed bundle producer read. Static only,zero new native cases,real pad/VR behavior not executed; sample child not implicitly reviewed; complete field types/touch enums/capture mode/frame cadence unresolved. Generated C missing helperarg and rawbitcast artifacts; original registers govern. No MM/source equivalence."
+      ],
+      "caveats": [
+        "Static full original and typed C review; no whole-function native or real pad/VR execution.",
+        "Complete original structures, device/slot enums and capture-option meaning remain unresolved. False can follow partial packet/cache/global writes.",
+        "16 direct import bindings and selected pad-refresh dependency verified; no whole-child credit. Diagnostic C has missing arguments/raw-bitcast artifacts; original assembly governs. No MM/source equivalence."
       ]
     }
   ],

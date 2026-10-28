@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1019,
+    "checked_and_applied_names": 1020,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1019,
+    "verified_names": 1020,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "865 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "866 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31478,6 +31478,42 @@
       "Zero-option path additionally processes scalar/audio-like levels and frequency summaries.",
       "RTC network/current tick fallback is converted to milliseconds; no platform/network calls executed during review.",
       "Child helper semantics not implicitly reviewed; decompiler C argument and raw-bitcast artifacts retained as limitations."
+    ]
+  },
+  "input_compact_packet_builder_checkpoint": {
+    "functions": {
+      "14121a320": {
+        "name": "BuildVRTrackedPadInputPacket",
+        "signature": "uchar PS4_SYSV BuildVRTrackedPadInputPacket(void * packet_working, void * sample_mutex_working, void * sample_ring_working, void * last_sample_time_working, uchar aggregate_buttons_working, int capture_option_working, int tracking_device_working, int tracking_slot_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "de9e236f5b7d313673da52e9ccac86c49fee29fbd6a07047decfbef27081ec77",
+        "size": 3567,
+        "instructions": 731,
+        "created": false,
+        "c_sha256": "33ec2d8fd914db0921fc87143bfb359435677618eafc788608a219718e257641",
+        "nonempty_c_lines": 727
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 3567,
+    "original_instructions": 731,
+    "typed_c_nonempty_lines": 701,
+    "new_native_cases": 0,
+    "verified_direct_import_bindings": 16,
+    "direct_caller_windows": 2,
+    "scope_limits": [
+      "Static full original and typed C review; no whole-function native or real pad/VR execution.",
+      "Complete original structures, device/slot enums and capture-option meaning remain unresolved. False can follow partial packet/cache/global writes.",
+      "16 direct import bindings and selected pad-refresh dependency verified; no whole-child credit. Diagnostic C has missing arguments/raw-bitcast artifacts; original assembly governs. No MM/source equivalence."
+    ],
+    "findings": [
+      "Combines VR tracker result/cache with pad sample-ring state into a preinitialized65-byte packet.",
+      "Option0 may aggregate buttons across at most255 records of120 bytes ring entries and advances last timestamp; first-sample/disabled aggregation uses latest only.",
+      "Remaps buttons while preserving selected destination bits, copies analog bytes, packs up to two auxiliary records, and normalizes/quantizes pose.",
+      "False is not an atomic no-op: metadata, tracking cache or global state may already change.",
+      "Sample refresh dependency imports scePadRead and controller information; whole dependency implementation not yet reviewed."
     ]
   }
 }
