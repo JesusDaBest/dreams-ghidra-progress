@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "868 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "869 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8527,
-    "other_names": 1177,
-    "verification": "complete_inventory_matches_baseline_plus_868_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8526,
+    "other_names": 1178,
+    "verification": "complete_inventory_matches_baseline_plus_869_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24166,6 +24166,26 @@
         "Static full original/typed C review; zero new native cases and no real controller execution.",
         "Complete original classes, setting/option meanings, motion math edge behavior and hardware timing remain unresolved.",
         "Diagnostic C omits indirect formatting arguments and has inaccurate imported-math return types. Two exact reviewed formatting renderings are accepted for naming verification only; original bytes and ABI remain strict. No runnable-C or MM/source equivalence."
+      ]
+    },
+    {
+      "address": "140bc7830",
+      "original_name": "FUN_140bc7830",
+      "applied_name": "IsRecipientImpSuppressedByControlinator",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV IsRecipientImpSuppressedByControlinator(void * recipient_working, void * context_working)",
+      "evidence": [
+        "Whole 168-byte original /48 instructions and37 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name; complete recipient/context classes unresolved. PS4_SYSV RDIrecipient,RSIframe/editor context;AL boolean. Reads association pointers recipient+0x19c38/+0x19c40; selected kind2/nonkind2 arrangements combined with first-record flag+0x261 reject early. Otherwise decodes signed low22 bits of recipient DWORD+0x17184,range-checks against context count+0x10b58c0,reads pointer table+0x10958c0. Requires nonnull object with kind(low7 headerbits)=20 Controlinator,original CtrlMode+0x1a0 in1Possessable/2FollowController,and original AllowImpDuringPossession+0x1bc zero. Original field name/offset independently tied via property descriptor writes; enum/kind registrations rechecked. Whole168original bytes/48instructions and complete typed C read;four direct caller windows inspected.5184 synthetic whole-original AL/immutability cases passed before a final metadata-only count assertion failed(expected10368 instead of actual5184);correct Cartesian count independently recomputed,original log/script retained,no native rerun. No calls/imports/global slots in this helper; no live game/concurrency execution. Association record kind2/flag261 meanings and malformed-pointer behavior unresolved. Name describes these gates,not all ways Dreams can hide/suppress an imp. No MM/source equivalence."
+      ],
+      "caveats": [
+        "Whole original helper validated with synthetic disjoint memory; no real editor, malformed pointer or concurrency validation.",
+        "Association record kind2 and flag261 remain unnamed; full structures and whole parent policy remain unresolved.",
+        "All5184 native case checks passed before final metadata assertion failed from incorrect expected count10368; actual Cartesian count independently recomputed, failure log/executed script retained, native suite not rerun. No MM/source equivalence."
       ]
     }
   ],

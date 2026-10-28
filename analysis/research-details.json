@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1022,
+    "checked_and_applied_names": 1023,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1022,
+    "verified_names": 1023,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "868 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "869 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31584,6 +31584,40 @@
       "Adjusts a mutable orientation reference and derives bounded motion values before packing a65-byte input packet.",
       "Original imp-position/controller-type strings connect the optional formatted output to imp motion data.",
       "AL returns saved connectivity; disconnected return may follow packet header writes."
+    ]
+  },
+  "recipient_imp_suppression_checkpoint": {
+    "functions": {
+      "140bc7830": {
+        "name": "IsRecipientImpSuppressedByControlinator",
+        "signature": "uchar PS4_SYSV IsRecipientImpSuppressedByControlinator(void * recipient_working, void * context_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "7f4a26ff276115612f5a44da6a135c9008bdba99cfb2deeb90384206f24e827b",
+        "size": 168,
+        "instructions": 48,
+        "created": false,
+        "c_sha256": "cc4b520d94e794f37de0db17c31dd1a1e986c6a264cf309f8055e854ad876429",
+        "nonempty_c_lines": 57
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 168,
+    "original_instructions": 48,
+    "typed_c_nonempty_lines": 37,
+    "new_native_cases": 5184,
+    "direct_caller_windows": 4,
+    "scope_limits": [
+      "Whole original helper validated with synthetic disjoint memory; no real editor, malformed pointer or concurrency validation.",
+      "Association record kind2 and flag261 remain unnamed; full structures and whole parent policy remain unresolved.",
+      "All5184 native case checks passed before final metadata assertion failed from incorrect expected count10368; actual Cartesian count independently recomputed, failure log/executed script retained, native suite not rerun. No MM/source equivalence."
+    ],
+    "findings": [
+      "Returns true only for a valid Controlinator in Possessable or FollowController mode with AllowImpDuringPossession zero, subject to associated-record gates.",
+      "Decodes signed low22-bit object handle and checks table bounds, pointer and kind.",
+      "Original property name/offset and existing control-mode/kind registrations checked against executable bytes.",
+      "All5184 synthetic exact-result and input/code immutability checks completed; receipt recovered after wrong final expected-count assertion without rerunning native code."
     ]
   }
 }

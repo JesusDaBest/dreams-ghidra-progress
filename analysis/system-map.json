@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2415,
-  "unmapped_total": 7289,
+  "mapped_total": 2416,
+  "unmapped_total": 7288,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61850,6 +61850,30 @@
           "support": [
             "Whole 7876-byte original /1576 instructions and1863 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
             "Analyst descriptive name; original enums/classes unresolved. PS4_SYSV: RDI preinitialized65-bytepacket,ESI user-like integer,RDXexternal sample mutex,RCXpadstate,R8Blow-byte interpolation flag,R9Blow-byte aggregation flag,XMM0float scale;entry stack+8 setting pointer,+16 mutable motion/reference-state pointer,+24 low-byte option;AL saved post-refresh sample-connected byte. Original entry/caller registers govern generated C, whose untyped imported math returns and bitcasts are inaccurate. Writes packet header before connected check;false does not promise unchanged packet. Estimates sample interval from pre-refresh ring timestamps128 records apart; optional target time uses current process time minus1.5 estimated intervals. Refreshes sample ring under mutex, copies latest120-byte sample; optional backward search up to255 samples and hemisphere-correct normalized linear quaternion interpolation. Option0 scans history newer than saved motionstate+0x20,ORs buttons and conditionally carries nonzero trigger values;uses aggregate result only if prior timestamp nonzero and aggregation flag equals1,then advances timestamp. Remaps buttons,triggers,analogbytes and up to2 auxiliary records. Computes projected motion values from normalized relative orientation,reference quaternion and scale/settings;may rebase reference when settings change,initialize incomplete reference or adjust at clamp boundary. Uses tanf,powf,atan2f,acosf,sincosf and isfinite checks; exact original setting/option semantics and pathological floating point behavior remain unresolved. Packs normalized quaternion into three15-bit components plus omitted-component tag,clamps two motion components to+-100,writes third projected component,zeroes packet+0x14..0x1f. Option0 can update global imp-position snapshot or emit formatted imp_position_x/imp_abs_position_x/imp_position_y/imp_abs_position_y/imp_position_z and controller_type fields;original strings DS4/Gun independently checked. Updates motionstate flag+0x29. Full7876original bytes/1576instructions and1863nonempty typedC lines read;14 direct imports matched original thunks;both direct caller windows in reviewed input-bundle producer read. Static only,zero new native cases;hardware/MM/source equivalence not claimed. Query child1408b8f10 whole1026-byte original read but not fully semantically resolved or credited."
+          ]
+        }
+      ]
+    },
+    "140bc7830": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "input-state-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Queries Controlinator possession rules for imp-input policy; original property/enum/kind linkage, full helper and four direct caller windows reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full168-byte original/48 instructions and37 C lines;Original AllowImpDuringPossession binding verified;5184 synthetic original-code checks, four caller windows read.",
+      "code_sha256": "7f4a26ff276115612f5a44da6a135c9008bdba99cfb2deeb90384206f24e827b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IsRecipientImpSuppressedByControlinator",
+          "support": [
+            "Whole 168-byte original /48 instructions and37 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+            "Analyst descriptive name; complete recipient/context classes unresolved. PS4_SYSV RDIrecipient,RSIframe/editor context;AL boolean. Reads association pointers recipient+0x19c38/+0x19c40; selected kind2/nonkind2 arrangements combined with first-record flag+0x261 reject early. Otherwise decodes signed low22 bits of recipient DWORD+0x17184,range-checks against context count+0x10b58c0,reads pointer table+0x10958c0. Requires nonnull object with kind(low7 headerbits)=20 Controlinator,original CtrlMode+0x1a0 in1Possessable/2FollowController,and original AllowImpDuringPossession+0x1bc zero. Original field name/offset independently tied via property descriptor writes; enum/kind registrations rechecked. Whole168original bytes/48instructions and complete typed C read;four direct caller windows inspected.5184 synthetic whole-original AL/immutability cases passed before a final metadata-only count assertion failed(expected10368 instead of actual5184);correct Cartesian count independently recomputed,original log/script retained,no native rerun. No calls/imports/global slots in this helper; no live game/concurrency execution. Association record kind2/flag261 meanings and malformed-pointer behavior unresolved. Name describes these gates,not all ways Dreams can hide/suppress an imp. No MM/source equivalence."
           ]
         }
       ]

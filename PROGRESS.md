@@ -9097,3 +9097,14 @@ It consumes refreshed controller history, optionally interpolates orientation by
 **Static analysis only; zero new native cases.** Complete original classes, setting meanings, floating-point edge behavior and real controller behavior remain unresolved. Generated C has inaccurate imported-math types and omits indirect formatting arguments. Two exact reviewed formatting renderings are accepted solely for naming-persistence checks; executable bytes and ABI checks remain strict. Neither rendering is claimed as correct compilable source. No Media Molecule source-build match is claimed.
 
 Totals: **1,022 reviewed names /9,704 defined functions**, **2,415 mapped /7,289 unmapped**. Whole-game completion remains unknown.
+
+
+### Controlinator possession and imp-input policy
+
+**IsRecipientImpSuppressedByControlinator** was read in full: **168 original bytes /48 instructions** and **37 nonempty diagnostic C lines**. Its saved descriptive name and two-pointer working interface passed independent reopening with executable bytes unchanged. Four direct caller windows were inspected.
+
+The helper decodes a signed 22-bit object handle, checks its table bounds and verifies the Controlinator kind. A positive result requires `CtrlMode` to be `Possessable` or `FollowController` and `AllowImpDuringPossession` to be disabled, subject to additional associated-record gates. The original property registration independently links that name to field offset `0x1bc`; mode and object-kind evidence were rechecked. The associated-record kind and flag labels remain unresolved.
+
+**5,184 synthetic whole-original checks completed**, covering association branches, handle bounds/ignored upper bits, object kinds, control modes and possession flags, with exact result and fixture/code immutability checks. The script then failed only on an incorrect final expected-count assertion (10,368 instead of 5,184). The completed count was independently recomputed, the original log/script retained, and native code was not rerun. These checks do not establish live editor or concurrency behavior, malformed-pointer safety, or the full parent policy.
+
+Totals: **1,023 reviewed names /9,704 defined functions**, **2,416 mapped /7,288 unmapped**. Whole-game completion remains unknown.
