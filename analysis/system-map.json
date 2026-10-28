@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2406,
-  "unmapped_total": 7298,
+  "mapped_total": 2407,
+  "unmapped_total": 7297,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61634,6 +61634,30 @@
           "support": [
             "Entire 121-byte body (37 instructions) and all 21 nonempty typed C lines read; saved name/interface independently reopened; code unchanged.",
             "Analyst descriptive name. Loops max(0,signed global14783f834) UI-state slots with stride11048, beginning at149f96940. For each nonzero byte at slot-24, calls FindPreferredUIRegionIndexForGroup(EDI group ID). Valid index copies region key into slot-8 and clears DWORD slot+0. Inactive slots and not-found results preserve existing fields. SysV EDI signed group ID,void. Whole121-byte original and21 nonempty typed C lines read.1536 isolated whole original caller cases with original470-byte lookup passed:no substitutes;counts-1/0/1/2,all two-slot active masks,found/missing queries,preferred keys,priority/marker layouts,two patterns,complete global/other fixture comparison. Two valid synthetic slots only; malformed counts/references,concurrency/live UI,input-state lifecycle and original field/source names unverified. No MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "140231a30": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim",
+        "runtime-implementation"
+      ],
+      "component_basis": "Resets generic UI-region/group lists and remaps persistent UI-state records by current IDs.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/typed C and caller evidence plus720 isolated original setup/remapping cases; dropped-slot dispatch static only.",
+      "code_sha256": "1502741c5028e999060f15231dca5ca38180defe3ed29639b15e2b241f289063",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetUIRegionListsAndRemapStateSlots",
+          "support": [
+            "Entire 2608-byte body (464 instructions) and all 459 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name. Compares incoming8-byte view key to149f968f0, stores changed flag149f96900 and key149f968f8; copies32-byte stack transform to149fe1ef0, raw low64 XMM0 bits to149f96908, sets flag149f96901 and float0.5 at149f96910; clears region count149fdfa40,group count149fe0650 and counter149fe1e60. Backs up four 0x11048-byte UI-state slots, including 0x220-byte outer records and16-byte inner items; resets their state headers/counts. For each current slot, finds root entry matching mapped ID and context, restores first matching old state by ID or initializes defaults/newID. Copies inner key8/value4, preserving destination4-byte padding; clears state+0x2c and moves its oldDWORD to+0x30. For unmatched old slots with flag+4 set, prepares descriptor 0x1b6a52b8 and calls unreviewed140a62d40 with 0x30-byte payload under imported mutex; delivery unverified. Whole2608-byte original and459 nonempty typed C lines read;two direct caller windows checked.720 isolated whole-original cases passed with valid synthetic roots,counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,0/1/2 outer and inner counts,view-key changes,two patterns and entire fixture comparisons. No substitutes; event/thread/mutex paths trapped and not reached. Windows adapter probes stack pagewise; original code unchanged. Lost-slot event path static-only. Missing root match can lead to null dereference; malformed counts/pointers,concurrency/live UI untested. Raw XMM0 pair and split32-byte stack transform are working storage descriptions, not recovered source types. No MM source equivalence."
           ]
         }
       ]

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1013,
+    "checked_and_applied_names": 1014,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1013,
+    "verified_names": 1014,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "859 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "860 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31299,6 +31299,33 @@
       "Both full original bodies and typed C read.1728 isolated original lookup cases plus1536 distinct original caller/lookup cases passed, with no substituted calls.",
       "Synthetic valid group references and at most two UI-state slots only; malformed counts/indices/pointers,concurrency and live UI remain untested.",
       "Priority/marker/preference and UI-state field labels are descriptive; original classes and full input-state lifecycle remain unresolved. Selected large-caller windows add no full caller credit or Media Molecule source-equivalence claim."
+    ]
+  },
+  "ui_region_setup_checkpoint": {
+    "functions": {
+      "140231a30": {
+        "name": "ResetUIRegionListsAndRemapStateSlots",
+        "signature": "void PS4_SYSV ResetUIRegionListsAndRemapStateSlots(void * context_owner_working, void * view_key_working, ulonglong view_pair_bits_working, SpatialQueryFloat4Working16 transform_half0_working, SpatialQueryFloat4Working16 transform_half1_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "1502741c5028e999060f15231dca5ca38180defe3ed29639b15e2b241f289063",
+        "size": 2608,
+        "instructions": 464,
+        "created": false,
+        "c_sha256": "7f115918ca770719b0460b7e0e6481724aa6e90f512a599549d70b5764d71084",
+        "nonempty_c_lines": 482
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 2608,
+    "original_instructions": 464,
+    "typed_c_nonempty_lines": 459,
+    "new_native_cases": 720,
+    "scope_limits": [
+      "Entire2608-byte original/464 instructions and459 nonempty typed C lines read; two direct caller windows inspected, without full caller credit.",
+      "720 isolated whole-original setup cases passed:counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,small nested records,view-key changes and full fixture/padding comparisons. Windows adapter probes stack pagewise; original code unchanged.",
+      "Dropped-slot helper/mutex path remains static-only. Missing current root match may lead to null dereference. Malformed counts/pointers,concurrency/live UI and original source types remain unresolved; no Media Molecule source match."
     ]
   }
 }

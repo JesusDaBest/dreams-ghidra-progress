@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "859 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "860 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8536,
-    "other_names": 1168,
-    "verification": "complete_inventory_matches_baseline_plus_859_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8535,
+    "other_names": 1169,
+    "verification": "complete_inventory_matches_baseline_plus_860_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23986,6 +23986,26 @@
         "Both full original bodies and typed C read.1728 isolated original lookup cases plus1536 distinct original caller/lookup cases passed, with no substituted calls.",
         "Synthetic valid group references and at most two UI-state slots only; malformed counts/indices/pointers,concurrency and live UI remain untested.",
         "Priority/marker/preference and UI-state field labels are descriptive; original classes and full input-state lifecycle remain unresolved. Selected large-caller windows add no full caller credit or Media Molecule source-equivalence claim."
+      ]
+    },
+    {
+      "address": "140231a30",
+      "original_name": "FUN_140231a30",
+      "applied_name": "ResetUIRegionListsAndRemapStateSlots",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetUIRegionListsAndRemapStateSlots(void * context_owner_working, void * view_key_working, ulonglong view_pair_bits_working, SpatialQueryFloat4Working16 transform_half0_working, SpatialQueryFloat4Working16 transform_half1_working)",
+      "evidence": [
+        "Entire 2608-byte body (464 instructions) and all 459 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+        "Analyst descriptive name. Compares incoming8-byte view key to149f968f0, stores changed flag149f96900 and key149f968f8; copies32-byte stack transform to149fe1ef0, raw low64 XMM0 bits to149f96908, sets flag149f96901 and float0.5 at149f96910; clears region count149fdfa40,group count149fe0650 and counter149fe1e60. Backs up four 0x11048-byte UI-state slots, including 0x220-byte outer records and16-byte inner items; resets their state headers/counts. For each current slot, finds root entry matching mapped ID and context, restores first matching old state by ID or initializes defaults/newID. Copies inner key8/value4, preserving destination4-byte padding; clears state+0x2c and moves its oldDWORD to+0x30. For unmatched old slots with flag+4 set, prepares descriptor 0x1b6a52b8 and calls unreviewed140a62d40 with 0x30-byte payload under imported mutex; delivery unverified. Whole2608-byte original and459 nonempty typed C lines read;two direct caller windows checked.720 isolated whole-original cases passed with valid synthetic roots,counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,0/1/2 outer and inner counts,view-key changes,two patterns and entire fixture comparisons. No substitutes; event/thread/mutex paths trapped and not reached. Windows adapter probes stack pagewise; original code unchanged. Lost-slot event path static-only. Missing root match can lead to null dereference; malformed counts/pointers,concurrency/live UI untested. Raw XMM0 pair and split32-byte stack transform are working storage descriptions, not recovered source types. No MM source equivalence."
+      ],
+      "caveats": [
+        "Entire2608-byte original/464 instructions and459 nonempty typed C lines read; two direct caller windows inspected, without full caller credit.",
+        "720 isolated whole-original setup cases passed:counts-1/0/1/2/4,identity/reverse/rotate/new-ID maps,small nested records,view-key changes and full fixture/padding comparisons. Windows adapter probes stack pagewise; original code unchanged.",
+        "Dropped-slot helper/mutex path remains static-only. Missing current root match may lead to null dereference. Malformed counts/pointers,concurrency/live UI and original source types remain unresolved; no Media Molecule source match."
       ]
     }
   ],

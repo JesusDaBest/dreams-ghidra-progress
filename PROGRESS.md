@@ -8991,3 +8991,18 @@ The caller loops the nonnegative UI-state count. For each slot with its flag set
 Malformed counts/references/pointers, concurrency and live UI remain untested. Five indexed direct caller windows were inspected without full large-caller review credit. Both helpers are counted once under UI primitives; no Media Molecule source match is claimed.
 
 Totals: **1,013 reviewed names /9,704 defined functions**, **2,406 mapped /7,298 unmapped**. Whole-game completion remains unknown.
+
+
+### UI-region setup and persistent state remapping
+
+**ResetUIRegionListsAndRemapStateSlots** was read in full: **2,608 original bytes /464 instructions** and **459 nonempty diagnostic C lines**. Its descriptive name and working interface survived independent reopening with code unchanged.
+
+It records an incoming 8-byte view key and change flag, copies a 32-byte transform and a raw register pair, sets defaults and clears the region/group counts plus another counter. It backs up four UI-state slots, resets them, then restores matching old state into the current ID order or initializes state for a new ID. Nested 0x220-byte records and 16-byte items move with the matching state; each item copies 12 bytes while retaining destination padding.
+
+An unmatched old slot with its notification flag set prepares descriptor `0x1b6a52b8` and a 0x30-byte payload for an unreviewed helper under a mutex. That path is statically reviewed only; notification delivery is not established. A missing current root entry can lead to a null dereference, so the routine requires valid caller/root invariants.
+
+**720 new isolated whole-original cases passed**, covering counts -1/0/1/2/4, identity/reverse/rotate/new-ID mappings, zero/one/two outer and inner records, view-key changes and two patterns. Complete global/root/count fixtures and destination padding were compared. No imported implementation ran. The Windows adapter probes the stack pagewise before this PS4 routine reserves its large frame; game bytes remain unchanged.
+
+Malformed counts/pointers, lost-slot dispatch, concurrency and live UI remain untested. The raw register pair and split stack transform describe working storage, not recovered original source types. Two direct caller windows add no full caller review credit; no Media Molecule source match is claimed.
+
+Totals: **1,014 reviewed names /9,704 defined functions**, **2,407 mapped /7,297 unmapped**. Whole-game completion remains unknown.
