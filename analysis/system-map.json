@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9704,
-  "mapped_total": 2401,
-  "unmapped_total": 7303,
+  "mapped_total": 2402,
+  "unmapped_total": 7302,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61514,6 +61514,30 @@
           "support": [
             "Entire1028-byte body (199 instructions) and all179 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
             "Analyst descriptive name. Loads Imp customization using an indexed 80-byte descriptor. Rejects out-of-range index or empty name. Cache key is lower64 MurmurHash3_x64_128(name,seed0) XOR descriptor+0x30, plus descriptor+0x38; pool kind3. Matching nonzero descriptor+0x48 and payload hash copies0x4220 bytes directly. Otherwise builds chars/%s.dat, initializes temporary defaults, and calls LoadOrQueueImpStateByName with variant customization, minimum revision3, magic check1 and supplied mode. False propagates; true installs payload, calls ClearUnusedImpBlocksAndHashPayload twice, updates descriptor hash and, only in mode0, global usage/time stamps, then copies output. AL boolean return. Whole1028-byte original/199 instructions and typed C read.60 isolated original cache/rejection cases passed with original hash/pool lookup and controlled strlen/memcpy, complete output/descriptor/pool/global checks. Reload path static only; loader success does not guarantee decode for unsupported revision. Valid pointer/count invariants required; concurrency, I/O and live game untested. No original source-name or MM-source equivalence claim."
+          ]
+        }
+      ]
+    },
+    "1412b3230": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Creates an Imp display record from named customization, bounds and flags.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original and typed C review, selected caller/constructor windows, follow-up original body and import binding evidence; static only.",
+      "code_sha256": "f29231c236e28c00d436f75c7caa7850d1cfbeb889c6f1fddf3efe17ca07212a",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CreateNamedImpDisplayRecord",
+          "support": [
+            "Entire860-byte body (196 instructions) and all180 nonempty typed C lines read; name/interface independently reopened; code unchanged.",
+            "Analyst descriptive name; original class/source names unknown. Finds the first exact name in80-byte Imp descriptor table; hashes name with MurmurHash3_x64_128 seed badd5eed, acquires pool kind2 with high key0, then calls LoadImpCustomizationByDescriptorIndex(mode1) into that record payload. Returns0 for null name, empty table, missing descriptor, unavailable pool/load, or rejected clip with flags bit800. Calls sincosf(angle*0.5), uses bounds x/y and w for clip extents, layer plus global offset, edge factors from division by0.01 and clamping. Chooses display flags OR42 or442; packed options become (options & fffffffffeffff00)|100000b. Calls1412a88c0 to obtain pointer in RAX and handle in EDX; writes pool index+3b4, display flags+3b0, fixed vector+390 and angle-derived vector+3a0; calls1412ac6d0(record,0,XMM0zero), returns handle EAX. Original860-byte/196-instruction body and180 nonempty typed C lines fully read; downstream1211-byte body and selected constructor windows read, no extra review credit. Static only: zero new native tests. Rendering output, allocation failure/null constructor result, malformed pointers/counts, NaN and concurrency unverified. No MM source match."
           ]
         }
       ]

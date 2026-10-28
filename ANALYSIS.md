@@ -9517,3 +9517,16 @@ An 80-byte descriptor supplies the name and cache keys. A matching nonzero paylo
 **60 new isolated original cache-hit/rejection cases passed**, using the original hash and pool lookup plus controlled strlen/memcpy. Complete descriptor, pool, globals, output and guards were compared. Reload behavior is statically reviewed only; unsupported revisions can report loader success without decoding. Pointer/count invariants, concurrency, file I/O and live-game behavior remain unproven.
 
 Totals: **1,008 reviewed names /9,704 defined functions**, **2,401 mapped /7,303 unmapped**. These are reviewed-code counts; whole-game completion remains unknown.
+
+
+### Named Imp display records
+
+**CreateNamedImpDisplayRecord** was read in full: **860 original bytes /196 instructions** and **180 nonempty diagnostic C lines**. Its descriptive name and working interface survived independent reopening with code unchanged.
+
+It searches the 80-byte Imp descriptor table by exact name, hashes the name with seed `badd5eed`, acquires a kind-2 pool record and requests customization in mode 1. It returns zero when the name, pool, load or required clipping test fails.
+
+The successful path uses `sincosf(angle * 0.5)`, bounds and clip edges, layer offset and packed flags to request a display record. It stores the Imp pool index, display flags and two vectors in that record, invokes the follow-up helper and returns the constructor handle. The constructor returns a pointer in RAX and handle in EDX; diagnostic C does not yet express its complete vector/stack interface. The follow-up call is likewise interpreted from assembly rather than its provisional C arguments.
+
+**Static analysis only: zero new native cases.** Imported strcmp/sincosf bindings were independently checked. Selected caller and constructor windows plus the complete follow-up original body provide supporting evidence, without extra function-review credit. Live rendering, allocation failure, malformed inputs, NaN and concurrency remain unverified; original classes and Media Molecule source equivalence are unknown.
+
+Totals: **1,009 reviewed names /9,704 defined functions**, **2,402 mapped /7,302 unmapped**. Whole-game completion remains unknown.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1008,
+    "checked_and_applied_names": 1009,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1008,
+    "verified_names": 1009,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "854 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "855 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31188,6 +31188,33 @@
     "scope_limits": [
       "Cache-hit and rejection paths passed60 isolated original cases with original hash and pool lookup, synthetic disjoint buffers and controlled strlen/memcpy. Reload path statically reviewed only.",
       "Unsupported file revisions may yield loader success without decoding; valid pointer/count invariants required. No live game, I/O, concurrency or original-source equivalence established."
+    ]
+  },
+  "imp_customization_consumer_checkpoint": {
+    "functions": {
+      "1412b3230": {
+        "name": "CreateNamedImpDisplayRecord",
+        "signature": "uint PS4_SYSV CreateNamedImpDisplayRecord(int layer_working, void * customization_name_working, ulonglong packed_options_working, uint flags_working, SpatialQueryFloat4Working16 bounds_working, float angle_working)",
+        "return_storage": "EAX:4",
+        "original_sha256": "f29231c236e28c00d436f75c7caa7850d1cfbeb889c6f1fddf3efe17ca07212a",
+        "size": 860,
+        "instructions": 196,
+        "created": false,
+        "c_sha256": "4ed1c4d0cc8f8c1f854e985d277c56b47355f4720d3aaf862d674b20a12c44f7",
+        "nonempty_c_lines": 198
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 860,
+    "original_instructions": 196,
+    "typed_c_nonempty_lines": 180,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Static only: complete860-byte original/196 instructions and180 nonempty typed C lines read; imported strcmp and sincosf bindings verified. Zero new native cases.",
+      "Selected constructor windows and whole1211-byte follow-up original body inspected; no additional function review credit. Constructor/follow-up call ABIs remain incomplete in diagnostic C; assembly used.",
+      "No live rendering, allocation failure, malformed input, NaN, concurrency, platform or original-source equivalence established."
     ]
   }
 }
