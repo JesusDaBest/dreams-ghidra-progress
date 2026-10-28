@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "870 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "871 existing-function renames, 155 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9704,
-    "default_fun_names": 8525,
-    "other_names": 1179,
-    "verification": "complete_inventory_matches_baseline_plus_870_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "total": 9706,
+    "default_fun_names": 8524,
+    "other_names": 1182,
+    "verification": "complete_inventory_matches_baseline_plus_871_renames_and_155_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24207,6 +24207,68 @@
         "Four synchronization/thread imports replaced by no-op/counter stubs; actual platform synchronization is not verified.",
         "Associated record labels remain unresolved. Selected chain fixtures contain at most one valid Controlinator; input scan fixtures at most two records. No whole large-caller or MM/source equivalence claim."
       ]
+    },
+    {
+      "address": "14147fff0",
+      "original_name": null,
+      "applied_name": "UpdateImpPilotFromFrameInput",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateImpPilotFromFrameInput(void * pose_state_working, int input_index_working, void * frame_input_working, void * owner_working)",
+      "evidence": [
+        "Entire original 29428-byte body (5627 instructions) and all 5875 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Reviewed original 29428-byte EH body (5627 instructions) and complete typed decompilation. Updates an indexed frame-input imp pilot: tool/hit-dependent interaction state, constrained pose transforms, glyph/state fields, analog data and activity timing. Can emit INTERACTING tagged output and update another recipient animation record. Original diagnostic references src/imp/imp_pilot.cpp; name is descriptive, not recovered source. Several state/glyph IDs remain raw. Static review only; no whole-game or visual validation. Opaque pointers intentionally retained."
+      ],
+      "caveats": [
+        "Complete original assembly and typed C read; static analysis only, zero new native cases or live game validation.",
+        "Names describe supported roles; original function names, several state/glyph IDs and whole-system correctness remain unresolved.",
+        "Original imp_pilot.cpp diagnostic reference is not a Media Molecule source-code or livestream match."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14147f920",
+      "original_name": "FUN_14147f920",
+      "applied_name": "AssignAndBlendImpPilotTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AssignAndBlendImpPilotTransform(void * pose_state_working, void * transform_working, uchar reset_working, float blend_scale_working)",
+      "evidence": [
+        "Entire original 870-byte body (177 instructions) and all 212 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Reviewed original 870-byte EH body (177 instructions) and complete typed C. Rejects nonfinite transform, nonpositive scale, quaternion length outside approximately1e-4 of one, or nonfinite blend-scale. Copies transform, floors blend-scale at approximately0.01, optionally seeds stored pose or blends quaternion with hemisphere correction and slerp/lerp plus normalization; copies result to current pose. Static review only. Descriptive name; opaque state/transform pointers retained."
+      ],
+      "caveats": [
+        "Complete original assembly and typed C read; static analysis only, zero new native cases or live game validation.",
+        "Names describe supported roles; original function names, several state/glyph IDs and whole-system correctness remain unresolved.",
+        "Original imp_pilot.cpp diagnostic reference is not a Media Molecule source-code or livestream match."
+      ]
+    },
+    {
+      "address": "14147fc90",
+      "original_name": null,
+      "applied_name": "InitializeImpPilotInteractionPoint",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeImpPilotInteractionPoint(void * pose_state_working, void * transform_working, SpatialQueryFloat4Working16 scale_working, SpatialQueryFloat4Working16 point_working)",
+      "evidence": [
+        "Entire original 557-byte body (121 instructions) and all 239 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Reviewed original 557-byte EH body (121 instructions) and complete typed C. Initializes interaction point only when state+180 is zero and transform/point checks pass. Selects cached local point using FLT_MAX sentinel or inverse-transforms supplied point with finite reciprocal-scale mask; stores local point+1b0, transformed point+190, resets+184 and sets state+180=2. No positive-scale or unit-quaternion validation is implied. Static review only; descriptive name."
+      ],
+      "caveats": [
+        "Complete original assembly and typed C read; static analysis only, zero new native cases or live game validation.",
+        "Names describe supported roles; original function names, several state/glyph IDs and whole-system correctness remain unresolved.",
+        "Original imp_pilot.cpp diagnostic reference is not a Media Molecule source-code or livestream match."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1024,
+    "checked_and_applied_names": 1027,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1024,
-    "function_count": 9704,
+    "verified_names": 1027,
+    "function_count": 9706,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2068,6 +2068,8 @@
       "14147bcc0",
       "14147cde0",
       "14147f1b0",
+      "14147fc90",
+      "14147fff0",
       "14148a980",
       "1414f5a90",
       "1414f5c30",
@@ -2079,7 +2081,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "870 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "871 existing-function renames, 155 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31678,6 +31680,55 @@
       "Applies focused hit-type, active tool and brush-setup gates, then association/context checks and selected Controlinator overrides.",
       "The reviewed pad-motion packet builder uses this flag to permit reference adjustment at motion bounds.",
       "12570 whole-original root-plus-child synthetic cases passed with exact flag, reference-count/call-count and code/input integrity checks."
+    ]
+  },
+  "imp_pilot_checkpoint": {
+    "functions": {
+      "14147fff0": {
+        "name": "UpdateImpPilotFromFrameInput",
+        "signature": "void PS4_SYSV UpdateImpPilotFromFrameInput(void * pose_state_working, int input_index_working, void * frame_input_working, void * owner_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "c5649bbf9b09fe67633b80b9946ca37e4e37636e0f77e1c49dfd25a184ecab2f",
+        "size": 29428,
+        "instructions": 5627,
+        "created": true,
+        "c_sha256": "056152568172eac52da2da300bfa8adc9b1a20628adff024ee670cf033d8d1d8",
+        "nonempty_c_lines": 5884
+      },
+      "14147f920": {
+        "name": "AssignAndBlendImpPilotTransform",
+        "signature": "void PS4_SYSV AssignAndBlendImpPilotTransform(void * pose_state_working, void * transform_working, uchar reset_working, float blend_scale_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "1ce71332838acfff00fff1db408b78c7fabbf30e122346046710fd3fb8c984c5",
+        "size": 870,
+        "instructions": 177,
+        "created": false,
+        "c_sha256": "2fe5b1d5c2f490f9614ac512c15f48b628c1fae904e518851cd1fd5fc3b9da02",
+        "nonempty_c_lines": 220
+      },
+      "14147fc90": {
+        "name": "InitializeImpPilotInteractionPoint",
+        "signature": "void PS4_SYSV InitializeImpPilotInteractionPoint(void * pose_state_working, void * transform_working, SpatialQueryFloat4Working16 scale_working, SpatialQueryFloat4Working16 point_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "dd81e3b5b8249ade6d223b7a0df912b78c86c6a6b3da12cfbfedc93f6c20a5f4",
+        "size": 557,
+        "instructions": 121,
+        "created": true,
+        "c_sha256": "05e6ed5d5b5e5f96e9cb1543160285daf68ef3ac4920527b7458b13bb8f7cd9d",
+        "nonempty_c_lines": 247
+      }
+    },
+    "new_checked_names": 3,
+    "new_definitions": 2,
+    "existing_renames": 1,
+    "original_bytes": 30855,
+    "original_instructions": 5925,
+    "typed_c_nonempty_lines": 6326,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete original assembly and typed C read; static analysis only, zero new native cases or live game validation.",
+      "Names describe supported roles; original function names, several state/glyph IDs and whole-system correctness remain unresolved.",
+      "Original imp_pilot.cpp diagnostic reference is not a Media Molecule source-code or livestream match."
     ]
   }
 }

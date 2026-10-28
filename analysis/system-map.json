@@ -4,9 +4,9 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9704,
-  "mapped_total": 2417,
-  "unmapped_total": 7287,
+  "inventory_total": 9706,
+  "mapped_total": 2420,
+  "unmapped_total": 7286,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61898,6 +61898,78 @@
           "support": [
             "Whole 1026-byte original /237 instructions and161 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
             "Analyst descriptive name based on reviewed pad-motion packet caller; exact original class names unresolved. PS4_SYSV EDIuser-like i32,AL allow flag. Pins current frame/context under pool mutex/reference count,scans input records stride0x270 matching active group and user; no match returns true. Reads auxiliary record stride0x19c50. Verified fields: tool+0x190 ETool;focused RayHitId+0x50 hit_type+0x54 gives EHitType at+0xa4;tool_setup+0x197 EToolSetup. Applies focused-hit masks,selected-handle/tool/setup/operation/float gates;ETool24 SelectThingForTweak bypasses initial gates,ETool74 SnapPoint rejects on ordinary branch. Selected tools require SculptBrushMenu3 or StrokeBrushMenu17 setup;raw BT indices mask to6bits. Additional associated pointer/kind and current-group ID/flag gates retain opaque original labels. For Imp8 in selected group/editor state,inverts IsRecipientImpSuppressedByControlinator result,then can force allow via selected valid FollowController object matching this recipient/player;InputDisableControls and playeridx gates verified from original property bindings. Queried by reviewed BuildPadMotionInputPacket to allow reference adjustment at motion bounds;second caller window in14147fff0 reads false into pose-related flag,whole29428-byte second caller not reviewed. Releases pin and condition-broadcasts when reference count reaches zero. Full1026 original bytes/237instructions and full fresh typed C read.12570 new whole-original synthetic root+original child checks passed,covering77tools*50hits*3setups plus focused-handle,association,operation,threshold/NaN,selected-chain,pin/refcount and missing/multiple-record cases. Four imports controlled no-op/counters;no actual synchronization/platform/live-game execution. Valid frame/group/object-chain invariants assumed;invalid pointer/null frame/cyclic chains and concurrent mutation untested. No MM/source equivalence or full structure claim."
+          ]
+        }
+      ]
+    },
+    "14147fff0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original imp_pilot.cpp reference and complete tool/hit-dependent pose, interaction and transform helper review identify the imp pilot subsystem.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, original quaternion dispatch, math import/constant bindings and caller windows. Static-only.",
+      "code_sha256": "c5649bbf9b09fe67633b80b9946ca37e4e37636e0f77e1c49dfd25a184ecab2f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateImpPilotFromFrameInput",
+          "support": [
+            "Entire original 29428-byte body (5627 instructions) and all 5875 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Reviewed original 29428-byte EH body (5627 instructions) and complete typed decompilation. Updates an indexed frame-input imp pilot: tool/hit-dependent interaction state, constrained pose transforms, glyph/state fields, analog data and activity timing. Can emit INTERACTING tagged output and update another recipient animation record. Original diagnostic references src/imp/imp_pilot.cpp; name is descriptive, not recovered source. Several state/glyph IDs remain raw. Static review only; no whole-game or visual validation. Opaque pointers intentionally retained."
+          ]
+        }
+      ]
+    },
+    "14147f920": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original imp_pilot.cpp reference and complete tool/hit-dependent pose, interaction and transform helper review identify the imp pilot subsystem.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, original quaternion dispatch, math import/constant bindings and caller windows. Static-only.",
+      "code_sha256": "1ce71332838acfff00fff1db408b78c7fabbf30e122346046710fd3fb8c984c5",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AssignAndBlendImpPilotTransform",
+          "support": [
+            "Entire original 870-byte body (177 instructions) and all 212 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Reviewed original 870-byte EH body (177 instructions) and complete typed C. Rejects nonfinite transform, nonpositive scale, quaternion length outside approximately1e-4 of one, or nonfinite blend-scale. Copies transform, floors blend-scale at approximately0.01, optionally seeds stored pose or blends quaternion with hemisphere correction and slerp/lerp plus normalization; copies result to current pose. Static review only. Descriptive name; opaque state/transform pointers retained."
+          ]
+        }
+      ]
+    },
+    "14147fc90": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original imp_pilot.cpp reference and complete tool/hit-dependent pose, interaction and transform helper review identify the imp pilot subsystem.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, original quaternion dispatch, math import/constant bindings and caller windows. Static-only.",
+      "code_sha256": "dd81e3b5b8249ade6d223b7a0df912b78c86c6a6b3da12cfbfedc93f6c20a5f4",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeImpPilotInteractionPoint",
+          "support": [
+            "Entire original 557-byte body (121 instructions) and all 239 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Reviewed original 557-byte EH body (121 instructions) and complete typed C. Initializes interaction point only when state+180 is zero and transform/point checks pass. Selects cached local point using FLT_MAX sentinel or inverse-transforms supplied point with finite reciprocal-scale mask; stores local point+1b0, transformed point+190, resets+184 and sets state+180=2. No positive-scale or unit-quaternion validation is implied. Static review only; descriptive name."
           ]
         }
       ]

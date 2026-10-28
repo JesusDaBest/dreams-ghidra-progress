@@ -9697,3 +9697,14 @@ The policy pins the current context, matches input records by active group and u
 **12,570 whole-original synthetic root-plus-child cases passed.** They cover all 77 tool IDs × 50 hit IDs × three setup states, plus targeted association, focus-handle, operation, selected-chain, float-threshold/NaN, reference-count and missing/multiple-input-record cases. Exact result, fixture/code integrity and expected pin/unpin call counts were checked. Four synchronization/thread imports used controlled no-op/counter substitutes; actual platform synchronization and live editor behavior are not verified. Fixtures use valid group/recipient zero, at most two input records and one selected-chain object. Invalid context, malformed pointers, cyclic chains, concurrent mutation and the associated records’ original labels remain unresolved. The second large caller is not counted as reviewed.
 
 Totals: **1,024 reviewed names /9,704 defined functions**, **2,417 mapped /7,287 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp pilot pose and interaction flow
+
+Three descriptive names and working interfaces passed independent Ghidra reopening with original executable bytes unchanged: **UpdateImpPilotFromFrameInput**, **AssignAndBlendImpPilotTransform**, and **InitializeImpPilotInteractionPoint**. Two bodies were missing function definitions. The full original bodies cover **30,855 bytes /5,925 instructions**, with **6,326 nonempty diagnostic C lines** read before naming.
+
+The input routine updates tool/hit-dependent imp pose, interaction state, analog data and activity timing; it can emit an INTERACTING tagged output and update another recipient animation record. The transform helpers validate/blend a pose and initialize a transformed interaction point. The original four-way packed-quaternion dispatch, constants, math imports and caller windows were checked. An original imp_pilot.cpp diagnostic reference supports the subsystem identification.
+
+**Static review only; zero new native cases.** Several state/glyph IDs, unreviewed child behavior and live-game correctness remain unresolved. These are descriptive names, not recovered source names. No Media Molecule source or livestream match is claimed. Each function is mapped once under Imp visuals.
+
+Totals: **1,027 reviewed names /9,706 defined functions**, **2,420 mapped /7,286 unmapped**. Whole-game completion remains unknown.
