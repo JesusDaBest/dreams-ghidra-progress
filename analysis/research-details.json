@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1006,
+    "checked_and_applied_names": 1007,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1006,
-    "function_count": 9703,
+    "verified_names": 1007,
+    "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2059,6 +2059,7 @@
       "14144cf10",
       "14144d710",
       "14144dad0",
+      "141450be0",
       "1414792e0",
       "1414793a0",
       "14147b210",
@@ -2078,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "853 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "853 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31133,6 +31134,34 @@
       "Static-only:zero new native cases. File I/O,allocation,asynchronous completion,callback managers,worker bodies,locking andpointer lifetime not runtime verified.",
       "File version outside the accepted interval can skip decode without setting error; true does not guarantee output was populated. Cache mode false may mean queued/pending work.",
       "Original classes/field names,malformed-data safety,all caller contracts and Media Molecule source equivalence remain unproven."
+    ]
+  },
+  "imp_request_worker_checkpoint": {
+    "functions": {
+      "141450be0": {
+        "name": "RunImpStateRequestWorker",
+        "signature": "void PS4_SYSV RunImpStateRequestWorker(void)",
+        "return_storage": "<VOID>",
+        "original_sha256": "66fb545dd29d958febefa1e1ff269ad5e4f14543757dbad9385934c3fc9222d1",
+        "size": 3244,
+        "instructions": 705,
+        "created": true,
+        "c_sha256": "b3e7ef01deec01762ea4d7631cc805495c9acefeaaff6c3080ed74a1d6281edb",
+        "nonempty_c_lines": 548
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 1,
+    "existing_renames": 0,
+    "original_bytes": 3244,
+    "original_instructions": 705,
+    "typed_c_nonempty_lines": 528,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete3244-byte original body (705 instructions) and528 nonempty typed C lines read; selected thread startup window independently links entry to scePthreadCreate and ImpSerialiser name.",
+      "Static-only:zero native cases. Real condition/mutex/TLS,callback managers,allocation/failure,asynchronous completion and live-game behavior untested.",
+      "No normal return instruction observed; void/noargs is an opaque working interface,not a recovered original pthread prototype or shutdown guarantee.",
+      "Callback lifetime,capacity behavior under races,malformed data and Media Molecule source equivalence remain unproven."
     ]
   }
 }

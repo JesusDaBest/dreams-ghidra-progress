@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9703,
-  "mapped_total": 2399,
+  "inventory_total": 9704,
+  "mapped_total": 2400,
   "unmapped_total": 7304,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -61466,6 +61466,30 @@
           "support": [
             "Entire original 7276-byte body (1165 instructions) and all 1157 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Mode!=1: opens built-in debug Imp directory then data directory asrb,builds1MiB serializer buffer,optionlow8 controls5f496d70 magic check,readsrevision andonlycalls SerializeImpStatePayload ifminimum_revision<=revision<=99999. ReturnAL reflects serializererrorzero; out-of-range revision canreturntruewithoutdecoding output. Mode1:rejectsnamelength>64,expires pending records usingprocesscounter/frequency; cachekey0=low64 Murmur128(name,seed0) xor286d375e ifoptionlow8nonzero;key1=low64 Murmur128(variant,seed0) xorzeroextended32(minimum_revision*cd99). Reusesmatchingcachepayload onactive request; otherwise reservescacheentry ifcount<8,builds load/find/remove callback descriptors,queuesdeduplicated work,broadcastscondition,andreturnsfalse pending. Lookup/removal callbacks are reviewed14144bb40/14144bc10; loadcallback14144bb30 forcesmode0. Output is4220-byte Imp payload; originalclasses unresolved. Full7276-byte original/1165instructions and1157 nonempty typedC read; bothdirectincomingwindows read,caller14148a3d7 testsAL. SixSysV workingargs RDI/RSI/RDX/ECX/R8D/R9D,AL byte success. Static-only,zero newnativecases. FileI/O,allocation,asynchronouscompletion,locking/pointerlifetime,malformeddata andlivegame untested; callback manager andworker bodies notimplicitlyreviewed. OriginalC++/MMsource identity unclaimed."
+          ]
+        }
+      ]
+    },
+    "141450be0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Startup identifies ImpSerialiser thread; worker consumes the reviewed Imp loader request queue and lookup/load/removal callbacks.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review,primary import bindings,selected startup window and process-counter deadline constant. Static-only.",
+      "code_sha256": "66fb545dd29d958febefa1e1ff269ad5e4f14543757dbad9385934c3fc9222d1",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RunImpStateRequestWorker",
+          "support": [
+            "Entire original 3244-byte body (705 instructions) and all 528 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Threadstartup window passes thisentry toindependentlyresolved scePthreadCreate withname ImpSerialiser. Complete3244-byte original/705instructions and528 nonempty typedC read. Reads currentthreadname andsets TLS,locksqueue mutex148a546e0,waitsoncondition148a546d8 whenneitherqueuedrequestsnorinvalidatedactiveentries. Queuedrecords stridef0,activeentries stride50; limit8 activeentries. Clonesrequestname/callbackobjects. Onavailableactivecapacity,unlocksqueuemutex,invokeslookupforpayload thenloadcallbackwithname/output/variant/minrevision/magicarguments;relocksaftercallback. Successfulload records128-bit key anddeadline nowseconds+3 usingprocesscounter/frequency. Failure/capacity invokesremovalcallback. Dequeuesmatchingrequestbydestroyingcallbacks/ownedstring andcompactingf0 records. Invalidatedactiveentries invoke removal,thencompact50 records/decrementcount. Requiredmissingcallback takesbad_function_call importthenUD2. No normal RET inbody;void/noargs isopaque workinginterface,originalpthreadprototype unrecovered. Allnormalpathsloop; no shutdownprotocolproved. Static-only,zero newnativecases. Realcondition/mutex,TLS,callbackclones/destructors,allocationfailure,capacity/lifetime/concurrency andlivegame untested. NooriginalC++classname/MMsourceequivalence."
           ]
         }
       ]

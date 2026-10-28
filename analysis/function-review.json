@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "853 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "853 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9703,
+    "total": 9704,
     "default_fun_names": 8542,
-    "other_names": 1161,
-    "verification": "complete_inventory_matches_baseline_plus_853_renames_and_152_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1162,
+    "verification": "complete_inventory_matches_baseline_plus_853_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23846,6 +23846,28 @@
         "File version outside the accepted interval can skip decode without setting error; true does not guarantee output was populated. Cache mode false may mean queued/pending work.",
         "Original classes/field names,malformed-data safety,all caller contracts and Media Molecule source equivalence remain unproven."
       ]
+    },
+    {
+      "address": "141450be0",
+      "original_name": null,
+      "applied_name": "RunImpStateRequestWorker",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RunImpStateRequestWorker(void)",
+      "evidence": [
+        "Entire original 3244-byte body (705 instructions) and all 528 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Threadstartup window passes thisentry toindependentlyresolved scePthreadCreate withname ImpSerialiser. Complete3244-byte original/705instructions and528 nonempty typedC read. Reads currentthreadname andsets TLS,locksqueue mutex148a546e0,waitsoncondition148a546d8 whenneitherqueuedrequestsnorinvalidatedactiveentries. Queuedrecords stridef0,activeentries stride50; limit8 activeentries. Clonesrequestname/callbackobjects. Onavailableactivecapacity,unlocksqueuemutex,invokeslookupforpayload thenloadcallbackwithname/output/variant/minrevision/magicarguments;relocksaftercallback. Successfulload records128-bit key anddeadline nowseconds+3 usingprocesscounter/frequency. Failure/capacity invokesremovalcallback. Dequeuesmatchingrequestbydestroyingcallbacks/ownedstring andcompactingf0 records. Invalidatedactiveentries invoke removal,thencompact50 records/decrementcount. Requiredmissingcallback takesbad_function_call importthenUD2. No normal RET inbody;void/noargs isopaque workinginterface,originalpthreadprototype unrecovered. Allnormalpathsloop; no shutdownprotocolproved. Static-only,zero newnativecases. Realcondition/mutex,TLS,callbackclones/destructors,allocationfailure,capacity/lifetime/concurrency andlivegame untested. NooriginalC++classname/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Complete3244-byte original body (705 instructions) and528 nonempty typed C lines read; selected thread startup window independently links entry to scePthreadCreate and ImpSerialiser name.",
+        "Static-only:zero native cases. Real condition/mutex/TLS,callback managers,allocation/failure,asynchronous completion and live-game behavior untested.",
+        "No normal return instruction observed; void/noargs is an opaque working interface,not a recovered original pthread prototype or shutdown guarantee.",
+        "Callback lifetime,capacity behavior under races,malformed data and Media Molecule source equivalence remain unproven."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [

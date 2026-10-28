@@ -9493,3 +9493,16 @@ The output is the same 0x4220-byte Imp payload. Cache keys use the low 64-bit ha
 **Static analysis only; zero new native cases.** File I/O, allocation/failure, callback management, worker execution, asynchronous completion, malformed inputs, synchronization/pointer lifetime and live-game behavior remain untested. Related import names were independently resolved, without executing their linked implementations. No Media Molecule source match or server/authentication behavior is claimed.
 
 The routine is counted once under Imp visuals. Totals: **1,006 reviewed names /9,703 defined functions**, **2,399 mapped /7,304 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp request worker and callback completion flow
+
+**RunImpStateRequestWorker** was read in full and defined in Ghidra: **3,244 original bytes /705 instructions** and **528 nonempty diagnostic C lines**. Its descriptive name and working void interface survived independent reopening with original code unchanged. A selected startup window passes its entry to the independently resolved thread-creation import with the literal thread name **ImpSerialiser**. The larger startup function was not fully reviewed.
+
+The worker sets thread-local data, holds the queue mutex and waits on a condition when there is no queued work or invalidated active entry. It copies queued request names/callback objects, uses lookup callbacks to obtain output storage, and invokes load callbacks outside the queue mutex. Successful loads can add an active entry with a deadline equal to process-counter seconds plus **3.0 seconds**. The active-entry limit is eight. Failure/capacity paths invoke removal callbacks; handled queued records are destroyed and compacted. Invalidated active entries invoke removal and are compacted separately. Expiry invalidation is performed by the previously reviewed loader, not independently proven to happen on a timer here.
+
+The queued and active lists use 0xf0-byte and 0x50-byte records respectively. Callback clone/destructor operations and required-callback checks were followed in assembly; missing required callbacks take the imported bad-function-call path. No normal return instruction appears in this body. The void/no-argument signature is an opaque working interface, not a recovered original pthread prototype or shutdown contract.
+
+**Static analysis only; zero new native cases.** Real thread/TLS/condition/mutex execution, callback ownership, allocation/failure, asynchronous completion, races/deadlocks, malformed inputs and live-game behavior remain untested. Import bindings and the 3.0 deadline constant were independently inspected without executing platform implementations. No Media Molecule source match or whole-system correctness claim is made.
+
+The worker is counted once under Imp visuals. Totals: **1,007 reviewed names /9,704 defined functions**, **2,400 mapped /7,304 unmapped**. Whole-game completion remains unknown.
