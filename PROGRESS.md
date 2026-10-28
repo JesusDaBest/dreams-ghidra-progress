@@ -9049,3 +9049,16 @@ It initializes five records with a 0x180-byte stride, setting both packet mask f
 Selected original windows in the runtime update show the current records copied to a snapshot before clearing and rebuilding the current list. A new record initially copies the incoming packet into both its primary and comparison fields. Matching snapshot records then replace the comparison packet; later matches win. If no match exists, comparison remains equal to current input, so the absent-from-comparison query yields no matching bits in this path. This establishes a prior-pass snapshot relationship; the enclosing call cadence and platform packet producer remain unproven. These selected windows add no whole-function review credit.
 
 Totals: **1,018 reviewed names /9,704 defined functions**, **2,411 mapped /7,293 unmapped**. These are code-review counts; whole-game completion remains unknown.
+
+
+### Local input and tracking bundle
+
+**BuildLocalInputAndTrackingBundle** was read in full: **16,424 original bytes /2,954 instructions** and **2,776 nonempty diagnostic C lines**. The descriptive name and working pointer/opaque-option/void interface survived independent reopening with executable bytes unchanged.
+
+The function initializes a packed output bundle with eight 65-byte packet slots, identifiers, counts, metadata, auxiliary defaults and a timestamp. It visits four user/device records and selects delegated packet helpers or inlined tracked-controller paths. The latter read Move samples and VR-tracker results, aggregate recent button state, handle recentering/recalibration, and normalize and quantize pose data into compact packets. It then associates packets with deduplicated owner IDs. Exact original mode enums and complete structure types remain unresolved.
+
+**27 import bindings were checked against original thunks**, including Move reads, VR-tracker results and recalibration, locking, RTC conversion and logarithms. A zero-option path also processes scalar/audio-like levels and frequency summaries. The RTC network tick has a current-tick fallback; conversion produces the bundle's millisecond timestamp. No platform or network calls were executed during analysis.
+
+Three original direct-call windows supply output pointers and options 0/1. This is **static review, with zero new native cases**; real device behavior, child implementations, reentrancy and exact update cadence remain unverified. Some generated C omits arguments or misrepresents raw bitcasts, so original instruction/register evidence governs. No Media Molecule source match is claimed.
+
+Totals: **1,019 reviewed names /9,704 defined functions**, **2,412 mapped /7,292 unmapped**. Whole-game completion remains unknown.

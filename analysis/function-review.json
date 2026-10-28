@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "864 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "865 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9704,
-    "default_fun_names": 8531,
-    "other_names": 1173,
-    "verification": "complete_inventory_matches_baseline_plus_864_renames_and_153_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8530,
+    "other_names": 1174,
+    "verification": "complete_inventory_matches_baseline_plus_865_renames_and_153_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -24086,6 +24086,26 @@
         "Analyst descriptive role; original class and device identities unresolved. No Media Molecule source equivalence or live game validation.",
         "32 new isolated whole-original initializer cases passed without substitutes; runtime snapshot/rebuild code has only selected static windows reviewed.",
         "Selected runtime path snapshots prior-pass records and uses key-matched comparison packets with current-packet fallback; frame cadence and input producer remain unproven."
+      ]
+    },
+    {
+      "address": "140a635b0",
+      "original_name": "FUN_140a635b0",
+      "applied_name": "BuildLocalInputAndTrackingBundle",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildLocalInputAndTrackingBundle(void * input_bundle_working, int capture_option_working)",
+      "evidence": [
+        "Whole 16424-byte original /2954 instructions and2776 nonempty typed C lines read; saved name/interface independently reopened; executable unchanged.",
+        "Analyst descriptive name; source class and device mode enums not recovered. RDI writable packed bundle, ESI opaque32-bit capture option (observed0/1),void working return. Minimum destination0x59e: memset+1 length0x595;versionBYTE0=1; timestampQWORD+0x596. Eight65-byte packet defaults at+0x47, four128-byte auxiliary defaults at+0x24f, identifiers/counts/metadata and32-byte pose pairs. Initial full-option0 additionally samples7 scalar/audio-like channels and frequency summaries via unreviewed14009e6b0 and verifiedlog2f/logf. Always resolves RTC network/current tick fallback and writes milliseconds after tick conversion. Visits4 user/device records stride0x18230 under rwlock; mode/capacity branches delegate normal packet construction to14121a320/1408ae960 or read Move and VR tracker state. Tracked paths cache/aggregate recent64-byte Move samples, remap button bits, recenter/recalibrate tracking, normalize and quantize pose into compact packets. Last phase adds valid user IDs/pose metadata and deduplicates packet owners byID, writes packet-to-owner indices and packet count. Full16424 original bytes/2954instructions and2776nonempty typedC lines read;27 imports resolved byNID/loader and original thunks matched. Three direct caller windows supply option0/1 and outputpointer; indirect callers not exhaustive. Static review only: no native whole-function or real platform calls, frame cadence/reentrancy guarantee, whole-child review or MM source equivalence. Diagnostic C omits some import/helper args and has raw-bitcast inaccuracies; original register/instruction evidence governs. Option and complete structures remain opaque."
+      ],
+      "caveats": [
+        "Static full original and typed C review; no whole-function native or real device/platform execution.",
+        "Original mode enums, complete bundle/class types and frame cadence remain unresolved; opaque option retained.",
+        "27 original import thunks verified; child callees not implicitly reviewed. Diagnostic C has missing arguments and raw-bitcast artifacts; original assembly governs. No MM/source-build equivalence."
       ]
     }
   ],

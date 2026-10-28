@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 972,
+    "done": 973,
     "todo": 1439,
-    "total": 2411,
-    "behavior_or_helpers_reviewed": 898,
+    "total": 2412,
+    "behavior_or_helpers_reviewed": 899,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -20306,12 +20306,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 158,
+        "done": 159,
         "todo": 302,
-        "total": 460,
-        "behavior_or_helpers_reviewed": 154,
+        "total": 461,
+        "behavior_or_helpers_reviewed": 155,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 251,
+        "runtime_functions_identified": 252,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -20344,6 +20344,7 @@
           "ComputePaletteSamplingOffsetTransform",
           "ComputeSpatiallyWeightedPaletteColor",
           "AdjustEditorScalarFromRelativeRotation",
+          "BuildLocalInputAndTrackingBundle",
           "ApplyKeyedRecordInsertionEvent",
           "SetKeyedRecordCoordinatesOrNearbyRecords",
           "RemoveKeyedRecordOrNearbyRecords",
@@ -20808,6 +20809,7 @@
           "1408fe340",
           "1408fe6e0",
           "140a034d0",
+          "140a635b0",
           "140b35aa0",
           "140b35bd0",
           "140b35ec0",
@@ -26189,17 +26191,18 @@
           {
             "name": "interface/input",
             "label": "Controls & input",
-            "done": 4,
+            "done": 5,
             "todo": 32,
-            "total": 36,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 37,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 4,
+            "runtime_functions_identified": 5,
             "property_type_functions_identified": 32,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "AdjustEditorScalarFromRelativeRotation",
+              "BuildLocalInputAndTrackingBundle",
               "InitializeFiveUIInputRecords",
               "QueryUIInputSlotsMatchingMask",
               "QueryUIInputSlotsMatchingMaskAbsentFromComparison"
@@ -26240,6 +26243,7 @@
             ],
             "done_addresses": [
               "140a034d0",
+              "140a635b0",
               "1412a57a0",
               "1412a5fd0",
               "1412a6070"
@@ -26905,6 +26909,57 @@
                 ]
               },
               {
+                "name": "interface/input/input-state-records",
+                "label": "Input state records",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "BuildLocalInputAndTrackingBundle",
+                  "InitializeFiveUIInputRecords"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140a635b0",
+                  "1412a57a0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/input/input-state-records/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "BuildLocalInputAndTrackingBundle",
+                      "InitializeFiveUIInputRecords"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140a635b0",
+                      "1412a57a0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "interface/input/setbuttontogglemessage",
                 "label": "Set Button Toggle Message",
                 "done": 0,
@@ -27138,53 +27193,6 @@
                     "todo_addresses": [
                       "140cdb820"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "interface/input/input-state-records",
-                "label": "Input state records",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "InitializeFiveUIInputRecords"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1412a57a0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "interface/input/input-state-records/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "InitializeFiveUIInputRecords"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1412a57a0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -48741,5 +48749,5 @@
       }
     ]
   },
-  "unmapped": 7293
+  "unmapped": 7292
 }

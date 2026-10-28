@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1018,
+    "checked_and_applied_names": 1019,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1018,
+    "verified_names": 1019,
     "function_count": 9704,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2079,7 +2079,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "864 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "865 existing-function renames, 153 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31442,5 +31442,42 @@
       "Whole containing update routine/cadence not reviewed; no previous-frame timing claim."
     ],
     "snapshot_followup_new_review_credit": 0
+  },
+  "input_packet_producer_checkpoint": {
+    "functions": {
+      "140a635b0": {
+        "name": "BuildLocalInputAndTrackingBundle",
+        "signature": "void PS4_SYSV BuildLocalInputAndTrackingBundle(void * input_bundle_working, int capture_option_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "a2ad7ab4b712938487542ddcb10d2703cc5f9563abe302884e50a4110e1d2857",
+        "size": 16424,
+        "instructions": 2954,
+        "created": false,
+        "c_sha256": "4e6dd59aadb87df2636899a7065de18f36258efb91733ae1d6f6dc43b7138a84",
+        "nonempty_c_lines": 2800
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 16424,
+    "original_instructions": 2954,
+    "typed_c_nonempty_lines": 2776,
+    "new_native_cases": 0,
+    "verified_import_bindings": 27,
+    "direct_caller_windows": 3,
+    "scope_limits": [
+      "Static full original and typed C review; no whole-function native or real device/platform execution.",
+      "Original mode enums, complete bundle/class types and frame cadence remain unresolved; opaque option retained.",
+      "27 original import thunks verified; child callees not implicitly reviewed. Diagnostic C has missing arguments and raw-bitcast artifacts; original assembly governs. No MM/source-build equivalence."
+    ],
+    "findings": [
+      "Initializes packed bundle with eight65-byte packet slots, identifiers, metadata, auxiliary records and timestamp.",
+      "Visits four user/device records; delegated helper paths and inlined Move/VR-tracked paths build compact packets.",
+      "Tracked input aggregates buffered button state and normalizes/quantizes pose data; mode enums remain provisional.",
+      "Zero-option path additionally processes scalar/audio-like levels and frequency summaries.",
+      "RTC network/current tick fallback is converted to milliseconds; no platform/network calls executed during review.",
+      "Child helper semantics not implicitly reviewed; decompiler C argument and raw-bitcast artifacts retained as limitations."
+    ]
   }
 }
